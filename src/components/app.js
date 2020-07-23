@@ -7,7 +7,6 @@ import Routes from './routes';
 import './app.scss';
 
 const App = () => {
-  console.log('something');
   return (
     <div className="App">
       <BrowserRouter>
