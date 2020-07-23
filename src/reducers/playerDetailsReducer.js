@@ -28,6 +28,7 @@ export default (
       } = action.payload.data.league.standard.stats;
       const currentStats = season.find((item) => item.seasonYear === 2019);
       const payloadDetails = currentStats ? currentStats.total : latest;
+
       return {
         ...state,
         details: {
