@@ -50,7 +50,8 @@ export const getSelectedPlayer = (player) => async (dispatch) => {
 
   const playerResponse = await dataNbaNet.get(`/prod/v1/2019/players/${player.person_id}_profile.json`);
   const gamesResponse = await dataNbaNet.get(`/data/10s/prod/v1/2019/players/${player.person_id}_gamelog.json`);
-  dispatch({ type: 'UPDATE_PLAYER_DETAILS', payload: playerResponse.data.league.standard.stats.latest });
-  dispatch({ type: 'SET_RECENT_GAMES', payload: gamesResponse.data.league.standard });
+
+  dispatch({ type: 'UPDATE_PLAYER_DETAILS', payload: playerResponse });
+  dispatch({ type: 'SET_RECENT_GAMES', payload: gamesResponse });
   dispatch({ type: 'SET_PLAYER_DETAILS_IS_LOADING', payload: false });
 };

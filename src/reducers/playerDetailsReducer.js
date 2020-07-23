@@ -22,19 +22,28 @@ export default (
         },
       };
     case 'UPDATE_PLAYER_DETAILS':
+      const {
+        latest,
+        regularSeason: { season },
+      } = action.payload.data.league.standard.stats;
+      const currentStats = season.find((item) => item.seasonYear === 2019);
+      const payloadDetails = currentStats ? currentStats.total : latest;
+
       return {
         ...state,
         details: {
           ...state.details,
-          ...action.payload,
+          ...payloadDetails,
         },
       };
     case 'SET_RECENT_GAMES':
+      const { standard: recentGames } = action.payload.data.league;
+
       return {
         ...state,
         details: {
           ...state.details,
-          recentGames: action.payload,
+          recentGames,
         },
       };
     default:
