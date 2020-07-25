@@ -1,10 +1,10 @@
-import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-import Header from "./header";
-import Routes from "./routes";
+import Header from './header';
+import Routes from './routes';
 
-import "./app.scss";
+import './app.scss';
 
 const App = () => {
   return (
