@@ -13,13 +13,15 @@ git clone https://github.com/kammanz/raptors-app.git
 npm install
 npm start
 
-for unit testing:
+For unit testing:
 
 npm install enzyme enzyme-adapter-react-16 enzyme-to-json --save-dev
+
 or using Yarn: 
+
 yarn add enzyme enzyme-adapter-react-16 react-test-renderer enzyme-to-json --dev
 
-unit test configuration:
+Unit test configuration:
 
 In the src/ directory, create a new file called setupTests.js
 In that file, write the following at top of file:
