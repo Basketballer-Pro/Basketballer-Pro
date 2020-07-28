@@ -12,20 +12,26 @@ Currently this app displays all team player stats. All data and images are pulle
 git clone https://github.com/kammanz/raptors-app.git
 npm install
 npm start
+```
 
 For unit testing:
 
+```
 npm install enzyme enzyme-adapter-react-16 enzyme-to-json --save-dev
+```
 
-or using Yarn: 
+or using Yarn:
 
+```
 yarn add enzyme enzyme-adapter-react-16 react-test-renderer enzyme-to-json --dev
+```
 
 Unit test configuration:
 
 In the src/ directory, create a new file called setupTests.js
 In that file, write the following at top of file:
 
+```
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
