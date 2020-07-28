@@ -16,6 +16,6 @@ it('renders without crashing', () => {
     div
   );
 
-  expect(div.innerHTML.length).toEqual(10);
+  expect(div.innerHTML.length).toEqual(10); // Expected to Fail test
   ReactDOM.unmountComponentAtNode(div);
 });
