@@ -50,3 +50,17 @@
 .hasNoBorder {
   border-top: none;
 }
+
+@media all and (max-width: 959px) and (orientation: portrait) {
+  .optionContainer {
+    height: 32px;
+  }
+
+  .optionTitle {
+    font-size: 15px;
+  }
+
+  .borderTriangle {
+    border-width: 32px 11px 0 0;
+  }
+}
