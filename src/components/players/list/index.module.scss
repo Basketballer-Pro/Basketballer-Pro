@@ -126,10 +126,6 @@
 @media all and (max-width: 1196px) and (orientation: landscape) {
   .container {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .container {
-    grid-template-columns: repeat(3, 1fr);
     max-width: 800px;
 
     .playerCard {
