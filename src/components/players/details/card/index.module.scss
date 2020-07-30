@@ -98,3 +98,10 @@
   font-weight: bold;
   text-align: end;
 }
+
+@media all and (max-width: 1196px) and (orientation: landscape) {
+  .card {
+    min-width: unset;
+    width: 373px;
+  }
+}

@@ -15,3 +15,10 @@
 .scrollHidden {
   overflow: hidden;
 }
+
+@media all and (max-width: 1196px) and (orientation: landscape) {
+  .container {
+    min-width: unset;
+    width: 396px;
+  }
+}

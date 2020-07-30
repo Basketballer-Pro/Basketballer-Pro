@@ -127,4 +127,13 @@
   .container {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 800px;
+
+    .playerCard {
+      max-width: 265px;
+    }
+  }
 }
