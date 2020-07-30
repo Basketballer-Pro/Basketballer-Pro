@@ -67,3 +67,9 @@
   border-radius: 50%;
   background-color: $grey1b;
 }
+
+@media all and (max-width: 1196px) and (orientation: landscape) {
+  .container {
+    min-width: unset;
+  }
+}
