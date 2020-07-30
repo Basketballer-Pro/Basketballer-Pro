@@ -14,6 +14,29 @@ npm install
 npm start
 ```
 
+### Testing:
+
+```
+npm install enzyme enzyme-adapter-react-16 enzyme-to-json --save-dev
+```
+
+or using Yarn:
+
+```
+yarn add enzyme enzyme-adapter-react-16 react-test-renderer enzyme-to-json --dev
+```
+
+#### Testing configuration:
+
+In the `src/` directory, create a new file called `setupTests.js`
+In that file, write the following at top of file:
+
+```
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+configure({ adapter: new Adapter() });
+```
+
 ### Built With
 
 - [React](https://reactjs.org/) - The JS framework used
