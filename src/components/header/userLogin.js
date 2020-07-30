@@ -24,11 +24,7 @@ const UserLogin = () => {
         <img src={kobe} alt="user avatar" className={styles.userPic} />
         <div className={styles.userName}>Kobe Bryant</div>
         <div className={styles.chevronContainer}>
-          <Chevron
-            // width={14}
-            // height={7}
-            color={'#959595'} /* color is $grey3 */
-          />
+          <Chevron color={'#959595'} /* color is $grey3 */ />
         </div>
       </button>
     </div>
