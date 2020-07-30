@@ -11,15 +11,25 @@ const UserLogin = () => {
   return (
     <div className={styles.userContainer}>
       <button>
-        <Bell />
+        <div className={styles.svgContainer}>
+          <Bell />
+        </div>
       </button>
       <button>
-        <Gear />
+        <div className={styles.svgContainer}>
+          <Gear />
+        </div>
       </button>
       <button>
-        <img src={kobe} alt="user avatar" height="25" className={styles.userPic} />
+        <img src={kobe} alt="user avatar" className={styles.userPic} />
         <div className={styles.userName}>Kobe Bryant</div>
-        <Chevron width={14} height={7} color={'#959595'} /* color is $grey3 */ />
+        <div className={styles.chevronContainer}>
+          <Chevron
+            // width={14}
+            // height={7}
+            color={'#959595'} /* color is $grey3 */
+          />
+        </div>
       </button>
     </div>
   );

@@ -37,3 +37,27 @@
 .userName {
   margin-right: 18px;
 }
+
+@media all and (max-width: 834px) and (orientation: portrait) {
+  .userContainer {
+    height: 32px;
+
+    .svgContainer {
+      width: 14px;
+      height: auto;
+    }
+
+    button .userPic {
+      height: 18px;
+      border-radius: 18px;
+    }
+
+    button .userName {
+      font-size: 10px;
+    }
+
+    .chevronContainer {
+      width: 10px;
+    }
+  }
+}

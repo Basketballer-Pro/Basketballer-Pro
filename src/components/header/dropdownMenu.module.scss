@@ -6,6 +6,14 @@
   user-select: none;
 }
 
+.react-select-container {
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+  cursor: pointer;
+  width: 320px;
+}
+
 .optionContainer {
   display: flex;
   align-items: center;
@@ -51,16 +59,34 @@
   border-top: none;
 }
 
-@media all and (max-width: 959px) and (orientation: portrait) {
+@media all and (max-width: 834px) and (orientation: portrait) {
+  .teamContainer {
+    max-width: 230px;
+  }
   .optionContainer {
     height: 32px;
+    max-width: 230px;
+  }
+
+  .optionImgContainer {
+    width: 20px;
+    height: 20px;
+    margin-left: 6px;
   }
 
   .optionTitle {
-    font-size: 15px;
+    font-size: 17px;
   }
 
   .borderTriangle {
     border-width: 32px 11px 0 0;
+  }
+
+  .react-select-container .control {
+    position: relative;
+    box-sizing: border-box;
+    height: 100%;
+    cursor: pointer;
+    max-width: 230px;
   }
 }

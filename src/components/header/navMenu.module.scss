@@ -37,16 +37,24 @@
   }
 }
 
-@media all and (max-width: 959px) and (orientation: portrait) {
+@media all and (max-width: 834px) and (orientation: portrait) {
   .container {
     font-size: 12px;
+
     .navLink {
       padding-top: 2px;
       border-bottom: 3px solid transparent;
     }
+
     a {
-      height: calc(100% - 13px);
-      padding: 13px 20px 0;
+      height: calc(100% - 11px);
+      padding: 14px 17px 0;
+    }
+
+    &::after {
+      content: '';
+      border-top: 32px solid $white;
+      border-right: 11px solid transparent;
     }
   }
 }

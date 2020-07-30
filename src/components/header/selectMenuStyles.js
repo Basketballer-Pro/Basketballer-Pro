@@ -6,6 +6,10 @@ const selectMenuStyles = (teamColor) => {
       height: '100%',
       cursor: 'pointer',
       width: 320,
+      '@media only screen and (max-width: 834px)': {
+        ...provided['@media only screen and (max-width: 834px)'],
+        maxWidth: 232,
+      },
     }),
     control: () => ({
       display: 'flex',
@@ -30,6 +34,11 @@ const selectMenuStyles = (teamColor) => {
       display: 'flex',
       justifyContent: 'center',
       paddingRight: 22,
+      '@media only screen and (max-width: 834px)': {
+        ...provided['@media only screen and (max-width: 834px)'],
+        width: 20,
+        paddingRight: 10,
+      },
     }),
     indicatorSeparator: (provided) => ({
       ...provided,
