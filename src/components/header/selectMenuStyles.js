@@ -34,7 +34,7 @@ const selectMenuStyles = (teamColor) => {
       display: 'flex',
       justifyContent: 'center',
       paddingRight: 22,
-      width: 32,
+      width: 35,
       '@media only screen and (max-width: 834px)': {
         ...provided['@media only screen and (max-width: 834px)'],
         width: 20,
