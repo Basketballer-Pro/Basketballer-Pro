@@ -22,3 +22,10 @@
     width: 396px;
   }
 }
+
+@media all and (max-width: 834px) and (orientation: portrait) {
+  .container {
+    min-width: unset;
+    max-width: 310px;
+  }
+}

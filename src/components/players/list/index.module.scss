@@ -133,3 +133,31 @@
     }
   }
 }
+
+@media all and (max-width: 834px) and (orientation: portrait) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 523px;
+
+    .playerCard {
+      max-width: 165px;
+
+      .detailsContainer {
+        height: 64px;
+        .number {
+          padding-top: 14px;
+          font-size: 18px;
+        }
+      }
+
+      .details {
+        padding-top: 14px;
+        .name,
+        .position,
+        .size {
+          font-size: 9px;
+        }
+      }
+    }
+  }
+}

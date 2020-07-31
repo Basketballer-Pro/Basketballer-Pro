@@ -105,3 +105,10 @@
     width: 373px;
   }
 }
+
+@media all and (max-width: 834px) and (orientation: portrait) {
+  .card {
+    min-width: unset;
+    // width: 373px;
+  }
+}
