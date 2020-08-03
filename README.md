@@ -1,10 +1,8 @@
-## NBA Player Search App
+# BasketBaller Pro
 
 This app lets you search through NBA players and view their statistics. Good for those who play Fantasy Basketball or simply avid fans exploring their curiosity. You will also be able to view team standings and recent game results.
 
 Currently this app displays all team player stats. All data and images are pulled from official NBA sources. Api can be found here: http://data.nba.net/
-
-**NOTE**: Due to Covid-19 the 2019-20 NBA season has been cancelled. Statistics go far as March 12, 2020
 
 ### Installation
 
@@ -13,6 +11,24 @@ git clone https://github.com/kammanz/raptors-app.git
 npm install
 npm start
 ```
+
+### Linting
+
+Utilizing `ES Lint`, `Prettier` and `VS Code` standards. Further config details can be found at this article [here](https://readwriteexercise.com/posts/setting-up-create-react-app-vs-code-eslint-prettier/)
+
+To run lint:
+
+```
+yarn lint
+```
+
+To fix most lint errors:
+
+```
+yarn lint:fix
+```
+
+Also added [Husky](https://github.com/typicode/husky) githooks preventing `git commit` errors and must be fixed prior to commit. Warnings will be ignored.
 
 ### Testing:
 
@@ -26,7 +42,7 @@ or using Yarn:
 yarn add enzyme enzyme-adapter-react-16 react-test-renderer enzyme-to-json --dev
 ```
 
-#### Testing configuration:
+##### Testing configuration:
 
 In the `src/` directory, create a new file called `setupTests.js`
 In that file, write the following at top of file:
@@ -46,8 +62,8 @@ configure({ adapter: new Adapter() });
 
 ### Authors
 
-- **Kaumil Manzoor** - _Development_ - [Kammanz](http://kammanz.com/)
-- **Nikhil Tumne** - _Design_ - [Freshly Grazed](http://freshlygrazed.com/)
+- **Nikhil Tumne** - _Co-Founder, Team Lead Developer, Designer_ - [Freshly Grazed](http://freshlygrazed.com/)
+- **Kaumil Manzoor** - _Co-Founder, Front End Developer_ - [Kammanz](http://kammanz.com/)
 
 ### License
 

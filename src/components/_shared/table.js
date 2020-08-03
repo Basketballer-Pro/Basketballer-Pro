@@ -13,15 +13,27 @@ const Table = ({ array, isTotalStats, result }) => {
             return <th key={title}>{title}</th>;
           })}
         </tr>
-        <tr className={classnames(styles.table, isTotalStats ? styles.totalStats : styles.games)}>
+        <tr
+          className={classnames(
+            styles.table,
+            isTotalStats ? styles.totalStats : styles.games
+          )}
+        >
           {array.map(({ title, value }) => {
-            const val = parseInt(value) === -1 ? <div className={styles.invalid}>-</div> : value;
+            const val =
+              parseInt(value) === -1 ? (
+                <div className={styles.invalid}>-</div>
+              ) : (
+                value
+              );
 
             return (
               <td key={title}>
                 {title === 'result' ? (
                   <>
-                    <span className={result === 'W' ? styles.won : styles.lost}>{result}</span>
+                    <span className={result === 'W' ? styles.won : styles.lost}>
+                      {result}
+                    </span>
                     {val}
                   </>
                 ) : (

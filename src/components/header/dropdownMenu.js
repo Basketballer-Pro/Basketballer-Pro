@@ -33,7 +33,8 @@ const DropdownMenu = ({ teams, selectedTeam, getSelectedTeam, history }) => {
             styles.optionContainer,
             isSingleValue && styles.hasNoBorder
           )}
-          {...innerProps}>
+          {...innerProps}
+        >
           <div className={styles.optionImgContainer}>
             <TeamLogo />
           </div>
@@ -46,7 +47,8 @@ const DropdownMenu = ({ teams, selectedTeam, getSelectedTeam, history }) => {
   return (
     <div
       style={{ backgroundColor: teamColor }}
-      className={styles.teamContainer}>
+      className={styles.teamContainer}
+    >
       <Select
         styles={selectMenuStyles()}
         options={teams}

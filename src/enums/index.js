@@ -59,4 +59,7 @@ export const TEAM_COLORS = Object.freeze({
   WAS: '#cf142b',
 });
 
-export const MVP_PLAYERS = Object.freeze([{ NAME: 'kobe' }, { NAME: 'jordan' }]);
+export const MVP_PLAYERS = Object.freeze([
+  { NAME: 'kobe' },
+  { NAME: 'jordan' },
+]);
