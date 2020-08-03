@@ -15,9 +15,14 @@ const selectMenuStyles = (teamColor) => {
         maxWidth: 232,
       },
     }),
-    control: () => ({
+    control: (provided) => ({
       display: 'flex',
       height: '100%',
+      '@media only screen and (max-width: 838px)': {
+        ...provided['@media only screen and (max-width: 838px)'],
+        maxWidth: 242,
+        fontSize: 10,
+      },
     }),
     valueContainer: (provided) => ({
       ...provided,

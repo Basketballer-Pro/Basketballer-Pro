@@ -89,9 +89,13 @@
   }
 }
 
-@media all and (max-width: 834px) and (orientation: portrait) {
+@media all and (max-width: 838px) {
   .userContainer {
     height: 32px;
+
+    .borderTriangle {
+      border-width: 0 0 32px 11px;
+    }
 
     button .svgContainer {
       width: 14px;
