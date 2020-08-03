@@ -12,6 +12,22 @@ npm install
 npm start
 ```
 
+### Linting
+
+To run lint:
+
+```
+yarn lint
+```
+
+To fix most lint errors:
+
+```
+yarn lint:fix
+```
+
+Also added [Husky](https://github.com/typicode/husky) githooks preventing `git push` errors to respository.
+
 ### Testing:
 
 ```
