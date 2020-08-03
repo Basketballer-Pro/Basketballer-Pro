@@ -26,7 +26,7 @@ To fix most lint errors:
 yarn lint:fix
 ```
 
-Also added [Husky](https://github.com/typicode/husky) githooks preventing `git commit` errors and must be fixed per commit. Warnings will be fine.
+Also added [Husky](https://github.com/typicode/husky) githooks preventing `git commit` errors and must be fixed prior to commit. Warnings will be ignored.
 
 ### Testing:
 
