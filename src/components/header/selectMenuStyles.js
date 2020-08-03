@@ -6,6 +6,10 @@ const selectMenuStyles = (teamColor) => {
       height: '100%',
       cursor: 'pointer',
       width: 320,
+      '@media only screen and (max-width: 1074px)': {
+        ...provided['@media only screen and (max-width: 1074px)'],
+        fontSize: 10,
+      },
       '@media only screen and (max-width: 834px)': {
         ...provided['@media only screen and (max-width: 834px)'],
         maxWidth: 232,
@@ -23,6 +27,11 @@ const selectMenuStyles = (teamColor) => {
       color: 'white',
       fontFamily: 'spurs',
       fontSize: 22,
+      '@media only screen and (max-width: 1074px)': {
+        ...provided['@media only screen and (max-width: 1074px)'],
+        maxWidth: 250,
+        fontSize: 10,
+      },
     }),
     singleValue: (provided) => ({
       ...provided,
@@ -35,6 +44,10 @@ const selectMenuStyles = (teamColor) => {
       justifyContent: 'center',
       paddingRight: 22,
       width: 35,
+      '@media only screen and (max-width: 1074px)': {
+        ...provided['@media only screen and (max-width: 1074px)'],
+        width: '2rem',
+      },
       '@media only screen and (max-width: 834px)': {
         ...provided['@media only screen and (max-width: 834px)'],
         width: 20,

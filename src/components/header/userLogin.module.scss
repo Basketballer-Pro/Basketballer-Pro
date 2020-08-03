@@ -22,10 +22,12 @@
     cursor: pointer;
 
     .svgContainer {
+      display: flex;
       width: 20px;
     }
 
     .chevronContainer {
+      display: flex;
       width: 13px;
     }
 
@@ -44,6 +46,30 @@
 
 .userName {
   margin-right: 18px;
+}
+
+// MEDIA QUERIES
+
+// Tablet
+
+@media all and (max-width: 1074px) {
+  .userContainer {
+    button {
+      .userName {
+        font-size: 0.8rem;
+      }
+      .svgContainer {
+        width: 1rem;
+      }
+
+      .chevronContainer {
+        width: 0.6rem;
+      }
+      .userPic {
+        height: 1.4rem;
+      }
+    }
+  }
 }
 
 @media all and (max-width: 834px) and (orientation: portrait) {

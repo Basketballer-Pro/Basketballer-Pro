@@ -37,6 +37,16 @@
   }
 }
 
+@media all and (max-width: 1074px) {
+  .container {
+    font-size: 0.9rem;
+
+    .navLink {
+      padding-top: 8px;
+    }
+  }
+}
+
 @media all and (max-width: 834px) and (orientation: portrait) {
   .container {
     font-size: 12px;
