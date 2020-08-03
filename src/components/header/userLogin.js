@@ -10,6 +10,12 @@ import styles from './userLogin.module.scss';
 const UserLogin = () => {
   return (
     <div className={styles.userContainer}>
+      <div
+        style={{
+          borderColor: `grey transparent transparent transparent`,
+        }}
+        className={styles.borderTriangle}
+      />
       <button>
         <div className={styles.svgContainer}>
           <Bell />

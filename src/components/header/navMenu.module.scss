@@ -28,13 +28,13 @@
     }
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    left: 100%;
-    border-top: 45px solid $white;
-    border-right: 16px solid transparent;
-  }
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   left: 100%;
+  //   border-top: 45px solid $white;
+  //   border-right: 16px solid transparent;
+  // }
 }
 
 @media all and (max-width: 1074px) {

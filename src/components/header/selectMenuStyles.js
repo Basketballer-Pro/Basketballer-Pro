@@ -32,6 +32,11 @@ const selectMenuStyles = (teamColor) => {
         maxWidth: 250,
         fontSize: 10,
       },
+      '@media only screen and (max-width: 900px)': {
+        ...provided['@media only screen and (max-width: 900px)'],
+        maxWidth: 235,
+        fontSize: 10,
+      },
     }),
     singleValue: (provided) => ({
       ...provided,

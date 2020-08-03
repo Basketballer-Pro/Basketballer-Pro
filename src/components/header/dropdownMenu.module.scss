@@ -69,6 +69,21 @@
   }
 }
 
+@media all and (max-width: 900px) {
+  .teamContainer {
+    max-width: 260px;
+  }
+  .optionTitle {
+    font-size: 1.1rem;
+    margin-top: 0.3rem;
+  }
+
+  .optionImgContainer {
+    width: 1.7rem;
+    height: auto;
+  }
+}
+
 @media all and (max-width: 834px) and (orientation: portrait) {
   .teamContainer {
     max-width: 230px;

@@ -1,14 +1,23 @@
 @import 'src/scss/variables.scss';
 
 .userContainer {
+  position: relative;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding-left: 30px;
   background: $background-color-grey;
   color: $text-dark-grey;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
+
+  .borderTriangle {
+    position: absolute;
+    right: 100%;
+    border-width: 0 0 45px 16px;
+    border-style: solid;
+    border-color: transparent transparent #ededed;
+    z-index: 1;
+  }
 
   button {
     display: flex;
@@ -68,6 +77,14 @@
       .userPic {
         height: 1.4rem;
       }
+    }
+  }
+}
+
+@media all and (max-width: 900px) {
+  .userContainer {
+    button {
+      padding: 0 0.8rem;
     }
   }
 }
