@@ -17,9 +17,18 @@ const UserLogin = () => {
         <Gear />
       </button>
       <button>
-        <img src={kobe} alt="user avatar" height="25" className={styles.userPic} />
+        <img
+          src={kobe}
+          alt="user avatar"
+          height="25"
+          className={styles.userPic}
+        />
         <div className={styles.userName}>Kobe Bryant</div>
-        <Chevron width={14} height={7} color={'#959595'} /* color is $grey3 */ />
+        <Chevron
+          width={14}
+          height={7}
+          color={'#959595'} /* color is $grey3 */
+        />
       </button>
     </div>
   );

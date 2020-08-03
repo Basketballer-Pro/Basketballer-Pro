@@ -28,7 +28,10 @@ const List = ({
   }, [teamId]);
 
   return (
-    <div ref={domRef} className={classnames(styles.container, isLoading && styles.noScroll)}>
+    <div
+      ref={domRef}
+      className={classnames(styles.container, isLoading && styles.noScroll)}
+    >
       <Overlay isLoading={isLoading}>
         <Spinner height={19} width={4} radius={3} isLoading={isLoading} />
       </Overlay>
@@ -45,7 +48,11 @@ const List = ({
   );
 };
 
-const mapStateToProps = ({ player, players: { list, isLoading }, teams: { selectedTeam } }) => {
+const mapStateToProps = ({
+  player,
+  players: { list, isLoading },
+  teams: { selectedTeam },
+}) => {
   return { player, players: list, isLoading, selectedTeam };
 };
 

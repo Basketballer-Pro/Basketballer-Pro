@@ -17,7 +17,10 @@ const DropdownMenu = ({ teams, selectedTeam, getSelectedTeam, history }) => {
   const { teamId: selectedTeamId, teamColor } = selectedTeam;
   const chevron = () => <Chevron color={'white'} />;
 
-  const renderItem = ({ data: { teamColor, fullName, tricode, teamId }, innerProps }, isSingleValue) => {
+  const renderItem = (
+    { data: { teamColor, fullName, tricode, teamId }, innerProps },
+    isSingleValue
+  ) => {
     const TeamLogo = Logos[tricode];
     const isSelected = selectedTeamId === teamId;
     const isDisplayed = isSingleValue || (!isSingleValue && !isSelected);
@@ -26,8 +29,12 @@ const DropdownMenu = ({ teams, selectedTeam, getSelectedTeam, history }) => {
       isDisplayed && (
         <div
           style={{ backgroundColor: teamColor }}
-          className={classnames(styles.optionContainer, isSingleValue && styles.hasNoBorder)}
-          {...innerProps}>
+          className={classnames(
+            styles.optionContainer,
+            isSingleValue && styles.hasNoBorder
+          )}
+          {...innerProps}
+        >
           <div className={styles.optionImgContainer}>
             <TeamLogo />
           </div>
@@ -38,7 +45,10 @@ const DropdownMenu = ({ teams, selectedTeam, getSelectedTeam, history }) => {
   };
 
   return (
-    <div style={{ backgroundColor: teamColor }} className={styles.teamContainer}>
+    <div
+      style={{ backgroundColor: teamColor }}
+      className={styles.teamContainer}
+    >
       <Select
         styles={selectMenuStyles()}
         options={teams}
@@ -79,4 +89,6 @@ DropdownMenu.propTypes = {
   history: PropTypes.object.isRequired,
 };
 
-export default connect(mapStateToProps, { getSelectedTeam })(withRouter(DropdownMenu));
+export default connect(mapStateToProps, { getSelectedTeam })(
+  withRouter(DropdownMenu)
+);
