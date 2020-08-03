@@ -11,11 +11,11 @@ module.exports = {
   },
   extends: ['plugin:react/recommended', 'plugin:prettier/recommended'],
   plugins: [],
-  // settings: {
-  //   react: {
-  //     version: 'detect',
-  //   },
-  // },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   // add your custom rules here
   rules: {
     'react/prop-types': 1,
