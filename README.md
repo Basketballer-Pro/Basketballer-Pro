@@ -28,8 +28,6 @@ To fix most lint errors:
 yarn lint:fix
 ```
 
-AVA's the BEst
-
 Also added [Husky](https://github.com/typicode/husky) githooks preventing `git commit` errors and must be fixed prior to commit. Warnings will be ignored.
 
 ### Testing:
