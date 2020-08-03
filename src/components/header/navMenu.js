@@ -18,11 +18,17 @@ const NavMenu = ({
   const activeBorder = {
     borderColor: teamColor,
   };
-  const getActiveStyle = (path) => (pathname.indexOf(path) >= 0 ? activeBorder : null);
+  const getActiveStyle = (path) =>
+    pathname.indexOf(path) >= 0 ? activeBorder : null;
 
   return (
     <div className={styles.container}>
-      <NavLink to={playerId ? `/${urlName}/players/${playerId}` : `/${urlName}/players`} activeStyle={activeStyle}>
+      <NavLink
+        to={
+          playerId ? `/${urlName}/players/${playerId}` : `/${urlName}/players`
+        }
+        activeStyle={activeStyle}
+      >
         Players
         <div className={styles.navLink} style={getActiveStyle('/players')} />
       </NavLink>

@@ -5,7 +5,10 @@ import styles from './title.module.scss';
 
 const Title = ({ title, teamColor, isRecentGames }) => {
   return (
-    <div style={{ backgroundColor: teamColor }} className={isRecentGames ? styles.gameStats : styles.totalStats}>
+    <div
+      style={{ backgroundColor: teamColor }}
+      className={isRecentGames ? styles.gameStats : styles.totalStats}
+    >
       {title}
     </div>
   );

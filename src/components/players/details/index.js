@@ -11,7 +11,11 @@ import TotalStats from './totalStats';
 
 import styles from './index.module.scss';
 
-const Details = ({ player: { details, isLoading }, teams, selectedTeam: { teamId, teamColor } }) => {
+const Details = ({
+  player: { details, isLoading },
+  teams,
+  selectedTeam: { teamId, teamColor },
+}) => {
   const ref = useRef();
   const [isSticky, setIsSticky] = useState(false);
   const [isAnimated, setIsAnimated] = useState(false);
@@ -78,11 +82,34 @@ const Details = ({ player: { details, isLoading }, teams, selectedTeam: { teamId
   ];
 
   return (
-    <div onScroll={onScroll} ref={ref} className={classnames(styles.container, isLoading && styles.scrollHidden)}>
-      <Card player={details} playerTeamId={teamId} teamColor={teamColor} isSticky={isSticky} isAnimated={isAnimated} />
-      <QuickStats quickStats={quickStats} teamColor={teamColor} isLoading={isLoading} />
-      <TotalStats totalStats={totalStats} teamColor={teamColor} isLoading={isLoading} />
-      <RecentGamesStats teams={teams} teamColor={teamColor} recentGamesStats={recentGames} isLoading={isLoading} />
+    <div
+      onScroll={onScroll}
+      ref={ref}
+      className={classnames(styles.container, isLoading && styles.scrollHidden)}
+    >
+      <Card
+        player={details}
+        playerTeamId={teamId}
+        teamColor={teamColor}
+        isSticky={isSticky}
+        isAnimated={isAnimated}
+      />
+      <QuickStats
+        quickStats={quickStats}
+        teamColor={teamColor}
+        isLoading={isLoading}
+      />
+      <TotalStats
+        totalStats={totalStats}
+        teamColor={teamColor}
+        isLoading={isLoading}
+      />
+      <RecentGamesStats
+        teams={teams}
+        teamColor={teamColor}
+        recentGamesStats={recentGames}
+        isLoading={isLoading}
+      />
     </div>
   );
 };

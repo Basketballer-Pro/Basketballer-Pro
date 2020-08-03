@@ -14,7 +14,16 @@ const Card = ({
   player,
   history,
   selectedPlayerId,
-  player: { first_name, height_ft, height_in, jersey_number, last_name, person_id, position_full, weight_lbs },
+  player: {
+    first_name,
+    height_ft,
+    height_in,
+    jersey_number,
+    last_name,
+    person_id,
+    position_full,
+    weight_lbs,
+  },
 }) => {
   const isSelected = person_id === selectedPlayerId;
 
@@ -24,16 +33,25 @@ const Card = ({
         history.push(`/${urlName}/players/${person_id}`);
         getSelectedPlayer(player);
       }}
-      className={classnames(styles.playerCard, isSelected && styles.selectedCard)}>
+      className={classnames(
+        styles.playerCard,
+        isSelected && styles.selectedCard
+      )}
+    >
       <div className={styles.imageContainer}>
         <img
-          src={person_id ? formatPlayerPhotoUrl(teamId, person_id) : placeholderImg}
+          src={
+            person_id ? formatPlayerPhotoUrl(teamId, person_id) : placeholderImg
+          }
           alt="player headshot"
           onError={(e) => (e.target.src = placeholderImg)}
         />
       </div>
       <div style={{ borderColor: teamColor }} className={styles.imageLine} />
-      <div style={{ backgroundColor: isSelected && teamColor }} className={styles.detailsContainer}>
+      <div
+        style={{ backgroundColor: isSelected && teamColor }}
+        className={styles.detailsContainer}
+      >
         {!!Object.keys(player).length && (
           <>
             <div className={styles.number}>{jersey_number}</div>
@@ -41,9 +59,11 @@ const Card = ({
               <div className={styles.name}>
                 {first_name} {last_name}
               </div>
-              <div className={styles.position}>{position_full.replace('-', ' - ')}</div>
+              <div className={styles.position}>
+                {position_full.replace('-', ' - ')}
+              </div>
               <div className={styles.size}>
-                {height_ft}' {height_in}, {weight_lbs} lbs
+                {height_ft}&apos; {height_in}, {weight_lbs} lbs
               </div>
             </div>
           </>
