@@ -16,6 +16,8 @@ npm start
 
 Utilizing ES Lint, Prettier and VS Code standards. Further config details can be found at this article [here](https://readwriteexercise.com/posts/setting-up-create-react-app-vs-code-eslint-prettier/)
 
+Also added [Husky](https://github.com/typicode/husky) githooks preventing `git commit` errors and must be fixed prior to commit. Warnings will be ignored.
+
 To run lint:
 
 ```
@@ -27,8 +29,6 @@ To fix most lint errors:
 ```
 yarn lint:fix
 ```
-
-Also added [Husky](https://github.com/typicode/husky) githooks preventing `git commit` errors and must be fixed prior to commit. Warnings will be ignored.
 
 ### Testing:
 
