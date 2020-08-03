@@ -40,7 +40,7 @@ or using Yarn:
 yarn add enzyme enzyme-adapter-react-16 react-test-renderer enzyme-to-json --dev
 ```
 
-### Testing configuration:
+#### Testing configuration:
 
 In the `src/` directory, create a new file called `setupTests.js`
 In that file, write the following at top of file:
