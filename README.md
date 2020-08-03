@@ -14,6 +14,8 @@ npm start
 
 ### Linting
 
+Utilizing ES Lint, Prettier and VS Code standards. Further config details can be found at this article [here](https://readwriteexercise.com/posts/setting-up-create-react-app-vs-code-eslint-prettier/)
+
 To run lint:
 
 ```
