@@ -26,8 +26,7 @@ const Card = ({
   },
 }) => {
   const isSelected = person_id === selectedPlayerId;
-  const nikhil;
-  
+
   return (
     <div
       onClick={() => {
