@@ -53,3 +53,10 @@
     }
   }
 }
+
+@media all and (max-width: 770px) {
+  a {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

@@ -116,3 +116,9 @@
     }
   }
 }
+
+@media all and (max-width: 770px) {
+  .userContainer button {
+    padding: 0 10px;
+  }
+}
