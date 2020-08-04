@@ -75,7 +75,7 @@ const selectMenuStyles = (teamColor) => {
       width: 35,
       '@media only screen and (max-width: 1074px)': {
         ...provided['@media only screen and (max-width: 1074px)'],
-        width: '2rem',
+        maxWidth: 32,
       },
       '@media only screen and (max-width: 838px)': {
         ...provided['@media only screen and (max-width: 838px)'],
