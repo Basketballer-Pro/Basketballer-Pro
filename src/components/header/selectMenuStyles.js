@@ -7,11 +7,10 @@ const selectMenuStyles = (teamColor) => {
       cursor: 'pointer',
       width: 320,
       '@media all and (max-width: 960px)': {
-        ...provided['@media all and (max-width: 960px)'],
         maxWidth: 210,
       },
     }),
-    control: (provided) => ({
+    control: () => ({
       display: 'flex',
       height: '100%',
     }),
@@ -34,7 +33,6 @@ const selectMenuStyles = (teamColor) => {
       justifyContent: 'center',
       paddingRight: 22,
       '@media all and (max-width: 960px)': {
-        ...provided['@media all and (max-width: 960px)'],
         width: 11,
         paddingRight: 3,
       },
