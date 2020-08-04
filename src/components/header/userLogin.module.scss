@@ -134,3 +134,23 @@
     }
   }
 }
+
+@media all and (max-width: 640px) {
+  .userContainer {
+    button {
+      // padding: 0 8px;
+
+      // .svgContainer {
+      //   width: 12px;
+      // }
+
+      .userPic {
+        margin-right: 10px;
+      }
+
+      .userName {
+        margin-right: 12px;
+      }
+    }
+  }
+}
