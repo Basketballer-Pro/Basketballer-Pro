@@ -76,6 +76,12 @@ const selectMenuStyles = (teamColor) => {
         paddingRight: 10,
         paddingLeft: 10,
       },
+      '@media only screen and (max-width: 680px)': {
+        ...provided['@media only screen and (max-width: 680px)'],
+        maxWidth: 28,
+        paddingRight: 9,
+        paddingLeft: 9,
+      },
     }),
     indicatorSeparator: (provided) => ({
       ...provided,

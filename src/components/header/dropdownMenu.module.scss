@@ -101,6 +101,7 @@
 
   .optionTitle {
     font-size: 1rem;
+    margin-top: 2px;
   }
 
   .borderTriangle {
@@ -133,25 +134,7 @@
 }
 
 @media all and (max-width: 720px) {
-  // .teamContainer {
-  //   max-width: 230px;
-  // }
-  // .optionContainer {
-  //   max-width: 230px;
-  //   height: 32px;
-  // }
-
-  // .optionImgContainer {
-  //   width: 20px;
-  //   height: 20px;
-  //   margin-left: 6px;
-  // }
-
   .optionTitle {
     font-size: 0.9rem;
   }
-
-  // .borderTriangle {
-  //   border-width: 32px 11px 0 0;
-  // }
 }
