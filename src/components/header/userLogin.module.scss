@@ -122,3 +122,15 @@
     padding: 0 10px;
   }
 }
+
+@media all and (max-width: 680px) {
+  .userContainer {
+    button {
+      padding: 0 8px;
+
+      .svgContainer {
+        width: 12px;
+      }
+    }
+  }
+}
