@@ -18,6 +18,10 @@ const selectMenuStyles = (teamColor) => {
         ...provided['@media only screen and (max-width: 770px)'],
         maxWidth: 222,
       },
+      '@media only screen and (max-width: 720px)': {
+        ...provided['@media only screen and (max-width: 770px)'],
+        maxWidth: 210,
+      },
     }),
     control: (provided) => ({
       display: 'flex',

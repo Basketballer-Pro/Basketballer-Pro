@@ -55,8 +55,15 @@
 }
 
 @media all and (max-width: 770px) {
-  a {
+  .container a {
     padding-left: 15px;
     padding-right: 15px;
+  }
+}
+
+@media all and (max-width: 720px) {
+  .container a {
+    padding-left: 13px;
+    padding-right: 13px;
   }
 }
