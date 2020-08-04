@@ -67,7 +67,7 @@ const DropdownMenu = ({ teams, selectedTeam, getSelectedTeam, history }) => {
       />
       <div
         style={{
-          borderColor: `${teamColor} transparent transparent transparent`,
+          borderColor: `${teamColor} white white`,
         }}
         className={styles.borderTriangle}
       />

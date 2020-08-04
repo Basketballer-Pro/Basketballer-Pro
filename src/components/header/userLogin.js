@@ -10,6 +10,7 @@ import styles from './userLogin.module.scss';
 const UserLogin = () => {
   return (
     <div className={styles.userContainer}>
+      <div className={styles.borderTriangle} />
       <button>
         <Bell className={styles.bell} />
       </button>

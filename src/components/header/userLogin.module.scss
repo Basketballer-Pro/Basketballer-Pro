@@ -4,7 +4,6 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding-left: 30px;
   background: $background-color-grey;
   color: $text-dark-grey;
   font-family: Arial, Helvetica, sans-serif;
@@ -26,6 +25,13 @@
   }
 }
 
+.borderTriangle {
+  border-width: 0 0 45px 16px;
+  border-style: solid;
+  border-color: $white $white #ededed;
+  z-index: 1;
+}
+
 .userPic {
   height: 25px;
   border: 2px solid $border-dark-grey;
@@ -39,12 +45,14 @@
 
 @media all and (max-width: 960px) {
   .userContainer {
-    padding-left: 14px;
-
     button {
-      padding: 0 10px;
+      padding: 0 8px;
       font-size: 12px;
     }
+  }
+
+  .borderTriangle {
+    border-width: 0 0 32px 11px;
   }
 
   .bell {
@@ -61,7 +69,7 @@
 
   .userPic,
   .userName {
-    margin-right: 14px;
+    margin-right: 12px;
   }
 
   .chevron {
