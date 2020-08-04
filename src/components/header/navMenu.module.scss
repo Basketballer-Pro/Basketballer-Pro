@@ -67,3 +67,17 @@
     padding-right: 13px;
   }
 }
+
+@media all and (max-width: 680px) {
+  .container {
+    font-size: 0.7rem;
+
+    a {
+      padding: 10px 10px 0 10px;
+    }
+
+    .navLink {
+      padding-top: 5px;
+    }
+  }
+}
