@@ -4,11 +4,9 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding-left: 30px;
   background: $background-color-grey;
   color: $text-dark-grey;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
 
   button {
     display: flex;
@@ -24,16 +22,57 @@
     &:focus {
       outline-color: transparent;
     }
-
-    .userPic {
-      height: 25px;
-      margin-right: 18px;
-      border: 2px solid $border-dark-grey;
-      border-radius: 25px;
-    }
   }
 }
 
+.borderTriangle {
+  border-width: 0 0 45px 16px;
+  border-style: solid;
+  border-color: $white $white $background-color-grey;
+  z-index: 1;
+}
+
+.userPic {
+  height: 25px;
+  border: 2px solid $border-dark-grey;
+  border-radius: 25px;
+}
+
+.userPic,
 .userName {
   margin-right: 18px;
+}
+
+@media all and (max-width: 960px) {
+  .userContainer {
+    button {
+      padding: 0 8px;
+      font-size: 12px;
+    }
+  }
+
+  .borderTriangle {
+    border-width: 0 0 32px 12px;
+  }
+
+  .bell {
+    width: 15px;
+  }
+
+  .gear {
+    width: 16px;
+  }
+
+  .userPic {
+    height: 18px;
+  }
+
+  .userPic,
+  .userName {
+    margin-right: 12px;
+  }
+
+  .chevron {
+    width: 10px;
+  }
 }

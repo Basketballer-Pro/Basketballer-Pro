@@ -1,12 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Gear = () => {
+const Gear = ({ className }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="22"
       height="22"
       viewBox="0 0 22 22"
+      className={className}
     >
       <path
         fill="#909090"
@@ -16,6 +18,14 @@ const Gear = () => {
       ></path>
     </svg>
   );
+};
+
+Gear.propTypes = {
+  className: PropTypes.string,
+};
+
+Gear.defaultProps = {
+  className: null,
 };
 
 export default Gear;

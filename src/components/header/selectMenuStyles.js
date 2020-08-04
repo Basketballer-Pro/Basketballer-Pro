@@ -6,6 +6,9 @@ const selectMenuStyles = (teamColor) => {
       height: '100%',
       cursor: 'pointer',
       width: 320,
+      '@media all and (max-width: 960px)': {
+        maxWidth: 210,
+      },
     }),
     control: () => ({
       display: 'flex',
@@ -13,7 +16,6 @@ const selectMenuStyles = (teamColor) => {
     }),
     valueContainer: (provided) => ({
       ...provided,
-      width: 285,
       padding: 0,
       margin: 0,
       color: 'white',
@@ -30,6 +32,10 @@ const selectMenuStyles = (teamColor) => {
       display: 'flex',
       justifyContent: 'center',
       paddingRight: 22,
+      '@media all and (max-width: 960px)': {
+        width: 11,
+        paddingRight: 3,
+      },
     }),
     indicatorSeparator: (provided) => ({
       ...provided,
