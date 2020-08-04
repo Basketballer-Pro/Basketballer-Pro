@@ -6,6 +6,7 @@
   flex: 1.5;
   justify-content: center;
   align-items: center;
+  padding-left: 16px;
   background-color: $white;
   font-family: Avenir;
   font-size: 16px;
@@ -34,5 +35,23 @@
     left: 100%;
     border-top: 45px solid $white;
     border-right: 16px solid transparent;
+  }
+}
+
+@media all and (max-width: 960px) {
+  .container {
+    padding-left: 11px;
+    font-size: 13px;
+    line-height: 11px;
+    letter-spacing: 0.2px;
+
+    a {
+      padding: 5px 9px 0;
+    }
+
+    &::after {
+      border-top: 32px solid $white;
+      border-right: 11px solid transparent;
+    }
   }
 }

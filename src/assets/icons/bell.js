@@ -1,12 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Bell = () => {
+const Bell = ({ className }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="20"
       height="22"
       viewBox="0 0 20 22"
+      className={className}
     >
       <path
         fill="#909090"
@@ -16,6 +18,14 @@ const Bell = () => {
       ></path>
     </svg>
   );
+};
+
+Bell.propTypes = {
+  className: PropTypes.string,
+};
+
+Bell.defaultProps = {
+  className: null,
 };
 
 export default Bell;

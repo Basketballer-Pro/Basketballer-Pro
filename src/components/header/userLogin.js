@@ -11,10 +11,10 @@ const UserLogin = () => {
   return (
     <div className={styles.userContainer}>
       <button>
-        <Bell />
+        <Bell className={styles.bell} />
       </button>
       <button>
-        <Gear />
+        <Gear className={styles.gear} />
       </button>
       <button>
         <img
@@ -25,6 +25,7 @@ const UserLogin = () => {
         />
         <div className={styles.userName}>Kobe Bryant</div>
         <Chevron
+          className={styles.chevron}
           width={14}
           height={7}
           color={'#959595'} /* color is $grey3 */
