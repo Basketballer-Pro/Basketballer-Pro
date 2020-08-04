@@ -29,6 +29,10 @@
   }
 }
 
+// MEDIA QUERIES
+
+// Tablet
+
 @media all and (max-width: 1074px) {
   .container {
     font-size: 0.9rem;
@@ -55,16 +59,19 @@
 }
 
 @media all and (max-width: 770px) {
-  .container a {
-    padding-left: 15px;
-    padding-right: 15px;
+  .container {
+    a {
+      padding: 4px 15px 0;
+    }
+    .navLink {
+      padding-top: 5px;
+    }
   }
 }
 
 @media all and (max-width: 720px) {
   .container a {
-    padding-left: 13px;
-    padding-right: 13px;
+    padding: 4px 13px 0;
   }
 }
 
@@ -74,10 +81,6 @@
 
     a {
       padding: 10px 10px 0 10px;
-    }
-
-    .navLink {
-      padding-top: 5px;
     }
   }
 }

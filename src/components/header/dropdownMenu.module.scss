@@ -51,7 +51,9 @@
   border-top: none;
 }
 
-// Media Queries
+// MEDIA QUERIES
+
+// Tablet
 
 @media all and (max-width: 1074px) {
   .teamContainer {
@@ -60,11 +62,11 @@
 
   .optionTitle {
     font-size: 1.2rem;
-    margin-top: 0.2rem;
+    margin-top: 4px;
   }
 
   .optionImgContainer {
-    width: 2rem;
+    max-width: 32px;
     height: auto;
   }
 }
@@ -75,11 +77,10 @@
   }
   .optionTitle {
     font-size: 1.1rem;
-    margin-top: 0.3rem;
   }
 
   .optionImgContainer {
-    width: 1.7rem;
+    max-width: 27px;
     height: auto;
   }
 }
@@ -94,38 +95,12 @@
   }
 
   .optionImgContainer {
-    width: 20px;
-    height: 20px;
-    margin-left: 6px;
+    max-width: 20px;
   }
 
   .optionTitle {
     font-size: 1rem;
     margin-top: 2px;
-  }
-
-  .borderTriangle {
-    border-width: 32px 11px 0 0;
-  }
-}
-
-@media all and (max-width: 770px) {
-  .teamContainer {
-    max-width: 230px;
-  }
-  .optionContainer {
-    max-width: 230px;
-    height: 32px;
-  }
-
-  .optionImgContainer {
-    width: 20px;
-    height: 20px;
-    margin-left: 6px;
-  }
-
-  .optionTitle {
-    font-size: 1rem;
   }
 
   .borderTriangle {
@@ -141,8 +116,7 @@
 
 @media all and (max-width: 640px) {
   .optionImgContainer {
-    width: 18px;
-    height: 18px;
+    max-width: 18px;
   }
   .optionTitle {
     font-size: 0.8rem;

@@ -33,6 +33,7 @@
     .svgContainer {
       display: flex;
       width: 20px;
+      height: auto;
     }
 
     .chevronContainer {
@@ -62,21 +63,19 @@
 // Tablet
 
 @media all and (max-width: 1074px) {
-  .userContainer {
-    button {
-      .userName {
-        font-size: 0.8rem;
-      }
-      .svgContainer {
-        width: 1rem;
-      }
+  .userContainer button {
+    .userName {
+      font-size: 0.8rem;
+    }
+    .svgContainer {
+      max-width: 16px;
+    }
 
-      .chevronContainer {
-        width: 0.6rem;
-      }
-      .userPic {
-        height: 1.4rem;
-      }
+    .chevronContainer {
+      max-width: 14px;
+    }
+    .userPic {
+      height: 22px;
     }
   }
 }
@@ -84,7 +83,11 @@
 @media all and (max-width: 900px) {
   .userContainer {
     button {
-      padding: 0 0.8rem;
+      padding: 0 13px;
+
+      .chevronContainer {
+        max-width: 13px;
+      }
     }
   }
 }
@@ -97,22 +100,19 @@
       border-width: 0 0 32px 11px;
     }
 
-    button .svgContainer {
-      width: 14px;
-      height: auto;
-    }
+    button {
+      .svgContainer {
+        max-width: 14px;
+      }
 
-    button .userPic {
-      height: 18px;
-      border-radius: 18px;
-    }
+      .userPic {
+        height: 18px;
+        border-radius: 18px;
+      }
 
-    button .userName {
-      font-size: 10px;
-    }
-
-    .chevronContainer {
-      width: 10px;
+      .userName {
+        font-size: 0.6rem;
+      }
     }
   }
 }
@@ -129,28 +129,20 @@
       padding: 0 8px;
 
       .svgContainer {
-        width: 12px;
+        max-width: 12px;
       }
     }
   }
 }
 
 @media all and (max-width: 640px) {
-  .userContainer {
-    button {
-      // padding: 0 8px;
+  .userContainer button {
+    .userPic {
+      margin-right: 10px;
+    }
 
-      // .svgContainer {
-      //   width: 12px;
-      // }
-
-      .userPic {
-        margin-right: 10px;
-      }
-
-      .userName {
-        margin-right: 12px;
-      }
+    .userName {
+      margin-right: 12px;
     }
   }
 }
