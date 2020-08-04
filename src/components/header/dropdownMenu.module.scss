@@ -138,3 +138,13 @@
     font-size: 0.9rem;
   }
 }
+
+@media all and (max-width: 640px) {
+  .optionImgContainer {
+    width: 18px;
+    height: 18px;
+  }
+  .optionTitle {
+    font-size: 0.8rem;
+  }
+}

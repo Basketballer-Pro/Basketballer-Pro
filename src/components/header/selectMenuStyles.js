@@ -26,6 +26,10 @@ const selectMenuStyles = (teamColor) => {
         ...provided['@media only screen and (max-width: 680px)'],
         maxWidth: 204,
       },
+      '@media only screen and (max-width: 640px)': {
+        ...provided['@media only screen and (max-width: 640px)'],
+        maxWidth: 182,
+      },
     }),
     control: (provided) => ({
       display: 'flex',
@@ -52,6 +56,10 @@ const selectMenuStyles = (teamColor) => {
       '@media only screen and (max-width: 900px)': {
         ...provided['@media only screen and (max-width: 900px)'],
         maxWidth: 235,
+      },
+      '@media only screen and (max-width: 640px)': {
+        ...provided['@media only screen and (max-width: 640px)'],
+        maxWidth: 166,
       },
     }),
     singleValue: (provided) => ({
@@ -85,6 +93,11 @@ const selectMenuStyles = (teamColor) => {
         maxWidth: 28,
         paddingRight: 9,
         paddingLeft: 9,
+      },
+      '@media only screen and (max-width: 640px)': {
+        ...provided['@media only screen and (max-width: 680px)'],
+        maxWidth: 8,
+        padding: 0,
       },
     }),
     indicatorSeparator: (provided) => ({
