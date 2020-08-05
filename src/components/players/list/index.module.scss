@@ -100,6 +100,7 @@
 
   &.selectedCard {
     pointer-events: none;
+
     .detailsContainer {
       .number {
         color: $white;
@@ -170,6 +171,7 @@
       .number {
         font-size: 18px;
       }
+
       .details {
         .name {
           font-size: 12px;
@@ -186,6 +188,7 @@
     }
   }
 }
+
 @media all and (max-width: 850px) {
   .container {
     grid-template-columns: repeat(2, 1fr);
