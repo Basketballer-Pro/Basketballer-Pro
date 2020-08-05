@@ -72,3 +72,9 @@ section {
 .line {
   border-bottom: 1px solid $grey1b;
 }
+
+@media all and (max-width: 1224px) {
+  header {
+    font-size: 12px;
+  }
+}
