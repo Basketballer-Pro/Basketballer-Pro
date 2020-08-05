@@ -98,3 +98,9 @@
   font-weight: bold;
   text-align: end;
 }
+
+@media all and (max-width: 1024px) {
+  .card {
+    min-width: 400px;
+  }
+}
