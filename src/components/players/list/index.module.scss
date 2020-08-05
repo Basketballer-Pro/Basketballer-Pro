@@ -180,3 +180,8 @@
     }
   }
 }
+@media all and (max-width: 850px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
