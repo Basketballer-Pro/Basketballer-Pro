@@ -24,6 +24,7 @@
 
 @media all and (max-width: 960px) {
   .container {
+    min-width: 320px;
     height: calc(100vh - 77px);
   }
 }
