@@ -126,6 +126,33 @@
 @media all and (max-width: 1224px) {
   .container {
     grid-template-columns: repeat(3, 1fr);
+
+    .detailsContainer {
+      padding-right: 10px;
+
+      .number,
+      .details {
+        padding-top: 15px;
+      }
+
+      .number {
+        font-size: 22px;
+
+        .details {
+          .name {
+            font-size: 13px;
+          }
+
+          .position {
+            font-size: 12px;
+          }
+
+          .size {
+            font-size: 11px;
+          }
+        }
+      }
+    }
   }
 }
 
