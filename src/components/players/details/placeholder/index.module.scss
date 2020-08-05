@@ -67,3 +67,9 @@
   border-radius: 50%;
   background-color: $grey1b;
 }
+
+@media all and (max-width: 1224px) {
+  .container {
+    min-width: 320px;
+  }
+}
