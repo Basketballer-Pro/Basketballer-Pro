@@ -17,7 +17,7 @@ const UserLogin = () => {
       <button>
         <Gear className={styles.gear} />
       </button>
-      <button>
+      <button className={styles.mobile}>
         <img
           src={kobe}
           alt="user avatar"
