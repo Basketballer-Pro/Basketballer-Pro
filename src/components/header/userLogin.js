@@ -3,6 +3,8 @@ import React from 'react';
 import Bell from 'assets/icons/bell';
 import Gear from 'assets/icons/gear';
 import Chevron from 'assets/icons/chevron';
+import Hamburger from 'assets/icons/hamburger';
+import MagnifyingGlass from 'assets/icons/magnifyingGlass';
 import kobe from 'assets/imgs/kobe.png';
 
 import styles from './userLogin.module.scss';
@@ -10,6 +12,14 @@ import styles from './userLogin.module.scss';
 const UserLogin = () => {
   return (
     <div className={styles.userContainer}>
+      <div className={styles.filterButton}>
+        <button className={styles.mobile}>
+          <Hamburger className={styles.hamburger} />
+        </button>
+        <button className={styles.mobile}>
+          <MagnifyingGlass className={styles.magnifyingGlass} />
+        </button>
+      </div>
       <div className={styles.borderTriangle} />
       <button>
         <Bell className={styles.bell} />

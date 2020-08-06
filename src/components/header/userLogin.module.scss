@@ -51,6 +51,10 @@
     }
   }
 
+  .filterButton {
+    display: none;
+  }
+
   .borderTriangle {
     border-width: 0 0 32px 12px;
   }
@@ -84,6 +88,15 @@
     display: flex;
     justify-content: flex-end;
 
+    .filterButton {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      background-color: $white;
+      pointer-events: none;
+    }
+
     .borderTriangle {
       border-width: 0 0 45px 16px;
     }
@@ -92,32 +105,13 @@
       display: none;
     }
 
-    // button .bell,
-    // .gear,
-    // .userName {
-    //   display: none;
-    //   padding: 0;
-    // }
-
-    // button .bell {
-    //   display: none;
-    // }
-
     button.mobile {
       padding: 0 22px;
+      pointer-events: none;
       div {
         display: none;
       }
     }
-
-    // .bell,
-    // .gear,
-    // .userName {
-    //   display: none;
-    //   svg {
-    //     display: none;
-    //   }
-    // }
 
     button {
       .userPic {
