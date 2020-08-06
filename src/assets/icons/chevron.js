@@ -26,7 +26,7 @@ Chevron.propTypes = {
 };
 
 Chevron.defaultProps = {
-  className: {},
+  className: null,
 };
 
 export default Chevron;
