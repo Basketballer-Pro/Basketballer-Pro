@@ -9,6 +9,11 @@ const selectMenuStyles = (teamColor) => {
       '@media all and (max-width: 960px)': {
         maxWidth: 210,
       },
+      '@media all and (max-width: 640px)': {
+        maxWidth: 'unset',
+        width: '100%',
+        paddingRight: 20,
+      },
     }),
     control: () => ({
       display: 'flex',

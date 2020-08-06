@@ -18,6 +18,7 @@
 
 @media all and (max-width: 640px) {
   .container {
-    // flex-direction: column;
+    flex-direction: column;
+    height: unset;
   }
 }
