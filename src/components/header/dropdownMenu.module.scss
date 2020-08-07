@@ -77,5 +77,20 @@
     .borderTriangle {
       display: none;
     }
+
+    .optionTitle {
+      font-size: 22px;
+    }
+
+    .optionImgContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      margin-left: 10px;
+      border-radius: 50%;
+      background-color: $white;
+    }
   }
 }

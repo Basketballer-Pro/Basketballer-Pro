@@ -41,6 +41,9 @@ const selectMenuStyles = (teamColor) => {
         width: 11,
         paddingRight: 3,
       },
+      '@media all and (max-width: 640px)': {
+        width: 13,
+      },
     }),
     indicatorSeparator: (provided) => ({
       ...provided,
