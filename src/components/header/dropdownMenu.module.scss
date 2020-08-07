@@ -71,7 +71,11 @@
 }
 
 @media all and (max-width: 640px) {
-  .borderTriangle {
-    display: none;
+  .teamContainer {
+    height: 45px;
+    z-index: 2;
+    .borderTriangle {
+      display: none;
+    }
   }
 }
