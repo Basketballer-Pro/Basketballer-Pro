@@ -9,15 +9,18 @@ const selectMenuStyles = (teamColor) => {
       '@media all and (max-width: 960px)': {
         maxWidth: 210,
       },
-      '@media all and (max-width: 640px)': {
+      '@media all and (max-width: 736px)': {
         maxWidth: 'unset',
         width: '100%',
-        paddingRight: 20,
+        // paddingRight: 20,
       },
     }),
     control: () => ({
       display: 'flex',
       height: '100%',
+      '@media all and (max-width: 736px)': {
+        width: '96%',
+      },
     }),
     valueContainer: (provided) => ({
       ...provided,
@@ -41,8 +44,9 @@ const selectMenuStyles = (teamColor) => {
         width: 11,
         paddingRight: 3,
       },
-      '@media all and (max-width: 640px)': {
+      '@media all and (max-width: 736px)': {
         width: 13,
+        paddingRight: 0,
       },
     }),
     indicatorSeparator: (provided) => ({

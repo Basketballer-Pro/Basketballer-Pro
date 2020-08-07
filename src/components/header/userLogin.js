@@ -13,18 +13,18 @@ const UserLogin = () => {
   return (
     <div className={styles.userContainer}>
       <div className={styles.filterButton}>
-        <button className={styles.mobile}>
+        <button className={styles.dick}>
           <Hamburger className={styles.hamburger} />
         </button>
-        <button className={styles.mobile}>
+        <button className={styles.dick}>
           <MagnifyingGlass className={styles.magnifyingGlass} />
         </button>
       </div>
       <div className={styles.borderTriangle} />
-      <button>
+      <button className={styles.mobileDontDisplay}>
         <Bell className={styles.bell} />
       </button>
-      <button>
+      <button className={styles.mobileDontDisPlay}>
         <Gear className={styles.gear} />
       </button>
       <button className={styles.mobile}>
