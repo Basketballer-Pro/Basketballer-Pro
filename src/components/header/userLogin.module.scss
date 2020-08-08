@@ -124,6 +124,14 @@
   }
 }
 
+@media all and (max-width: 520px) {
+  .userContainer {
+    .filterButton {
+      justify-content: space-between;
+    }
+  }
+}
+
 /*
    button:not(.mobile) {
       display: none;

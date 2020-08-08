@@ -13,10 +13,10 @@ const UserLogin = () => {
   return (
     <div className={styles.userContainer}>
       <div className={styles.filterButton}>
-        <button /*className={styles.mobileDontDisPlay} */>
+        <button className={styles.hamburgerContainer}>
           <Hamburger className={styles.hamburger} />
         </button>
-        <button /*className={styles.mobileDontDisplay}*/>
+        <button className={styles.magnifyingGlassContainer}>
           <MagnifyingGlass className={styles.magnifyingGlass} />
         </button>
       </div>
