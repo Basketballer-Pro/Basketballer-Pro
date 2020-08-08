@@ -128,6 +128,10 @@
   .userContainer {
     .filterButton {
       justify-content: space-between;
+
+      .hamburgerContainer {
+        padding-left: 18px;
+      }
     }
   }
 }
