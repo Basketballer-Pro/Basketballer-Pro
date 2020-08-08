@@ -60,7 +60,6 @@
   }
 
   .bell {
-    display: inline;
     width: 15px;
   }
 
@@ -84,7 +83,7 @@
 
 @media all and (max-width: 736px) {
   .userContainer {
-    flex-grow: 0.4;
+    flex-grow: 1;
     height: 45px;
 
     .filterButton {
@@ -94,16 +93,16 @@
       height: 100%;
       background-color: $white;
       pointer-events: none;
-
-      button {
-        padding: 0 10px;
-      }
     }
 
-    .mobileDontDisplay,
+    .mobileDontDisplay {
+      display: none;
+    }
+
     .userName {
       display: none;
     }
+
     .borderTriangle {
       border-width: 0 0 45px 16px;
     }

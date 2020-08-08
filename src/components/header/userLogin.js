@@ -13,10 +13,10 @@ const UserLogin = () => {
   return (
     <div className={styles.userContainer}>
       <div className={styles.filterButton}>
-        <button className={styles.dick}>
+        <button /*className={styles.mobileDontDisPlay} */>
           <Hamburger className={styles.hamburger} />
         </button>
-        <button className={styles.dick}>
+        <button /*className={styles.mobileDontDisplay}*/>
           <MagnifyingGlass className={styles.magnifyingGlass} />
         </button>
       </div>
@@ -24,7 +24,7 @@ const UserLogin = () => {
       <button className={styles.mobileDontDisplay}>
         <Bell className={styles.bell} />
       </button>
-      <button className={styles.mobileDontDisPlay}>
+      <button className={styles.mobileDontDisplay}>
         <Gear className={styles.gear} />
       </button>
       <button className={styles.mobile}>
