@@ -65,6 +65,9 @@ const selectMenuStyles = (teamColor) => {
       ...provided,
       maxHeight: 310,
       padding: 0,
+      '@media all and (max-width: 736px)': {
+        maxHeight: '60vh',
+      },
     }),
   };
 };
