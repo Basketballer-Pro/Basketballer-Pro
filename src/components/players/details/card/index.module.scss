@@ -116,3 +116,13 @@
     font-size: 34px;
   }
 }
+
+@media all and (max-width: 736px) {
+  .card {
+    min-width: 280px;
+
+    .imageContainer {
+      height: 208px;
+    }
+  }
+}
