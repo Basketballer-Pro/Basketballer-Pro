@@ -30,6 +30,12 @@
 
 @media all and (max-width: 736px) {
   .container {
-    min-width: 280px;
+    min-width: 260px;
+  }
+}
+
+@media all and (max-width: 605px) {
+  .container {
+    min-width: 220px;
   }
 }
