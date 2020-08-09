@@ -29,8 +29,11 @@ const Details = ({
   }, [details]);
 
   const onScroll = (e) => {
+    const breakpointWidth = 1224;
+    const scrollHeight = window.innerWidth > breakpointWidth ? 297 : 254;
+
     setIsAnimated(true);
-    setIsSticky(e.target.scrollTop >= 297);
+    setIsSticky(e.target.scrollTop >= scrollHeight);
   };
 
   if (!details.person_id) {

@@ -4,3 +4,9 @@
   align-items: center;
   margin-bottom: 24px;
 }
+
+@media all and (max-width: 1224px) {
+  .totalStats {
+    margin-bottom: 13px;
+  }
+}

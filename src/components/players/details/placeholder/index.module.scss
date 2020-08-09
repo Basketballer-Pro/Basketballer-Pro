@@ -67,3 +67,38 @@
   border-radius: 50%;
   background-color: $grey1b;
 }
+
+@media all and (max-width: 1224px) {
+  .container {
+    min-width: 320px;
+  }
+
+  .placeholderImage {
+    height: 248px;
+    font-size: 14px;
+  }
+
+  .barOne {
+    width: 163px;
+    height: 27px;
+  }
+
+  .barTwo {
+    width: 93px;
+    height: 17px;
+    margin-top: 4px;
+  }
+
+  .barThree {
+    width: 75px;
+    height: 15px;
+    margin-top: 3px;
+  }
+
+  .circle {
+    margin-top: 3px;
+    margin-right: 3px;
+    height: 34px;
+    width: 34px;
+  }
+}
