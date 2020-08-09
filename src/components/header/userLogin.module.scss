@@ -95,10 +95,7 @@
       pointer-events: none;
     }
 
-    .mobileDontDisplay {
-      display: none;
-    }
-
+    .mobileDontDisplay,
     .userName {
       display: none;
     }
@@ -135,28 +132,3 @@
     }
   }
 }
-
-/*
-   button:not(.mobile) {
-      display: none;
-    }
-
-    button.mobile {
-      padding: 0 22px;
-      pointer-events: none;
-      div {
-        display: none;
-      }
-    }
-
-    button {
-      .userPic {
-        height: 25px;
-      }
-
-      .mobile {
-        padding-right: 10px;
-      }
-    }
-
-*/

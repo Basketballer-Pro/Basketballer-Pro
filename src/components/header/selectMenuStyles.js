@@ -12,7 +12,6 @@ const selectMenuStyles = (teamColor) => {
       '@media all and (max-width: 736px)': {
         maxWidth: 'unset',
         width: '100%',
-        // paddingRight: 20,
       },
     }),
     control: () => ({

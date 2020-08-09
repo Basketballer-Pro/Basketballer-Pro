@@ -73,40 +73,37 @@
 @media all and (max-width: 736px) {
   .teamContainer {
     flex-grow: 1;
-    height: 45px;
     min-width: 310px;
+    height: 45px;
     z-index: 2;
 
     .optionContainer {
       height: 45px;
+
+      .optionImgContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        margin-left: 18px;
+        border-radius: 50%;
+        background-color: $white;
+      }
+      .optionTitle {
+        padding-left: 5px;
+        font-size: 22px;
+      }
     }
 
     .borderTriangle {
       border-width: 45px 16px 0 0;
     }
-
-    .optionTitle {
-      padding-left: 5px;
-      font-size: 22px;
-    }
-
-    .optionImgContainer {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      margin-left: 18px;
-      border-radius: 50%;
-      background-color: $white;
-    }
   }
 }
 
 @media all and (max-width: 520px) {
-  .teamContainer {
-    .borderTriangle {
-      display: none;
-    }
+  .teamContainer .borderTriangle {
+    display: none;
   }
 }
