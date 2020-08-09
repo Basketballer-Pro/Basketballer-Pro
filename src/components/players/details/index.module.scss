@@ -16,6 +16,12 @@
   overflow: hidden;
 }
 
+@media all and (max-width: 1224px) {
+  .container {
+    min-width: 320px;
+  }
+}
+
 @media all and (max-width: 960px) {
   .container {
     height: calc(100vh - 77px);

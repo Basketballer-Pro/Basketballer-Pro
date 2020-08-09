@@ -98,3 +98,21 @@
   font-weight: bold;
   text-align: end;
 }
+
+@media all and (max-width: 1224px) {
+  .card {
+    min-width: 320px;
+  }
+
+  .imageContainer {
+    height: 248px;
+  }
+
+  .playerName {
+    font-size: 20px;
+  }
+
+  .playerNumber {
+    font-size: 34px;
+  }
+}
