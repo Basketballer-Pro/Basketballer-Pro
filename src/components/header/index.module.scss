@@ -10,15 +10,8 @@
   list-style: none;
 }
 
-@media all and (max-width: 960px) {
-  .container {
-    // height: 32px;
-  }
-}
-
 @media all and (max-width: 736px) {
   .container {
-    height: 45px;
     justify-content: flex-start;
   }
 }
