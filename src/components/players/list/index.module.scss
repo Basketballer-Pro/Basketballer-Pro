@@ -167,6 +167,7 @@
 @media all and (max-width: 960px) {
   .container {
     height: calc(100vh - 77px);
+
     .detailsContainer {
       .number {
         font-size: 18px;
@@ -174,7 +175,7 @@
 
       .details {
         .name {
-          font-size: 12px;
+          font-size: 13px;
         }
 
         .position {
