@@ -55,9 +55,14 @@
   }
 }
 
+@media all and (max-width: 736px) {
+  .quickStats {
+    margin-bottom: 0;
+  }
+}
+
 @media all and (min-width: 521px) and (max-width: 634px) {
   .quickStats {
     padding-top: 5px;
-    margin-bottom: 8px;
   }
 }
