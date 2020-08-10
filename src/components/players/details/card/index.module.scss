@@ -126,3 +126,13 @@
     }
   }
 }
+
+@media all and (max-width: 605px) {
+  .card {
+    min-width: 220px;
+
+    .imageContainer {
+      height: 152px;
+    }
+  }
+}

@@ -102,3 +102,14 @@
     width: 34px;
   }
 }
+
+@media all and (max-width: 605px) {
+  .container {
+    min-width: 220px;
+
+    .placeholderImage {
+      height: 172px;
+      font-size: 12px;
+    }
+  }
+}
