@@ -140,12 +140,24 @@
   }
 }
 
-// @media all and (max-width: 605px) {
-//   .card {
-//     min-width: 220px;
+@media all and (min-width: 521px) and (max-width: 634px) {
+  .card {
+    min-width: 210px;
 
-//     .imageContainer {
-//       height: 152px;
-//     }
-//   }
-// }
+    .imageContainer {
+      height: 152px;
+    }
+
+    .detailsContainer {
+      padding: 10px 0;
+    }
+
+    .playerName {
+      font-size: 15px;
+    }
+
+    .playerNumber {
+      font-size: 26px;
+    }
+  }
+}

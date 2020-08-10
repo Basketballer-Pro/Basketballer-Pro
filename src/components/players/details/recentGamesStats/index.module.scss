@@ -79,3 +79,14 @@ section {
     font-size: 12px;
   }
 }
+
+@media all and (min-width: 521px) and (max-width: 634px) {
+  header {
+    // height: 40px;
+    font-size: 9px;
+  }
+
+  .date {
+    font-size: 8px;
+  }
+}

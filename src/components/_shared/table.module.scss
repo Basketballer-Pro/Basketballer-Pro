@@ -60,3 +60,16 @@ span {
     }
   }
 }
+
+@media all and (min-width: 521px) and (max-width: 634px) {
+  tr {
+    th {
+      padding: 3px 0;
+      font-size: 6px;
+    }
+
+    td {
+      font-size: 9px;
+    }
+  }
+}

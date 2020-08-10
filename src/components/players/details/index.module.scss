@@ -33,3 +33,9 @@
     min-width: 280px;
   }
 }
+
+@media all and (max-width: 634px) {
+  .container {
+    min-width: 210px;
+  }
+}

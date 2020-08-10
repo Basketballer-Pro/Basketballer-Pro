@@ -50,7 +50,14 @@
 
     .data {
       margin-top: 4px;
-      font-size: 20px;
+      font-size: 18px;
     }
+  }
+}
+
+@media all and (min-width: 521px) and (max-width: 634px) {
+  .quickStats {
+    padding-top: 5px;
+    margin-bottom: 8px;
   }
 }
