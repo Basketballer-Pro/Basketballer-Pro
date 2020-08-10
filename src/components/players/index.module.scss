@@ -4,9 +4,3 @@
   display: flex;
   border-top: 1px solid $grey1;
 }
-
-@media all and (max-width: 520px) {
-  .container {
-    margin-top: 45px;
-  }
-}
