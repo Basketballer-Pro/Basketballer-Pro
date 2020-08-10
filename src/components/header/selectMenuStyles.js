@@ -40,8 +40,9 @@ const selectMenuStyles = (teamColor) => {
       justifyContent: 'center',
       paddingRight: 22,
       '@media all and (max-width: 960px)': {
-        width: 11,
-        paddingRight: 3,
+        width: 10,
+        padding: 0,
+        marginRight: 5,
       },
       '@media all and (max-width: 736px)': {
         width: 13,

@@ -40,14 +40,17 @@
 @media all and (max-width: 1224px) {
   .quickStats {
     margin-bottom: 12px;
+
     .header {
       height: 14px;
       line-height: 14px;
       font-size: 9px;
+      letter-spacing: 0.3px;
     }
 
     .data {
       margin-top: 4px;
+      font-size: 20px;
     }
   }
 }
