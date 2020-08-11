@@ -6,20 +6,19 @@ const selectMenuStyles = (teamColor) => {
       height: '100%',
       cursor: 'pointer',
       width: 320,
-      '@media all and (max-width: 960px)': {
-        maxWidth: 210,
+      '@media all and (min-width: 736px) and (max-width: 960px)': {
+        width: 220,
       },
-      '@media all and (max-width: 736px)': {
-        maxWidth: 'unset',
-        width: '100%',
+      '@media all and (max-width: 520px)': {
+        width: '95%',
       },
     }),
     control: () => ({
       display: 'flex',
       height: '100%',
-      '@media all and (max-width: 736px)': {
-        width: '96%',
-      },
+      // '@media all and (max-width: 736px)': {
+      //   width: '96%',
+      // },
     }),
     valueContainer: (provided) => ({
       ...provided,

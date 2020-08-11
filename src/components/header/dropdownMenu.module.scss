@@ -48,7 +48,7 @@
   border-top: none;
 }
 
-@media all and (max-width: 960px) {
+@media all and (min-width: 736px) and (max-width: 960px) {
   .optionImgContainer {
     width: 20px;
     height: 20px;
@@ -62,41 +62,45 @@
   }
 }
 
-@media all and (max-width: 736px) {
-  .teamContainer {
-    flex-grow: 1;
-    min-width: 310px;
-    height: 45px;
-    z-index: 2;
+// @media all and (max-width: 736px) {
+//   .teamContainer {
+//     flex-grow: 1;
+//     min-width: 310px;
+//     height: 45px;
+//     z-index: 2;
 
-    .optionContainer {
-      height: 45px;
+//     .optionContainer {
+//       height: 45px;
 
-      .optionImgContainer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 32px;
-        height: 32px;
-        margin-left: 18px;
-        border-radius: 50%;
-        background-color: $white;
-      }
+//       .optionImgContainer {
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         width: 32px;
+//         height: 32px;
+//         margin-left: 18px;
+//         border-radius: 50%;
+//         background-color: $white;
+//       }
 
-      .optionTitle {
-        padding-left: 5px;
-        font-size: 22px;
-      }
-    }
+//       .optionTitle {
+//         padding-left: 5px;
+//         font-size: 22px;
+//       }
+//     }
 
-    .borderTriangle {
-      border-width: 45px 16px 0 0;
-    }
-  }
-}
+//     .borderTriangle {
+//       border-width: 45px 16px 0 0;
+//     }
+//   }
+// }
 
 @media all and (max-width: 520px) {
-  .teamContainer .borderTriangle {
-    display: none;
+  .teamContainer {
+    z-index: 2;
+
+    .borderTriangle {
+      display: none;
+    }
   }
 }
