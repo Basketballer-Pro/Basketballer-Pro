@@ -3,6 +3,8 @@ import React from 'react';
 import Bell from 'assets/icons/bell';
 import Gear from 'assets/icons/gear';
 import Chevron from 'assets/icons/chevron';
+import Hamburger from 'assets/icons/hamburger';
+import MagnifyingGlass from 'assets/icons/magnifyingGlass';
 import kobe from 'assets/imgs/kobe.png';
 
 import styles from './userLogin.module.scss';
@@ -10,14 +12,22 @@ import styles from './userLogin.module.scss';
 const UserLogin = () => {
   return (
     <div className={styles.userContainer}>
+      <div className={styles.filterButton}>
+        <button className={styles.hamburgerContainer}>
+          <Hamburger className={styles.hamburger} />
+        </button>
+        <button className={styles.magnifyingGlassContainer}>
+          <MagnifyingGlass className={styles.magnifyingGlass} />
+        </button>
+      </div>
       <div className={styles.borderTriangle} />
-      <button>
+      <button className={styles.mobileDontDisplay}>
         <Bell className={styles.bell} />
       </button>
-      <button>
+      <button className={styles.mobileDontDisplay}>
         <Gear className={styles.gear} />
       </button>
-      <button>
+      <button className={styles.mobile}>
         <img
           src={kobe}
           alt="user avatar"

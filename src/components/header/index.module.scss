@@ -10,8 +10,14 @@
   list-style: none;
 }
 
-@media all and (max-width: 960px) {
+@media all and (max-width: 736px) {
   .container {
-    height: 32px;
+    justify-content: flex-start;
+  }
+}
+
+@media all and (max-width: 520px) {
+  .container {
+    flex-direction: column;
   }
 }

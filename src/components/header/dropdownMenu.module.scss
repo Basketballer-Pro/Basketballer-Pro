@@ -19,7 +19,7 @@
   justify-content: center;
   width: 35px;
   height: 35px;
-  margin-left: 10px;
+  margin-left: 18px;
   border-radius: 50%;
   background-color: $white;
 }
@@ -48,15 +48,7 @@
   border-top: none;
 }
 
-@media all and (max-width: 960px) {
-  .optionContainer {
-    height: 32px;
-  }
-
-  .borderTriangle {
-    border-width: 32px 12px 0 0;
-  }
-
+@media all and (min-width: 736px) and (max-width: 960px) {
   .optionImgContainer {
     width: 20px;
     height: 20px;
@@ -64,8 +56,18 @@
   }
 
   .optionTitle {
-    margin-left: 9px;
+    margin-left: 8px;
     padding-top: 2px;
-    font-size: 16px;
+    font-size: 18px;
+  }
+}
+
+@media all and (max-width: 520px) {
+  .teamContainer {
+    z-index: 2;
+
+    .borderTriangle {
+      display: none;
+    }
   }
 }

@@ -4,3 +4,9 @@
   height: 45px;
   background-color: $white;
 }
+
+@media all and (min-width: 521px) and (max-width: 736px) {
+  .filters {
+    display: none;
+  }
+}
