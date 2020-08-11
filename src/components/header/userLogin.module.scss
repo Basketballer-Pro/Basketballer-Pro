@@ -101,7 +101,7 @@
     }
 
     .mobile {
-      padding: 0 15px;
+      margin: 20px;
       .userPic {
         height: 25px;
       }
@@ -127,6 +127,11 @@
       .hamburgerContainer {
         padding-left: 18px;
       }
+    }
+
+    .mobile {
+      padding-right: 7%;
+      margin: 0;
     }
   }
 }
