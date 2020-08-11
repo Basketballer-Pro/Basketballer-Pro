@@ -249,15 +249,16 @@
     .detailsContainer {
       padding-left: 10px;
       flex-direction: column-reverse;
+      justify-content: flex-end;
 
       .details {
-        justify-content: space-around;
-        height: 100%;
+        justify-content: flex-start;
+        height: auto;
         padding: 0;
       }
 
       .name {
-        font-size: 14px;
+        font-size: 13px;
       }
 
       .position,
