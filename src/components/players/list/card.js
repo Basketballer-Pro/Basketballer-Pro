@@ -55,11 +55,21 @@ const Card = ({
         isSelected && styles.selectedCard
       )}
     >
-      {/* <button onClick={() => setModalIsOpen(true)}>open modal</button> */}
-      <Modal isOpen={modalIsOpen}>
-        <DetailsCard player={player} teamColor={teamColor} />
-        {/* <h3>modal title</h3>
-        <div>modal body</div> */}
+      <Modal
+        isOpen={modalIsOpen}
+
+        /*shouldCloseOnOverlayClick={true}*/
+      >
+        <button
+          onClick={() => {
+            // console.log('ive been clicked');
+            setModalIsOpen(false);
+            console.log('here', modalIsOpen);
+          }}
+        >
+          close
+        </button>
+        <DetailsCard />
       </Modal>
       <div className={styles.imageContainer}>
         <img
