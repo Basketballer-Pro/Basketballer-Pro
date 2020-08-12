@@ -33,14 +33,13 @@
     min-width: 270px;
 
     .imageContainer {
-      height: 198px;
+      // height: 198px;
     }
   }
 }
 
 @media all and (min-width: 521px) and (max-width: 670px) {
   .container {
-    min-width: unset;
-    // width: 200px;
+    min-width: 250px;
   }
 }
