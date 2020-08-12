@@ -7,6 +7,8 @@ import classnames from 'classnames';
 import placeholderImg from 'assets/imgs/placeholder.png';
 import { formatPlayerPhotoUrl } from 'utils/stringUtils';
 
+import DetailsCard from 'components/players/details';
+
 import styles from './index.module.scss';
 
 const Card = ({
@@ -30,21 +32,34 @@ const Card = ({
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
+  const isPortraitWidth = window.innerWidth <= 520;
+
+  // const portraitWidth = (e) => {
+  //   console.log(window.innerWidth);
+  //   const scrollHeight = window.innerWidth > breakpointWidth ? 297 : 254;
+
+  //   setIsAnimated(true);
+  //   setIsSticky(e.target.scrollTop >= scrollHeight);
+  // };
+
   return (
+    // <Modal>
     <div
       onClick={() => {
         history.push(`/${urlName}/players/${person_id}`);
         getSelectedPlayer(player);
+        isPortraitWidth && setModalIsOpen(true);
       }}
       className={classnames(
         styles.playerCard,
         isSelected && styles.selectedCard
       )}
     >
-      <button onClick={() => setModalIsOpen(true)}>open modal</button>
+      {/* <button onClick={() => setModalIsOpen(true)}>open modal</button> */}
       <Modal isOpen={modalIsOpen}>
-        <h3>modal title</h3>
-        <div>modal body</div>
+        <DetailsCard player={player} teamColor={teamColor} />
+        {/* <h3>modal title</h3>
+        <div>modal body</div> */}
       </Modal>
       <div className={styles.imageContainer}>
         <img
@@ -78,6 +93,7 @@ const Card = ({
         )}
       </div>
     </div>
+    // </Modal>
   );
 };
 
