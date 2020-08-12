@@ -219,9 +219,8 @@
         padding: 2px 0 2px 17px;
 
         .details {
-          justify-content: space-between;
-          height: 100%;
-          padding: 0;
+          justify-content: space-evenly;
+          padding-top: 4px;
         }
 
         .name {
@@ -253,6 +252,7 @@
 
       .details {
         justify-content: flex-start;
+        // justify-content: space-evenly;
         height: auto;
         padding: 0;
       }
