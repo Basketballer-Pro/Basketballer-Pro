@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
+import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -27,6 +28,8 @@ const Card = ({
 }) => {
   const isSelected = person_id === selectedPlayerId;
 
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
   return (
     <div
       onClick={() => {
@@ -38,6 +41,11 @@ const Card = ({
         isSelected && styles.selectedCard
       )}
     >
+      <button onClick={() => setModalIsOpen(true)}>open modal</button>
+      <Modal isOpen={modalIsOpen}>
+        <h3>modal title</h3>
+        <div>modal body</div>
+      </Modal>
       <div className={styles.imageContainer}>
         <img
           src={
