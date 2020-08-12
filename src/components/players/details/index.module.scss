@@ -28,8 +28,19 @@
   }
 }
 
-@media all and (min-width: 521px) and (max-width: 634px) {
+@media all and (min-width: 671px) and (max-width: 736px) {
   .container {
-    min-width: 50%;
+    min-width: 270px;
+
+    .imageContainer {
+      height: 198px;
+    }
+  }
+}
+
+@media all and (min-width: 521px) and (max-width: 670px) {
+  .container {
+    min-width: unset;
+    // width: 200px;
   }
 }

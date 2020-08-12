@@ -103,12 +103,12 @@
   }
 }
 
-@media all and (max-width: 736px) {
+@media all and (min-width: 671px) and (max-width: 736px) {
   .container {
-    min-width: 280px;
+    min-width: 270px;
 
     .placeholderImage {
-      height: 208px;
+      height: 198px;
       font-size: 12px;
     }
 
@@ -141,7 +141,7 @@
   }
 }
 
-@media all and (min-width: 521px) and (max-width: 634px) {
+@media all and (min-width: 521px) and (max-width: 670px) {
   .container {
     min-width: 50%;
 

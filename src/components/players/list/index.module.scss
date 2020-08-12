@@ -205,6 +205,7 @@
 
       .imageContainer {
         flex-basis: 110px;
+        min-width: 110px;
       }
 
       .imageLine {
@@ -260,9 +261,12 @@
         font-size: 13px;
       }
 
-      .position,
+      .position {
+        font-size: 11px;
+      }
+
       .size {
-        font-size: 9px;
+        font-size: 10px;
       }
 
       .number {
