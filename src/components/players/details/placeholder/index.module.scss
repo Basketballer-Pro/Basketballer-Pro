@@ -103,13 +103,12 @@
   }
 }
 
-@media all and (max-width: 736px) {
+@media all and (min-width: 671px) and (max-width: 736px) {
   .container {
-    min-width: 280px;
+    min-width: 270px;
 
     .placeholderImage {
-      height: 208px;
-      font-size: 12px;
+      height: 198px;
     }
 
     .box {
@@ -141,16 +140,21 @@
   }
 }
 
-@media all and (min-width: 521px) and (max-width: 634px) {
+@media all and (min-width: 521px) and (max-width: 670px) {
   .container {
-    min-width: 50%;
+    min-width: 250px;
 
     .box {
+      flex-direction: column;
       margin-top: 10px;
+
+      .circle {
+        margin-top: 8px;
+      }
     }
 
     .placeholderImage {
-      height: 200px;
+      height: 184px;
     }
   }
 }

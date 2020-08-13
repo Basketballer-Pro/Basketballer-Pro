@@ -9,9 +9,6 @@ const selectMenuStyles = (teamColor) => {
       '@media all and (min-width: 737px) and (max-width: 960px)': {
         width: 230,
       },
-      '@media all and (max-width: 634px)': {
-        width: 300,
-      },
       '@media all and (max-width: 520px)': {
         width: '95%',
       },

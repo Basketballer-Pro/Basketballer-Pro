@@ -134,7 +134,7 @@
 
       .number,
       .details {
-        padding-top: 15px;
+        padding-top: 11px;
       }
 
       .number {
@@ -205,6 +205,7 @@
 
       .imageContainer {
         flex-basis: 110px;
+        min-width: 110px;
       }
 
       .imageLine {
@@ -218,13 +219,12 @@
         padding: 2px 0 2px 17px;
 
         .details {
-          justify-content: space-between;
-          height: 100%;
-          padding: 0;
+          justify-content: space-evenly;
+          padding-top: 4px;
         }
 
         .name {
-          font-size: 18px;
+          font-size: 14px;
         }
 
         .position,
@@ -236,7 +236,7 @@
           padding-top: 5px;
           padding-right: 10px;
           text-align: right;
-          font-size: 28px;
+          font-size: 16px;
         }
       }
     }
@@ -246,7 +246,7 @@
 @media all and (max-width: 670px) {
   .container .playerCard {
     .detailsContainer {
-      padding-left: 10px;
+      padding: 0 10px;
       flex-direction: column-reverse;
       justify-content: flex-end;
 
@@ -256,20 +256,18 @@
         padding: 0;
       }
 
-      .name {
-        font-size: 13px;
+      .position {
+        font-size: 11px;
       }
 
-      .position,
       .size {
-        font-size: 9px;
+        font-size: 11px;
       }
 
       .number {
         padding-top: 5px;
         padding-right: 7px;
         text-align: left;
-        font-size: 16px;
       }
     }
   }
