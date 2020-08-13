@@ -102,3 +102,59 @@
     width: 34px;
   }
 }
+
+@media all and (min-width: 671px) and (max-width: 736px) {
+  .container {
+    min-width: 270px;
+
+    .placeholderImage {
+      height: 198px;
+    }
+
+    .box {
+      margin-top: 15px;
+    }
+
+    .barOne {
+      width: 156px;
+      height: 20px;
+      margin-top: 5px;
+    }
+
+    .barTwo {
+      width: 90px;
+      height: 15px;
+      margin-top: 5px;
+    }
+
+    .barThree {
+      width: 70px;
+      height: 12px;
+      margin-top: 5px;
+    }
+
+    .circle {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+@media all and (min-width: 521px) and (max-width: 670px) {
+  .container {
+    min-width: 250px;
+
+    .box {
+      flex-direction: column;
+      margin-top: 10px;
+
+      .circle {
+        margin-top: 8px;
+      }
+    }
+
+    .placeholderImage {
+      height: 184px;
+    }
+  }
+}

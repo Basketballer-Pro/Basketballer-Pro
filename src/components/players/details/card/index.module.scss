@@ -129,3 +129,51 @@
     font-size: 30px;
   }
 }
+
+@media all and (min-width: 671px) and (max-width: 736px) {
+  .card {
+    min-width: 270px;
+
+    .imageContainer {
+      height: 198px;
+    }
+
+    .info {
+      justify-content: space-evenly;
+    }
+  }
+}
+
+@media all and (min-width: 521px) and (max-width: 670px) {
+  .card {
+    min-width: 250px;
+
+    .imageContainer {
+      height: 184px;
+    }
+
+    .detailsContainer {
+      flex-direction: column;
+      padding: 10px 0;
+    }
+
+    .playerName {
+      font-size: 16px;
+    }
+
+    .playerPosition {
+      font-size: 13px;
+    }
+
+    .playerNumber {
+      padding: 3px 0 0 2px;
+      text-align: left;
+      font-size: 24px;
+    }
+
+    .info {
+      justify-content: space-evenly;
+      margin-right: 5px;
+    }
+  }
+}

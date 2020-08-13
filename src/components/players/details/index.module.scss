@@ -27,3 +27,15 @@
     height: calc(100vh - 77px);
   }
 }
+
+@media all and (min-width: 671px) and (max-width: 736px) {
+  .container {
+    min-width: 270px;
+  }
+}
+
+@media all and (min-width: 521px) and (max-width: 670px) {
+  .container {
+    min-width: 250px;
+  }
+}
