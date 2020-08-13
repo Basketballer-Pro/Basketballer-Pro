@@ -11,6 +11,8 @@ import DetailsCard from 'components/players/details';
 
 import styles from './index.module.scss';
 
+Modal.setAppElement('#root');
+
 const Card = ({
   getSelectedPlayer,
   selectedTeam: { teamColor, teamId, urlName },
@@ -34,21 +36,16 @@ const Card = ({
 
   const isPortraitWidth = window.innerWidth <= 520;
 
-  // const portraitWidth = (e) => {
-  //   console.log(window.innerWidth);
-  //   const scrollHeight = window.innerWidth > breakpointWidth ? 297 : 254;
-
-  //   setIsAnimated(true);
-  //   setIsSticky(e.target.scrollTop >= scrollHeight);
-  // };
-
+  const closeModal = () => {
+    setModalIsOpen(!modalIsOpen);
+  };
   return (
     // <Modal>
     <div
       onClick={() => {
         history.push(`/${urlName}/players/${person_id}`);
         getSelectedPlayer(player);
-        isPortraitWidth && setModalIsOpen(true);
+        setModalIsOpen(true);
       }}
       className={classnames(
         styles.playerCard,
@@ -57,19 +54,12 @@ const Card = ({
     >
       <Modal
         isOpen={modalIsOpen}
-
-        /*shouldCloseOnOverlayClick={true}*/
+        onRequestClose={closeModal}
+        shouldCloseOnOverlayClick={true}
       >
-        <button
-          onClick={() => {
-            // console.log('ive been clicked');
-            setModalIsOpen(false);
-            console.log('here', modalIsOpen);
-          }}
-        >
-          close
-        </button>
-        <DetailsCard />
+        <button onClick={() => closeModal()}>close</button>
+        <h3>i am modal title</h3>
+        <p>i am modal body</p>
       </Modal>
       <div className={styles.imageContainer}>
         <img
