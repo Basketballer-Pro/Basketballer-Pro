@@ -16,6 +16,10 @@
   overflow: hidden;
 }
 
+.mobileButton {
+  display: none;
+}
+
 @media all and (max-width: 1224px) {
   .container {
     min-width: 320px;
@@ -41,8 +45,30 @@
 }
 
 @media all and (max-width: 520px) {
+  // .container {
+  //   position: absolute;
+  //   left: 0;
+  //   right: 0;
+  // }
+
+  .container {
+    display: none;
+  }
+
   .hide {
     position: absolute;
     left: 99%;
+  }
+
+  .show {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: unset;
+  }
+
+  .mobileButton {
+    display: inline-block;
   }
 }

@@ -41,9 +41,22 @@ const Details = ({
     setIsPlayerSelected(false);
   }, [teamId]);
 
+  const windowWidth = window.innerWidth;
+
+  useEffect(() => {
+    if (windowWidth < 521) {
+      setIsMobilePortrait(true);
+    }
+
+    if (windowWidth > 520) {
+      setIsMobilePortrait(false);
+    }
+  }, [windowWidth]);
+
   console.log('isPlayerSelected: ', isPlayerSelected);
   console.log('teamId: ', teamId);
   console.log('details.person_id: ', details.person_id);
+  console.log('windowWidth :', windowWidth);
 
   const onScroll = (e) => {
     const breakpointWidth = 1224;
@@ -53,11 +66,7 @@ const Details = ({
     setIsSticky(e.target.scrollTop >= scrollHeight);
   };
 
-  const mobilePortrait = () => {
-    if (window.innerWidth <= 520) {
-      return setIsMobilePortrait(true);
-    }
-  };
+  const mobilePortrait = window.innerWidth < 521;
 
   if (!details.person_id) {
     return (
@@ -113,7 +122,6 @@ const Details = ({
   ];
 
   const closeDisplay = () => {
-    console.log('ive been clicked');
     setIsPlayerSelected(false);
   };
 
@@ -124,10 +132,12 @@ const Details = ({
       className={classnames(
         styles.container,
         isLoading && styles.scrollHidden,
-        !isPlayerSelected && styles.hide
+        isPlayerSelected && styles.show
       )}
     >
-      <button onClick={() => closeDisplay()}>X</button>
+      <button onClick={() => closeDisplay()} className={styles.mobileButton}>
+        X
+      </button>
       <Card
         player={details}
         playerTeamId={teamId}
