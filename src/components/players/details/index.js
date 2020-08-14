@@ -19,6 +19,9 @@ const Details = ({
   const ref = useRef();
   const [isSticky, setIsSticky] = useState(false);
   const [isAnimated, setIsAnimated] = useState(false);
+  const [isMobilePortrait, setIsMobilePortrait] = useState(null);
+  const [isComponentDisplayed, setIsComponentDisplayed] = useState(true);
+  const [isPlayerSelected, setIsPlayerSelected] = useState(false);
 
   useEffect(() => {
     if (ref.current) {
@@ -28,6 +31,20 @@ const Details = ({
     }
   }, [details]);
 
+  const { person_id } = details;
+
+  useEffect(() => {
+    setIsPlayerSelected(true);
+  }, [person_id]);
+
+  useEffect(() => {
+    setIsPlayerSelected(false);
+  }, [teamId]);
+
+  console.log('isPlayerSelected: ', isPlayerSelected);
+  console.log('teamId: ', teamId);
+  console.log('details.person_id: ', details.person_id);
+
   const onScroll = (e) => {
     const breakpointWidth = 1224;
     const scrollHeight = window.innerWidth > breakpointWidth ? 297 : 254;
@@ -36,9 +53,20 @@ const Details = ({
     setIsSticky(e.target.scrollTop >= scrollHeight);
   };
 
+  const mobilePortrait = () => {
+    if (window.innerWidth <= 520) {
+      return setIsMobilePortrait(true);
+    }
+  };
+
   if (!details.person_id) {
     return (
-      <div className={styles.container}>
+      <div
+        className={classnames(
+          styles.container
+          // isMobilePortrait && styles.hide
+        )}
+      >
         <Placeholder />
       </div>
     );
@@ -84,12 +112,22 @@ const Details = ({
     { title: 'pts', value: points },
   ];
 
+  const closeDisplay = () => {
+    console.log('ive been clicked');
+    setIsPlayerSelected(false);
+  };
+
   return (
     <div
       onScroll={onScroll}
       ref={ref}
-      className={classnames(styles.container, isLoading && styles.scrollHidden)}
+      className={classnames(
+        styles.container,
+        isLoading && styles.scrollHidden,
+        !isPlayerSelected && styles.hide
+      )}
     >
+      <button onClick={() => closeDisplay()}>X</button>
       <Card
         player={details}
         playerTeamId={teamId}

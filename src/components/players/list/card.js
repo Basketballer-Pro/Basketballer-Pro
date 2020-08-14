@@ -27,6 +27,8 @@ const Card = ({
 }) => {
   const isSelected = person_id === selectedPlayerId;
 
+  const portraitWidth = window.innerWidth <= 520;
+
   return (
     <div
       onClick={() => {

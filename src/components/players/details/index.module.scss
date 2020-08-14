@@ -39,3 +39,10 @@
     min-width: 250px;
   }
 }
+
+@media all and (max-width: 520px) {
+  .hide {
+    position: absolute;
+    left: 99%;
+  }
+}
