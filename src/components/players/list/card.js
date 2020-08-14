@@ -1,17 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { withRouter } from 'react-router-dom';
-import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import placeholderImg from 'assets/imgs/placeholder.png';
 import { formatPlayerPhotoUrl } from 'utils/stringUtils';
 
-import DetailsCard from 'components/players/details';
-
 import styles from './index.module.scss';
-
-Modal.setAppElement('#root');
 
 const Card = ({
   getSelectedPlayer,
@@ -32,35 +27,17 @@ const Card = ({
 }) => {
   const isSelected = person_id === selectedPlayerId;
 
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-
-  const isPortraitWidth = window.innerWidth <= 520;
-
-  const closeModal = () => {
-    setModalIsOpen(!modalIsOpen);
-  };
   return (
-    // <Modal>
     <div
       onClick={() => {
         history.push(`/${urlName}/players/${person_id}`);
         getSelectedPlayer(player);
-        setModalIsOpen(true);
       }}
       className={classnames(
         styles.playerCard,
         isSelected && styles.selectedCard
       )}
     >
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        shouldCloseOnOverlayClick={true}
-      >
-        <button onClick={() => closeModal()}>close</button>
-        <h3>i am modal title</h3>
-        <p>i am modal body</p>
-      </Modal>
       <div className={styles.imageContainer}>
         <img
           src={
@@ -93,7 +70,6 @@ const Card = ({
         )}
       </div>
     </div>
-    // </Modal>
   );
 };
 
