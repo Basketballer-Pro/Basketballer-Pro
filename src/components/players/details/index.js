@@ -135,7 +135,11 @@ const Details = ({
         isPlayerSelected && styles.show
       )}
     >
-      <button onClick={() => closeDisplay()} className={styles.mobileButton}>
+      <button
+        style={{ color: `${teamColor}`, borderColor: `${teamColor}` }}
+        onClick={() => closeDisplay()}
+        className={styles.mobileButton}
+      >
         X
       </button>
       <Card
