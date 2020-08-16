@@ -19,8 +19,6 @@ const Details = ({
   const ref = useRef();
   const [isSticky, setIsSticky] = useState(false);
   const [isAnimated, setIsAnimated] = useState(false);
-  const [isMobilePortrait, setIsMobilePortrait] = useState(null);
-  const [isComponentDisplayed, setIsComponentDisplayed] = useState(true);
   const [isPlayerSelected, setIsPlayerSelected] = useState(false);
 
   useEffect(() => {
@@ -30,12 +28,6 @@ const Details = ({
       ref.current.scrollTo(0, 0);
     }
   }, [details]);
-
-  const { person_id } = details;
-
-  useEffect(() => {
-    setIsPlayerSelected(true);
-  }, [person_id]);
 
   useEffect(() => {
     setIsPlayerSelected(true);
@@ -47,15 +39,15 @@ const Details = ({
 
   const windowWidth = window.innerWidth;
 
-  useEffect(() => {
-    if (windowWidth < 521) {
-      setIsMobilePortrait(true);
-    }
+  // useEffect(() => {
+  //   if (windowWidth < 521) {
+  //     setIsMobilePortrait(true);
+  //   }
 
-    if (windowWidth > 520) {
-      setIsMobilePortrait(false);
-    }
-  }, [windowWidth]);
+  //   if (windowWidth > 520) {
+  //     setIsMobilePortrait(false);
+  //   }
+  // }, [windowWidth]);
 
   const onScroll = (e) => {
     const breakpointWidth = 1224;
