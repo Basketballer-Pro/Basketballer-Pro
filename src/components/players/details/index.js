@@ -37,18 +37,6 @@ const Details = ({
     setIsPlayerSelected(false);
   }, [teamId]);
 
-  const windowWidth = window.innerWidth;
-
-  // useEffect(() => {
-  //   if (windowWidth < 521) {
-  //     setIsMobilePortrait(true);
-  //   }
-
-  //   if (windowWidth > 520) {
-  //     setIsMobilePortrait(false);
-  //   }
-  // }, [windowWidth]);
-
   const onScroll = (e) => {
     const breakpointWidth = 1224;
     const scrollHeight = window.innerWidth > breakpointWidth ? 297 : 254;
@@ -61,12 +49,7 @@ const Details = ({
 
   if (!details.person_id) {
     return (
-      <div
-        className={classnames(
-          styles.container
-          // isMobilePortrait && styles.hide
-        )}
-      >
+      <div className={classnames(styles.container)}>
         <Placeholder />
       </div>
     );
@@ -115,11 +98,6 @@ const Details = ({
   const closeDisplay = () => {
     setIsPlayerSelected(false);
   };
-
-  console.log('isPlayerSelected: ', isPlayerSelected);
-  // console.log('teamId: ', teamId);
-  console.log('details.person_id: ', details.person_id);
-  // console.log('windowWidth :', windowWidth);
 
   return (
     <div

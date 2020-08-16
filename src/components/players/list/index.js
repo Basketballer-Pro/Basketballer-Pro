@@ -1,6 +1,5 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { connect } from 'react-redux';
-import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -27,8 +26,6 @@ const List = ({
   useEffect(() => {
     domRef.current.scrollTo(0, 0);
   }, [teamId]);
-
-  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   return (
     <div
