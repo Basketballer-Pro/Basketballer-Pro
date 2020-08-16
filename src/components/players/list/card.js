@@ -32,7 +32,6 @@ const Card = ({
   return (
     <div
       onClick={() => {
-        console.log('list card has been clicked');
         history.push(`/${urlName}/players/${person_id}`);
         getSelectedPlayer(player);
       }}
@@ -57,7 +56,12 @@ const Card = ({
       >
         {!!Object.keys(player).length && (
           <>
-            <div className={styles.number}>{jersey_number}</div>
+            <div
+              style={portraitWidth ? { color: `${teamColor}` } : null}
+              className={styles.number}
+            >
+              {jersey_number}
+            </div>
             <div className={styles.details}>
               <div className={styles.name}>
                 {first_name} {last_name}
