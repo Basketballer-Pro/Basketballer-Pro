@@ -38,6 +38,10 @@ const Details = ({
   }, [person_id]);
 
   useEffect(() => {
+    setIsPlayerSelected(true);
+  }, [isLoading]);
+
+  useEffect(() => {
     setIsPlayerSelected(false);
   }, [teamId]);
 
@@ -52,11 +56,6 @@ const Details = ({
       setIsMobilePortrait(false);
     }
   }, [windowWidth]);
-
-  console.log('isPlayerSelected: ', isPlayerSelected);
-  console.log('teamId: ', teamId);
-  console.log('details.person_id: ', details.person_id);
-  console.log('windowWidth :', windowWidth);
 
   const onScroll = (e) => {
     const breakpointWidth = 1224;
@@ -124,6 +123,11 @@ const Details = ({
   const closeDisplay = () => {
     setIsPlayerSelected(false);
   };
+
+  console.log('isPlayerSelected: ', isPlayerSelected);
+  // console.log('teamId: ', teamId);
+  console.log('details.person_id: ', details.person_id);
+  // console.log('windowWidth :', windowWidth);
 
   return (
     <div

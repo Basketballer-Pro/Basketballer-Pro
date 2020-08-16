@@ -277,17 +277,40 @@
   .container {
     height: calc(100vh - 45px);
 
-    .playerCard .detailsContainer {
-      flex-direction: row-reverse;
-      flex-grow: 1;
+    .playerCard {
+      // &.selectedCard {
+      //   pointer-events: unset;
 
-      .details {
+      //   .detailsContainer {
+      //     .number {
+      //       color: unset;
+      //     }
+
+      //     .details {
+      //       .name {
+      //         color: unset;
+      //       }
+
+      //       .position,
+      //       .size {
+      //         color: unset;
+      //       }
+      //     }
+      //   }
+      // }
+
+      .detailsContainer {
+        flex-direction: row-reverse;
         flex-grow: 1;
-      }
 
-      .number {
-        text-align: right;
-        font-size: 16px;
+        .details {
+          flex-grow: 1;
+        }
+
+        .number {
+          text-align: right;
+          font-size: 16px;
+        }
       }
     }
   }

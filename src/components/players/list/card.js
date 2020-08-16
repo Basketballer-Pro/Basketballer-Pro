@@ -32,12 +32,13 @@ const Card = ({
   return (
     <div
       onClick={() => {
+        console.log('list card has been clicked');
         history.push(`/${urlName}/players/${person_id}`);
         getSelectedPlayer(player);
       }}
       className={classnames(
         styles.playerCard,
-        isSelected && styles.selectedCard
+        !portraitWidth && isSelected && styles.selectedCard
       )}
     >
       <div className={styles.imageContainer}>
@@ -51,7 +52,7 @@ const Card = ({
       </div>
       <div style={{ borderColor: teamColor }} className={styles.imageLine} />
       <div
-        style={{ backgroundColor: isSelected && teamColor }}
+        style={{ backgroundColor: !portraitWidth && isSelected && teamColor }}
         className={styles.detailsContainer}
       >
         {!!Object.keys(player).length && (
