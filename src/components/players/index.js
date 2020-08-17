@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, useRouteMatch } from 'react-router-dom';
 
 import List from './list';
@@ -10,13 +10,25 @@ import styles from './index.module.scss';
 const PlayersPage = () => {
   const { path } = useRouteMatch();
 
+  const [size, setSize] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSize(window.innerWidth);
+    };
+    window.addEventListener('resize', handleResize);
+    window.removeEventListener('rezise', handleResize);
+  }, []);
+
+  console.log('size :', size);
+
   return (
     <>
       <Filters />
       <div className={styles.container}>
-        <List />
+        <List isMobilePortrait={size < 521} />
         <Route path={path || `${path}/:playerId`}>
-          <Details />
+          <Details isMobilePortrait={size < 521} />
         </Route>
       </div>
     </>

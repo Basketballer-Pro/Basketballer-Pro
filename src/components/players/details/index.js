@@ -15,6 +15,7 @@ const Details = ({
   player: { details, isLoading },
   teams,
   selectedTeam: { teamId, teamColor },
+  isMobilePortrait,
 }) => {
   const ref = useRef();
   const [isSticky, setIsSticky] = useState(false);
@@ -106,7 +107,7 @@ const Details = ({
       className={classnames(
         styles.container,
         isLoading && styles.scrollHidden,
-        isPlayerSelected && styles.show
+        isPlayerSelected && isMobilePortrait && styles.mobileDisplay
       )}
     >
       <button

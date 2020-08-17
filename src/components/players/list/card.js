@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
@@ -29,6 +29,16 @@ const Card = ({
 
   const portraitWidth = window.innerWidth <= 520;
 
+  const [size, setSize] = useState(window.innerWidth);
+
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setSize(window.innerWidth);
+  //   };
+  //   window.addEventListener('resize', handleResize);
+  //   window.removeEventListener('rezise', handleResize);
+  // }, [size]);
+
   return (
     <div
       onClick={() => {
@@ -57,7 +67,7 @@ const Card = ({
         {!!Object.keys(player).length && (
           <>
             <div
-              style={portraitWidth ? { color: `${teamColor}` } : null}
+              style={size < 521 ? { color: `${teamColor}` } : null}
               className={styles.number}
             >
               {jersey_number}
