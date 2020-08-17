@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import { getSelectedPlayer } from 'actions';
+import { resetPlayer } from 'actions';
 
 import Placeholder from './placeholder';
 import Card from './card';
@@ -24,8 +24,6 @@ const Details = ({
   const [isSticky, setIsSticky] = useState(false);
   const [isAnimated, setIsAnimated] = useState(false);
   const [isPlayerSelected, setIsPlayerSelected] = useState(false);
-
-  console.log('gsp', getSelectedPlayer);
 
   useEffect(() => {
     if (ref.current) {
@@ -100,8 +98,9 @@ const Details = ({
   ];
 
   const closeDisplay = () => {
+    console.log('closeDisplay');
     setIsPlayerSelected(false);
-    getSelectedPlayer({});
+    resetPlayer();
   };
 
   return (
@@ -167,4 +166,4 @@ Details.defaultProps = {
   size: null,
 };
 
-export default connect(mapStateToProps, { getSelectedPlayer })(Details);
+export default connect(mapStateToProps)(Details);

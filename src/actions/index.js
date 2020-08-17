@@ -1,4 +1,5 @@
 import dataNbaNet from 'apis';
+import axios from 'axios';
 import { TEAMS, TEAM_COLORS } from 'enums';
 
 export const getTeams = (pathname, history) => async (dispatch) => {
@@ -51,12 +52,12 @@ export const getSelectedTeam = (team, defaultPlayerId, history) => async (
   }
 };
 
-export const getSelectedPlayer = (player) => async (dispatch) => {
-  if (player === {}) {
-    dispatch({ type: 'RESET_PLAYER' });
-    console.log('get selected player: i have been fired!');
-  }
+export const resetPlayer = () => async (dispatch) => {
+  console.log('here');
+  dispatch({ type: 'RESET_PLAYER' });
+};
 
+export const getSelectedPlayer = (player) => async (dispatch) => {
   dispatch({ type: 'SET_PLAYER_DETAILS_IS_LOADING', payload: true });
   dispatch({ type: 'PRELOAD_PLAYER_DETAILS', payload: player });
 
