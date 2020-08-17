@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
@@ -85,11 +85,13 @@ Card.propTypes = {
   player: PropTypes.object.isRequired,
   history: PropTypes.object,
   selectedPlayerId: PropTypes.string,
+  size: PropTypes.number,
 };
 
 Card.defaultProps = {
   history: null,
   selectedPlayerId: null,
+  size: null,
 };
 
 export default withRouter(Card);
