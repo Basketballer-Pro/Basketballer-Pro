@@ -109,15 +109,14 @@ const Details = ({
       className={classnames(
         styles.container,
         isLoading && styles.scrollHidden,
-        size <= 520 && isPlayerSelected && styles.mobileDisplay
+        size <= 520 && isPlayerSelected && styles.portraitDisplay
       )}
     >
       <button
-        // style={{ color: `${teamColor}`, borderColor: `${teamColor}` }}
         onClick={() => {
           closeDisplay();
         }}
-        className={styles.mobileButton}
+        className={styles.portraitButton}
       >
         <Close color={teamColor} />
       </button>

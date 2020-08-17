@@ -56,7 +56,7 @@
     left: 99%;
   }
 
-  .mobileDisplay {
+  .portraitDisplay {
     display: inline-block;
     position: absolute;
     left: 0;
@@ -64,7 +64,7 @@
     height: calc(100vh - 90px);
   }
 
-  .mobileButton {
+  .portraitButton {
     display: inline-block;
     position: absolute;
     right: 15px;

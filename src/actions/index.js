@@ -1,5 +1,4 @@
 import dataNbaNet from 'apis';
-import axios from 'axios';
 import { TEAMS, TEAM_COLORS } from 'enums';
 
 export const getTeams = (pathname, history) => async (dispatch) => {
