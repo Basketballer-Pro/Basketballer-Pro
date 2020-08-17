@@ -46,7 +46,11 @@
 
 @media all and (max-width: 520px) {
   .container {
-    display: none;
+    // display: none;
+    position: absolute;
+    left: 100%;
+    overflow: hidden;
+    transition: 0.1s ease;
   }
 
   .hide {
