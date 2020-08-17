@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
+import { getSelectedPlayer } from 'actions';
+
 import Placeholder from './placeholder';
 import Card from './card';
 import QuickStats from './quickStats';
@@ -12,15 +14,18 @@ import TotalStats from './totalStats';
 import styles from './index.module.scss';
 
 const Details = ({
+  size,
   player: { details, isLoading },
   teams,
   selectedTeam: { teamId, teamColor },
-  isMobilePortrait,
+  getSelectedPlayer,
 }) => {
   const ref = useRef();
   const [isSticky, setIsSticky] = useState(false);
   const [isAnimated, setIsAnimated] = useState(false);
   const [isPlayerSelected, setIsPlayerSelected] = useState(false);
+
+  console.log('gsp', getSelectedPlayer);
 
   useEffect(() => {
     if (ref.current) {
@@ -45,8 +50,6 @@ const Details = ({
     setIsAnimated(true);
     setIsSticky(e.target.scrollTop >= scrollHeight);
   };
-
-  const mobilePortrait = window.innerWidth < 521;
 
   if (!details.person_id) {
     return (
@@ -98,6 +101,7 @@ const Details = ({
 
   const closeDisplay = () => {
     setIsPlayerSelected(false);
+    getSelectedPlayer({});
   };
 
   return (
@@ -107,12 +111,14 @@ const Details = ({
       className={classnames(
         styles.container,
         isLoading && styles.scrollHidden,
-        isPlayerSelected && isMobilePortrait && styles.mobileDisplay
+        size <= 520 && isPlayerSelected && styles.mobileDisplay
       )}
     >
       <button
         style={{ color: `${teamColor}`, borderColor: `${teamColor}` }}
-        onClick={() => closeDisplay()}
+        onClick={() => {
+          closeDisplay();
+        }}
         className={styles.mobileButton}
       >
         X
@@ -154,6 +160,11 @@ Details.propTypes = {
   player: PropTypes.object.isRequired,
   teams: PropTypes.array.isRequired,
   selectedTeam: PropTypes.object.isRequired,
+  size: PropTypes.number,
 };
 
-export default connect(mapStateToProps)(Details);
+Details.defaultProps = {
+  size: null,
+};
+
+export default connect(mapStateToProps, { getSelectedPlayer })(Details);

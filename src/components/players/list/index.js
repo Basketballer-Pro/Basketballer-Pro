@@ -64,6 +64,11 @@ List.propTypes = {
   player: PropTypes.object.isRequired,
   selectedTeam: PropTypes.object.isRequired,
   isLoading: PropTypes.bool.isRequired,
+  size: PropTypes.number,
+};
+
+List.defaultProps = {
+  size: null,
 };
 
 export default connect(mapStateToProps, { getSelectedPlayer })(List);

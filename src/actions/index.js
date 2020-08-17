@@ -52,6 +52,11 @@ export const getSelectedTeam = (team, defaultPlayerId, history) => async (
 };
 
 export const getSelectedPlayer = (player) => async (dispatch) => {
+  if (player === {}) {
+    dispatch({ type: 'RESET_PLAYER' });
+    console.log('get selected player: i have been fired!');
+  }
+
   dispatch({ type: 'SET_PLAYER_DETAILS_IS_LOADING', payload: true });
   dispatch({ type: 'PRELOAD_PLAYER_DETAILS', payload: player });
 
