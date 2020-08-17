@@ -12,7 +12,7 @@ import Card from './card';
 import styles from './index.module.scss';
 
 const List = ({
-  size,
+  screenWidth,
   getSelectedPlayer,
   players,
   player: {
@@ -43,7 +43,7 @@ const List = ({
           selectedTeam={selectedTeam}
           selectedPlayerId={selectedPlayerId}
           player={player}
-          size={size}
+          screenWidth={screenWidth}
         />
       ))}
     </div>
@@ -64,11 +64,11 @@ List.propTypes = {
   player: PropTypes.object.isRequired,
   selectedTeam: PropTypes.object.isRequired,
   isLoading: PropTypes.bool.isRequired,
-  size: PropTypes.number,
+  screenWidth: PropTypes.number,
 };
 
 List.defaultProps = {
-  size: null,
+  screenWidth: null,
 };
 
 export default connect(mapStateToProps, { getSelectedPlayer })(List);

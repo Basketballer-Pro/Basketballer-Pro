@@ -278,27 +278,6 @@
     height: calc(100vh - 45px);
 
     .playerCard {
-      // &.selectedCard {
-      //   pointer-events: unset;
-
-      //   .detailsContainer {
-      //     .number {
-      //       color: unset;
-      //     }
-
-      //     .details {
-      //       .name {
-      //         color: unset;
-      //       }
-
-      //       .position,
-      //       .size {
-      //         color: unset;
-      //       }
-      //     }
-      //   }
-      // }
-
       .detailsContainer {
         flex-direction: row-reverse;
         flex-grow: 1;

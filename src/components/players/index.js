@@ -9,22 +9,22 @@ import styles from './index.module.scss';
 
 const PlayersPage = () => {
   const { path } = useRouteMatch();
-  const [size, setSize] = useState(window.innerWidth);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const handleResize = () => {
-      setSize(window.innerWidth);
+      setScreenWidth(window.innerWidth);
     };
     window.addEventListener('resize', handleResize);
-  }, [size]);
+  }, [screenWidth]);
 
   return (
     <>
       <Filters />
       <div className={styles.container}>
-        <List size={size} />
+        <List screenWidth={screenWidth} />
         <Route path={path || `${path}/:playerId`}>
-          <Details size={size} />
+          <Details screenWidth={screenWidth} />
         </Route>
       </div>
     </>

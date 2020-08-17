@@ -16,7 +16,7 @@
   overflow: hidden;
 }
 
-.mobileButton {
+.portraitButton {
   display: none;
 }
 
@@ -49,11 +49,6 @@
     position: absolute;
     left: 100%;
     transition: 0.1s ease;
-  }
-
-  .hide {
-    position: absolute;
-    left: 99%;
   }
 
   .portraitDisplay {

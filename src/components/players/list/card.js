@@ -9,7 +9,7 @@ import { formatPlayerPhotoUrl } from 'utils/stringUtils';
 import styles from './index.module.scss';
 
 const Card = ({
-  size,
+  screenWidth,
   getSelectedPlayer,
   selectedTeam: { teamColor, teamId, urlName },
   player,
@@ -56,7 +56,7 @@ const Card = ({
         {!!Object.keys(player).length && (
           <>
             <div
-              style={size < 521 ? { color: `${teamColor}` } : null}
+              style={screenWidth <= 520 ? { color: `${teamColor}` } : null}
               className={styles.number}
             >
               {jersey_number}
@@ -85,13 +85,13 @@ Card.propTypes = {
   player: PropTypes.object.isRequired,
   history: PropTypes.object,
   selectedPlayerId: PropTypes.string,
-  size: PropTypes.number,
+  screenWidth: PropTypes.number,
 };
 
 Card.defaultProps = {
   history: null,
   selectedPlayerId: null,
-  size: null,
+  screenWidth: null,
 };
 
 export default withRouter(Card);

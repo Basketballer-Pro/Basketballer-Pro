@@ -15,7 +15,7 @@ import styles from './index.module.scss';
 
 const Details = ({
   dispatch,
-  size,
+  screenWidth,
   player: { details, isLoading },
   teams,
   selectedTeam: { teamId, teamColor },
@@ -51,7 +51,7 @@ const Details = ({
 
   if (!details.person_id) {
     return (
-      <div className={classnames(styles.container)}>
+      <div className={styles.container}>
         <Placeholder />
       </div>
     );
@@ -109,7 +109,7 @@ const Details = ({
       className={classnames(
         styles.container,
         isLoading && styles.scrollHidden,
-        size <= 520 && isPlayerSelected && styles.portraitDisplay
+        screenWidth < 521 && isPlayerSelected && styles.portraitDisplay
       )}
     >
       <button
@@ -157,11 +157,11 @@ Details.propTypes = {
   player: PropTypes.object.isRequired,
   teams: PropTypes.array.isRequired,
   selectedTeam: PropTypes.object.isRequired,
-  size: PropTypes.number,
+  screenWidth: PropTypes.number,
 };
 
 Details.defaultProps = {
-  size: null,
+  screenWidth: null,
 };
 
 export default connect(mapStateToProps)(Details);
