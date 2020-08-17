@@ -10,7 +10,6 @@ import styles from './index.module.scss';
 
 const Card = ({
   size,
-  isPortrait,
   getSelectedPlayer,
   selectedTeam: { teamColor, teamId, urlName },
   player,
@@ -28,39 +27,6 @@ const Card = ({
   },
 }) => {
   const isSelected = person_id === selectedPlayerId;
-
-  console.log('size :', size);
-
-  useEffect(() => {
-    console.log('size has changed');
-  }, [size]);
-
-  // if (isPortrait) {
-  //   console.log('i just became portrait');
-  // }
-
-  // const portraitWidth = window.innerWidth <= 520;
-
-  // const [size, setSize] = useState(window.innerWidth);
-  // const [isPortraity, setPortrait] = useState(null);
-
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setSize(window.innerWidth);
-  //   };
-  //   window.addEventListener('resize', handleResize);
-  //   window.removeEventListener('rezise', handleResize);
-  // }, [size]);
-
-  // useEffect(() => {
-  //   if (size <= 520) {
-  //     setPortrait(true);
-  //   }
-
-  //   setPortrait(false);
-  // }, [size]);
-
-  // console.log('isPortraity :', isPortraity);
 
   return (
     <div
