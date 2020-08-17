@@ -12,6 +12,7 @@ import Card from './card';
 import styles from './index.module.scss';
 
 const List = ({
+  size,
   getSelectedPlayer,
   players,
   player: {
@@ -42,6 +43,7 @@ const List = ({
           selectedTeam={selectedTeam}
           selectedPlayerId={selectedPlayerId}
           player={player}
+          size={size}
         />
       ))}
     </div>

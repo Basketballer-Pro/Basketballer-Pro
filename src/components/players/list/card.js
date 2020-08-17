@@ -9,6 +9,8 @@ import { formatPlayerPhotoUrl } from 'utils/stringUtils';
 import styles from './index.module.scss';
 
 const Card = ({
+  size,
+  isPortrait,
   getSelectedPlayer,
   selectedTeam: { teamColor, teamId, urlName },
   player,
@@ -27,9 +29,20 @@ const Card = ({
 }) => {
   const isSelected = person_id === selectedPlayerId;
 
-  const portraitWidth = window.innerWidth <= 520;
+  console.log('size :', size);
 
-  const [size, setSize] = useState(window.innerWidth);
+  useEffect(() => {
+    console.log('size has changed');
+  }, [size]);
+
+  // if (isPortrait) {
+  //   console.log('i just became portrait');
+  // }
+
+  // const portraitWidth = window.innerWidth <= 520;
+
+  // const [size, setSize] = useState(window.innerWidth);
+  // const [isPortraity, setPortrait] = useState(null);
 
   // useEffect(() => {
   //   const handleResize = () => {
@@ -39,6 +52,16 @@ const Card = ({
   //   window.removeEventListener('rezise', handleResize);
   // }, [size]);
 
+  // useEffect(() => {
+  //   if (size <= 520) {
+  //     setPortrait(true);
+  //   }
+
+  //   setPortrait(false);
+  // }, [size]);
+
+  // console.log('isPortraity :', isPortraity);
+
   return (
     <div
       onClick={() => {
@@ -47,7 +70,7 @@ const Card = ({
       }}
       className={classnames(
         styles.playerCard,
-        !portraitWidth && isSelected && styles.selectedCard
+        isSelected && styles.selectedCard
       )}
     >
       <div className={styles.imageContainer}>
@@ -61,7 +84,7 @@ const Card = ({
       </div>
       <div style={{ borderColor: teamColor }} className={styles.imageLine} />
       <div
-        style={{ backgroundColor: !portraitWidth && isSelected && teamColor }}
+        style={{ backgroundColor: isSelected && teamColor }}
         className={styles.detailsContainer}
       >
         {!!Object.keys(player).length && (
