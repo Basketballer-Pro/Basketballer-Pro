@@ -52,11 +52,6 @@ export const getSelectedTeam = (team, defaultPlayerId, history) => async (
   }
 };
 
-export const resetPlayer = () => async (dispatch) => {
-  console.log('here');
-  dispatch({ type: 'RESET_PLAYER' });
-};
-
 export const getSelectedPlayer = (player) => async (dispatch) => {
   dispatch({ type: 'SET_PLAYER_DETAILS_IS_LOADING', payload: true });
   dispatch({ type: 'PRELOAD_PLAYER_DETAILS', payload: player });

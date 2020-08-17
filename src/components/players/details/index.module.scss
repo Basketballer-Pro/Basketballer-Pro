@@ -46,10 +46,8 @@
 
 @media all and (max-width: 520px) {
   .container {
-    // display: none;
     position: absolute;
     left: 100%;
-    overflow: hidden;
     transition: 0.1s ease;
   }
 
@@ -73,11 +71,8 @@
     top: 15px;
     width: 30px;
     height: 30px;
-    border-radius: 50%;
-    border-style: solid;
+    border-style: none;
     background: transparent;
     opacity: 0.7;
-    font-size: 15px;
-    font-weight: bold;
   }
 }

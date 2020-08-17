@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import { resetPlayer } from 'actions';
+import Close from 'assets/icons/close';
 
 import Placeholder from './placeholder';
 import Card from './card';
@@ -14,11 +14,11 @@ import TotalStats from './totalStats';
 import styles from './index.module.scss';
 
 const Details = ({
+  dispatch,
   size,
   player: { details, isLoading },
   teams,
   selectedTeam: { teamId, teamColor },
-  getSelectedPlayer,
 }) => {
   const ref = useRef();
   const [isSticky, setIsSticky] = useState(false);
@@ -98,9 +98,8 @@ const Details = ({
   ];
 
   const closeDisplay = () => {
-    console.log('closeDisplay');
     setIsPlayerSelected(false);
-    resetPlayer();
+    dispatch({ type: 'RESET_PLAYER' });
   };
 
   return (
@@ -114,13 +113,13 @@ const Details = ({
       )}
     >
       <button
-        style={{ color: `${teamColor}`, borderColor: `${teamColor}` }}
+        // style={{ color: `${teamColor}`, borderColor: `${teamColor}` }}
         onClick={() => {
           closeDisplay();
         }}
         className={styles.mobileButton}
       >
-        X
+        <Close color={teamColor} />
       </button>
       <Card
         player={details}
