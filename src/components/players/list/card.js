@@ -56,7 +56,7 @@ const Card = ({
         {!!Object.keys(player).length && (
           <>
             <div
-              style={screenWidth <= 520 ? { color: `${teamColor}` } : null}
+              style={screenWidth <= 520 ? { color: teamColor } : null}
               className={styles.number}
             >
               {jersey_number}

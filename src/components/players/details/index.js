@@ -88,10 +88,6 @@ const Details = ({
     { title: 'pts', value: points },
   ];
 
-  const closeDisplay = () => {
-    dispatch({ type: 'RESET_PLAYER' });
-  };
-
   return (
     <div
       onScroll={onScroll}
