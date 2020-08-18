@@ -23,7 +23,6 @@ const Details = ({
   const ref = useRef();
   const [isSticky, setIsSticky] = useState(false);
   const [isAnimated, setIsAnimated] = useState(false);
-  const [isPlayerSelected, setIsPlayerSelected] = useState(false);
 
   useEffect(() => {
     if (ref.current) {
@@ -32,14 +31,6 @@ const Details = ({
       ref.current.scrollTo(0, 0);
     }
   }, [details]);
-
-  useEffect(() => {
-    setIsPlayerSelected(true);
-  }, [isLoading]);
-
-  useEffect(() => {
-    setIsPlayerSelected(false);
-  }, [teamId]);
 
   const onScroll = (e) => {
     const breakpointWidth = 1224;
@@ -98,7 +89,6 @@ const Details = ({
   ];
 
   const closeDisplay = () => {
-    setIsPlayerSelected(false);
     dispatch({ type: 'RESET_PLAYER' });
   };
 
@@ -109,7 +99,7 @@ const Details = ({
       className={classnames(
         styles.container,
         isLoading && styles.scrollHidden,
-        screenWidth <= 520 && isPlayerSelected && styles.portraitDisplay
+        screenWidth <= 520 && styles.portraitDisplay
       )}
     >
       <button
