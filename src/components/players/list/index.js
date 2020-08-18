@@ -12,7 +12,6 @@ import Card from './card';
 import styles from './index.module.scss';
 
 const List = ({
-  screenWidth,
   getSelectedPlayer,
   players,
   player: {
@@ -21,6 +20,7 @@ const List = ({
   selectedTeam,
   selectedTeam: { teamId },
   isLoading,
+  screenWidth,
 }) => {
   const domRef = useRef();
 

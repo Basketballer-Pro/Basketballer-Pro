@@ -109,7 +109,7 @@ const Details = ({
       className={classnames(
         styles.container,
         isLoading && styles.scrollHidden,
-        screenWidth < 521 && isPlayerSelected && styles.portraitDisplay
+        screenWidth <= 520 && isPlayerSelected && styles.portraitDisplay
       )}
     >
       <button
