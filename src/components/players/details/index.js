@@ -14,10 +14,10 @@ import TotalStats from './totalStats';
 import styles from './index.module.scss';
 
 const Details = ({
-  player: { details, isLoading },
-  teams,
-  selectedTeam: { teamId, teamColor },
   dispatch,
+  teams,
+  player: { details, isLoading },
+  selectedTeam: { teamId, teamColor },
   screenWidth,
 }) => {
   const ref = useRef();
@@ -138,16 +138,11 @@ const mapStateToProps = ({ player, teams: { teams, selectedTeam } }) => ({
 });
 
 Details.propTypes = {
-  player: PropTypes.object.isRequired,
+  dispatch: PropTypes.func.isRequired,
   teams: PropTypes.array.isRequired,
+  player: PropTypes.object.isRequired,
   selectedTeam: PropTypes.object.isRequired,
-  dispatch: PropTypes.func,
-  screenWidth: PropTypes.number,
-};
-
-Details.defaultProps = {
-  dispatch: null,
-  screenWidth: null,
+  screenWidth: PropTypes.number.isRequired,
 };
 
 export default connect(mapStateToProps)(Details);
