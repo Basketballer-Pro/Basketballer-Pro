@@ -15,23 +15,23 @@ const Card = ({
   history,
   selectedPlayerId,
   player: {
-    first_name,
-    height_ft,
-    height_in,
-    jersey_number,
-    last_name,
-    person_id,
-    position_full,
-    weight_lbs,
+    firstName,
+    heightFeet,
+    heightInches,
+    jersey,
+    lastName,
+    personId,
+    teamSitesOnly,
+    weightPounds,
   },
   screenWidth,
 }) => {
-  const isSelected = person_id === selectedPlayerId;
+  const isSelected = personId === selectedPlayerId;
 
   return (
     <div
       onClick={() => {
-        history.push(`/${urlName}/players/${person_id}`);
+        history.push(`/${urlName}/players/${personId}`);
         getSelectedPlayer(player);
       }}
       className={classnames(
@@ -42,7 +42,7 @@ const Card = ({
       <div className={styles.imageContainer}>
         <img
           src={
-            person_id ? formatPlayerPhotoUrl(teamId, person_id) : placeholderImg
+            personId ? formatPlayerPhotoUrl(teamId, personId) : placeholderImg
           }
           alt="player headshot"
           onError={(e) => (e.target.src = placeholderImg)}
@@ -59,17 +59,15 @@ const Card = ({
               style={screenWidth <= 520 ? { color: `${teamColor}` } : null}
               className={styles.number}
             >
-              {jersey_number}
+              {jersey}
             </div>
             <div className={styles.details}>
               <div className={styles.name}>
-                {first_name} {last_name}
+                {firstName} {lastName}
               </div>
-              <div className={styles.position}>
-                {position_full.replace('-', ' - ')}
-              </div>
+              <div className={styles.position}>{teamSitesOnly.posFull}</div>
               <div className={styles.size}>
-                {height_ft}&apos; {height_in}, {weight_lbs} lbs
+                {heightFeet}&apos; {heightInches}, {weightPounds} lbs
               </div>
             </div>
           </>

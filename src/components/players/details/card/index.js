@@ -9,14 +9,14 @@ import styles from './index.module.scss';
 
 const Card = ({
   player: {
-    person_id,
-    first_name,
-    last_name,
-    jersey_number,
-    position_full,
-    height_ft,
-    height_in,
-    weight_lbs,
+    personId,
+    firstName,
+    lastName,
+    jersey,
+    teamSitesOnly: { posFull },
+    heightFeet,
+    heightInches,
+    weightPounds,
   },
   playerTeamId,
   isSticky,
@@ -27,7 +27,7 @@ const Card = ({
     <div className={styles.card}>
       <div className={styles.imageContainer}>
         <img
-          src={formatPlayerPhotoUrl(playerTeamId, person_id)}
+          src={formatPlayerPhotoUrl(playerTeamId, personId)}
           alt="player headshot"
           onError={(e) => (e.target.src = placeholderImg)}
         />
@@ -51,25 +51,23 @@ const Card = ({
             )}
           >
             <img
-              src={formatPlayerPhotoUrl(playerTeamId, person_id)}
+              src={formatPlayerPhotoUrl(playerTeamId, personId)}
               alt="player headshot"
               onError={(e) => (e.target.src = placeholderImg)}
             />
           </div>
           <div className={styles.info}>
             <div className={styles.playerName}>
-              {first_name} {last_name}
+              {firstName} {lastName}
             </div>
-            <div className={styles.playerPosition}>
-              {position_full.replace('-', ' - ')}
-            </div>
+            <div className={styles.playerPosition}>{posFull}</div>
             <div className={styles.playerDetails}>
-              {height_ft}&apos; {height_in}, {weight_lbs} lbs
+              {heightFeet}&apos; {heightInches}, {weightPounds} lbs
             </div>
           </div>
         </div>
         <div style={{ color: teamColor }} className={styles.playerNumber}>
-          {jersey_number}
+          {jersey}
         </div>
       </div>
     </div>

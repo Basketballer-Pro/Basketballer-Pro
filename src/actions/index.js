@@ -1,5 +1,7 @@
 import dataNbaNet from 'apis';
 import { TEAMS, TEAM_COLORS } from 'enums';
+import playerDetailsReducer from 'reducers/playerDetailsReducer';
+import { TOR } from 'assets/icons/logos';
 
 export const getTeams = (pathname, history) => async (dispatch) => {
   const [defaultTeamName, , defaultPlayerId] = pathname.split('/').slice(1);
@@ -19,27 +21,54 @@ export const getTeams = (pathname, history) => async (dispatch) => {
   dispatch(getSelectedTeam(defaultTeam, defaultPlayerId, history));
 };
 
-export const getSelectedTeam = (team, defaultPlayerId, history) => async (
+export const getSelectedTeam = (team, defaultPlayerId, history, year) => async (
   dispatch
 ) => {
   // reset players list and details
   dispatch({ type: 'RESET_PLAYERS' });
   dispatch({ type: 'PRELOAD_PLAYER_DETAILS', payload: null });
 
+  console.log('team :', team);
+
   // set selected team
   dispatch({ type: 'SET_SELECTED_TEAM', payload: team });
 
-  const teamRosterResponse = await dataNbaNet.get(
-    `/json/cms/noseason/team/${team.urlName}/roster.json`
+  // const teamRosterResponse = await dataNbaNet.get(
+  //   `/json/cms/noseason/team/${team.urlName}/roster.json`
+  // );
+
+  const allPlayersResponse = await dataNbaNet.get(
+    `/prod/v1/${year || '2018'}/players.json`
   );
-  const teamRoster =
-    teamRosterResponse.data.sports_content.roster.players.player;
+  // console.log('all players', allPlayersResponse.data.league.standard);
+  // need to filter by nba
+
+  const allPlayers = allPlayersResponse.data.league.standard;
+  // console.log('all basketball players', allPlayers);
+
+  const singleTeamRosterResponse = await dataNbaNet.get(
+    `/prod/v1/${year || '2018'}/teams/${TEAMS.TOR.ID}/roster.json`
+  );
+
+  const singleTeamRoster =
+    singleTeamRosterResponse.data.league.standard.players;
+
+  // console.log('single team roster :', singleTeamRoster);
+  const teamRoster = allPlayers.filter((playerObj) => {
+    return playerObj.teamId === TEAMS.TOR.ID;
+  });
+
+  // const
+  // prod/v1/{year}/teams/{teamId}/roster.json>`
+
+  // const teamRoster =
+  //   teamRosterResponse.data.sports_content.roster.players.player;
   dispatch({ type: 'SET_PLAYERS', payload: teamRoster });
 
-  // set defaultPlayer if optional defaultPlayerId exists
+  //set defaultPlayer if optional defaultPlayerId exists
   if (defaultPlayerId) {
     const defaultPlayer = teamRoster.find(
-      (player) => player.person_id === defaultPlayerId
+      (player) => player.personId === defaultPlayerId
     );
 
     if (defaultPlayer) {
@@ -51,15 +80,19 @@ export const getSelectedTeam = (team, defaultPlayerId, history) => async (
   }
 };
 
+// were gonna need to know the player id number, and year
 export const getSelectedPlayer = (player) => async (dispatch) => {
   dispatch({ type: 'SET_PLAYER_DETAILS_IS_LOADING', payload: true });
   dispatch({ type: 'PRELOAD_PLAYER_DETAILS', payload: player });
 
+  console.log('here', player);
+  console.log('position', player.teamSitesOnly.posFull);
+
   const playerResponse = await dataNbaNet.get(
-    `/prod/v1/2019/players/${player.person_id}_profile.json`
+    `/prod/v1/2018/players/${player.personId}_profile.json`
   );
   const gamesResponse = await dataNbaNet.get(
-    `/data/10s/prod/v1/2019/players/${player.person_id}_gamelog.json`
+    `/data/10s/prod/v1/2018/players/${player.personId}_gamelog.json`
   );
 
   dispatch({ type: 'UPDATE_PLAYER_DETAILS', payload: playerResponse });

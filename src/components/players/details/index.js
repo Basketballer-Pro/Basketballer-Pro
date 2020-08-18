@@ -49,7 +49,7 @@ const Details = ({
     setIsSticky(e.target.scrollTop >= scrollHeight);
   };
 
-  if (!details.person_id) {
+  if (!details.personId) {
     return (
       <div className={styles.container}>
         <Placeholder />

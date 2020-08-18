@@ -17,7 +17,7 @@ const Header = ({
   getTeams,
   selectedTeam,
   player: {
-    details: { person_id },
+    details: { personId },
   },
 }) => {
   const getTeamsCallback = () => {
@@ -29,7 +29,7 @@ const Header = ({
   return (
     <div className={styles.container}>
       <DropdownMenu />
-      <NavMenu selectedTeam={selectedTeam} playerId={person_id} />
+      <NavMenu selectedTeam={selectedTeam} playerId={personId} />
       <UserLogin />
     </div>
   );
