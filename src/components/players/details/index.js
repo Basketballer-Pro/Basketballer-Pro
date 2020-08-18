@@ -103,9 +103,7 @@ const Details = ({
       )}
     >
       <button
-        onClick={() => {
-          closeDisplay();
-        }}
+        onClick={() => dispatch({ type: 'RESET_PLAYER' })}
         className={styles.portraitButton}
       >
         <Close color={teamColor} />
