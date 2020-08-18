@@ -9,7 +9,6 @@ import { formatPlayerPhotoUrl } from 'utils/stringUtils';
 import styles from './index.module.scss';
 
 const Card = ({
-  screenWidth,
   getSelectedPlayer,
   selectedTeam: { teamColor, teamId, urlName },
   player,
@@ -25,6 +24,7 @@ const Card = ({
     position_full,
     weight_lbs,
   },
+  screenWidth,
 }) => {
   const isSelected = person_id === selectedPlayerId;
 

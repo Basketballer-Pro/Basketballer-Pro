@@ -14,11 +14,11 @@ import TotalStats from './totalStats';
 import styles from './index.module.scss';
 
 const Details = ({
-  dispatch,
-  screenWidth,
   player: { details, isLoading },
   teams,
   selectedTeam: { teamId, teamColor },
+  dispatch,
+  screenWidth,
 }) => {
   const ref = useRef();
   const [isSticky, setIsSticky] = useState(false);
@@ -157,10 +157,12 @@ Details.propTypes = {
   player: PropTypes.object.isRequired,
   teams: PropTypes.array.isRequired,
   selectedTeam: PropTypes.object.isRequired,
+  dispatch: PropTypes.func,
   screenWidth: PropTypes.number,
 };
 
 Details.defaultProps = {
+  dispatch: null,
   screenWidth: null,
 };
 
