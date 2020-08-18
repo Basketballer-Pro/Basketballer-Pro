@@ -25,8 +25,6 @@ const List = ({
 }) => {
   const domRef = useRef();
 
-  console.log('player', player);
-
   useEffect(() => {
     domRef.current.scrollTo(0, 0);
   }, [teamId]);
