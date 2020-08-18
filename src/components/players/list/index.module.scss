@@ -166,7 +166,7 @@
 
 @media all and (max-width: 960px) {
   .container {
-    height: calc(100vh - 77px);
+    height: calc(100vh - 90px);
 
     .detailsContainer {
       .number {
@@ -244,30 +244,33 @@
 }
 
 @media all and (max-width: 670px) {
-  .container .playerCard {
-    .detailsContainer {
-      padding: 0 10px;
-      flex-direction: column-reverse;
-      justify-content: flex-end;
+  .container {
+    height: calc(100vh - 105px);
+    .playerCard {
+      .detailsContainer {
+        padding: 0 10px;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
 
-      .details {
-        justify-content: flex-start;
-        height: auto;
-        padding: 0;
-      }
+        .details {
+          justify-content: flex-start;
+          height: auto;
+          padding: 0;
+        }
 
-      .position {
-        font-size: 11px;
-      }
+        .position {
+          font-size: 11px;
+        }
 
-      .size {
-        font-size: 11px;
-      }
+        .size {
+          font-size: 11px;
+        }
 
-      .number {
-        padding-top: 5px;
-        padding-right: 7px;
-        text-align: left;
+        .number {
+          padding-top: 5px;
+          padding-right: 7px;
+          text-align: left;
+        }
       }
     }
   }
@@ -275,7 +278,7 @@
 
 @media all and (max-width: 520px) {
   .container {
-    height: calc(100vh - 45px);
+    // height: calc(100vh - 45px);
 
     .playerCard {
       .detailsContainer {

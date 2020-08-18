@@ -158,3 +158,9 @@
     }
   }
 }
+
+@media all and (max-width: 520px) {
+  .container {
+    display: none;
+  }
+}

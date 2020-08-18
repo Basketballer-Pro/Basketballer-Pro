@@ -46,9 +46,10 @@
 
 @media all and (max-width: 520px) {
   .container {
-    position: absolute;
-    left: 100%;
-    transition: 0.1s ease;
+    display: none;
+    // position: absolute;
+    // left: 100%;
+    // transition: 0.1s ease;
   }
 
   .portraitDisplay {
