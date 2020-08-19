@@ -20,6 +20,7 @@ const List = ({
   selectedTeam,
   selectedTeam: { teamId },
   isLoading,
+  screenWidth,
 }) => {
   const domRef = useRef();
 
@@ -42,6 +43,7 @@ const List = ({
           selectedTeam={selectedTeam}
           selectedPlayerId={selectedPlayerId}
           player={player}
+          screenWidth={screenWidth}
         />
       ))}
     </div>
@@ -62,6 +64,7 @@ List.propTypes = {
   player: PropTypes.object.isRequired,
   selectedTeam: PropTypes.object.isRequired,
   isLoading: PropTypes.bool.isRequired,
+  screenWidth: PropTypes.number.isRequired,
 };
 
 export default connect(mapStateToProps, { getSelectedPlayer })(List);

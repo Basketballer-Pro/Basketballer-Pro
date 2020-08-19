@@ -24,6 +24,7 @@ const Card = ({
     position_full,
     weight_lbs,
   },
+  screenWidth,
 }) => {
   const isSelected = person_id === selectedPlayerId;
 
@@ -54,7 +55,12 @@ const Card = ({
       >
         {!!Object.keys(player).length && (
           <>
-            <div className={styles.number}>{jersey_number}</div>
+            <div
+              style={screenWidth <= 520 ? { color: teamColor } : null}
+              className={styles.number}
+            >
+              {jersey_number}
+            </div>
             <div className={styles.details}>
               <div className={styles.name}>
                 {first_name} {last_name}
@@ -77,12 +83,12 @@ Card.propTypes = {
   getSelectedPlayer: PropTypes.func.isRequired,
   selectedTeam: PropTypes.object.isRequired,
   player: PropTypes.object.isRequired,
-  history: PropTypes.object,
+  history: PropTypes.object.isRequired,
+  screenWidth: PropTypes.number.isRequired,
   selectedPlayerId: PropTypes.string,
 };
 
 Card.defaultProps = {
-  history: null,
   selectedPlayerId: null,
 };
 

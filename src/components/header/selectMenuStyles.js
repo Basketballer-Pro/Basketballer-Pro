@@ -10,7 +10,7 @@ const selectMenuStyles = (teamColor) => {
         width: 230,
       },
       '@media all and (max-width: 520px)': {
-        width: '95%',
+        width: '100%',
       },
     }),
     control: () => ({
@@ -59,6 +59,9 @@ const selectMenuStyles = (teamColor) => {
       padding: 0,
       '@media all and (max-width: 736px)': {
         maxHeight: '60vh',
+      },
+      '@media all and (max-width: 520px)': {
+        width: '100%',
       },
     }),
   };

@@ -1,3 +1,10 @@
+const initialState = {
+  details: {
+    recentGames: [],
+  },
+  isLoading: false,
+};
+
 export default (
   state = {
     details: {
@@ -8,6 +15,8 @@ export default (
   action
 ) => {
   switch (action.type) {
+    case 'RESET_PLAYER':
+      return initialState;
     case 'SET_PLAYER_DETAILS_IS_LOADING':
       return {
         ...state,

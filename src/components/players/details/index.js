@@ -1,7 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+
+import Close from 'assets/icons/close';
 
 import Placeholder from './placeholder';
 import Card from './card';
@@ -12,9 +15,12 @@ import TotalStats from './totalStats';
 import styles from './index.module.scss';
 
 const Details = ({
-  player: { details, isLoading },
+  dispatch,
   teams,
-  selectedTeam: { teamId, teamColor },
+  history,
+  player: { details, isLoading },
+  selectedTeam: { teamId, teamColor, urlName },
+  screenWidth,
 }) => {
   const ref = useRef();
   const [isSticky, setIsSticky] = useState(false);
@@ -88,8 +94,24 @@ const Details = ({
     <div
       onScroll={onScroll}
       ref={ref}
-      className={classnames(styles.container, isLoading && styles.scrollHidden)}
+      className={classnames(
+        styles.container,
+        isLoading && styles.scrollHidden,
+        screenWidth <= 520 && styles.portraitDisplay
+      )}
     >
+      <button
+        onClick={() => {
+          dispatch({ type: 'RESET_PLAYER' });
+          history.push(`/${urlName}/players`);
+        }}
+        className={classnames(
+          styles.portraitButton,
+          isAnimated && styles.positionFixed
+        )}
+      >
+        <Close />
+      </button>
       <Card
         player={details}
         playerTeamId={teamId}
@@ -124,9 +146,12 @@ const mapStateToProps = ({ player, teams: { teams, selectedTeam } }) => ({
 });
 
 Details.propTypes = {
-  player: PropTypes.object.isRequired,
+  dispatch: PropTypes.func.isRequired,
   teams: PropTypes.array.isRequired,
+  history: PropTypes.object.isRequired,
+  player: PropTypes.object.isRequired,
   selectedTeam: PropTypes.object.isRequired,
+  screenWidth: PropTypes.number.isRequired,
 };
 
-export default connect(mapStateToProps)(Details);
+export default connect(mapStateToProps)(withRouter(Details));
