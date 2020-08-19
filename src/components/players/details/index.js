@@ -105,7 +105,10 @@ const Details = ({
           dispatch({ type: 'RESET_PLAYER' });
           history.push(`/${urlName}/players`);
         }}
-        className={styles.portraitButton}
+        className={classnames(
+          styles.portraitButton,
+          isAnimated && styles.closeButtonMove
+        )}
       >
         <Close color={teamColor} />
       </button>

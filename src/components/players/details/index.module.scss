@@ -46,11 +46,9 @@
 
 @media all and (max-width: 520px) {
   .container {
-    // display: none;
     position: absolute;
     left: 100%;
     transition: 0.2s ease;
-    // overflow: hidden;
   }
 
   .portraitDisplay {
@@ -69,5 +67,11 @@
     border-style: none;
     background: transparent;
     opacity: 0.7;
+  }
+
+  .closeButtonMove {
+    position: fixed;
+    top: 106px;
+    z-index: 3;
   }
 }
