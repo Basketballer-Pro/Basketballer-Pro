@@ -15,9 +15,9 @@ import TotalStats from './totalStats';
 import styles from './index.module.scss';
 
 const Details = ({
-  history,
   dispatch,
   teams,
+  history,
   player: { details, isLoading },
   selectedTeam: { teamId, teamColor, urlName },
   screenWidth,
@@ -97,7 +97,7 @@ const Details = ({
       className={classnames(
         styles.container,
         isLoading && styles.scrollHidden,
-        screenWidth <= 520 && details.person_id && styles.portraitDisplay
+        screenWidth <= 520 && styles.portraitDisplay
       )}
     >
       <button
@@ -148,6 +148,7 @@ const mapStateToProps = ({ player, teams: { teams, selectedTeam } }) => ({
 Details.propTypes = {
   dispatch: PropTypes.func.isRequired,
   teams: PropTypes.array.isRequired,
+  history: PropTypes.object.isRequired,
   player: PropTypes.object.isRequired,
   selectedTeam: PropTypes.object.isRequired,
   screenWidth: PropTypes.number.isRequired,
