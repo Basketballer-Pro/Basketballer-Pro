@@ -166,7 +166,7 @@
 
 @media all and (max-width: 960px) {
   .container {
-    height: calc(100vh - 77px);
+    height: calc(100vh - 90px);
 
     .detailsContainer {
       .number {
@@ -176,14 +176,6 @@
       .details {
         .name {
           font-size: 13px;
-        }
-
-        .position {
-          font-size: 11px;
-        }
-
-        .size {
-          font-size: 10px;
         }
       }
     }
@@ -244,52 +236,55 @@
 }
 
 @media all and (max-width: 670px) {
-  .container .playerCard {
-    .detailsContainer {
-      padding: 0 10px;
-      flex-direction: column-reverse;
-      justify-content: flex-end;
+  .container {
+    height: calc(100vh - 105px);
 
-      .details {
-        justify-content: flex-start;
-        height: auto;
-        padding: 0;
-      }
+    .playerCard {
+      .detailsContainer {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        padding: 0 10px;
 
-      .position {
-        font-size: 11px;
-      }
+        .details {
+          justify-content: flex-start;
+          height: auto;
+          padding: 0;
+        }
 
-      .size {
-        font-size: 11px;
-      }
+        .position {
+          font-size: 11px;
+        }
 
-      .number {
-        padding-top: 5px;
-        padding-right: 7px;
-        text-align: left;
+        .size {
+          font-size: 11px;
+        }
+
+        .number {
+          padding-top: 5px;
+          padding-right: 7px;
+          text-align: left;
+        }
+        .position {
+          font-size: 12px;
+        }
       }
     }
   }
 }
 
 @media all and (max-width: 520px) {
-  .container {
-    height: calc(100vh - 45px);
+  .container .playerCard {
+    .detailsContainer {
+      flex-direction: row-reverse;
+      flex-grow: 1;
 
-    .playerCard {
-      .detailsContainer {
-        flex-direction: row-reverse;
+      .details {
         flex-grow: 1;
+      }
 
-        .details {
-          flex-grow: 1;
-        }
-
-        .number {
-          text-align: right;
-          font-size: 16px;
-        }
+      .number {
+        text-align: right;
+        font-size: 16px;
       }
     }
   }

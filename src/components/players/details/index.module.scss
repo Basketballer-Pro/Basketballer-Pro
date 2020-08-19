@@ -48,7 +48,7 @@
   .container {
     position: absolute;
     left: 100%;
-    transition: 0.1s ease;
+    transition: 0.2s ease;
   }
 
   .portraitDisplay {
@@ -67,5 +67,11 @@
     border-style: none;
     background: transparent;
     opacity: 0.7;
+  }
+
+  .positionFixed {
+    position: fixed;
+    top: 106px;
+    z-index: 1;
   }
 }

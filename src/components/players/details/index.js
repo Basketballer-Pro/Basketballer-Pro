@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -14,16 +15,16 @@ import TotalStats from './totalStats';
 import styles from './index.module.scss';
 
 const Details = ({
-  player: { details, isLoading },
-  teams,
-  selectedTeam: { teamId, teamColor },
   dispatch,
+  teams,
+  history,
+  player: { details, isLoading },
+  selectedTeam: { teamId, teamColor, urlName },
   screenWidth,
 }) => {
   const ref = useRef();
   const [isSticky, setIsSticky] = useState(false);
   const [isAnimated, setIsAnimated] = useState(false);
-  const [isPlayerSelected, setIsPlayerSelected] = useState(false);
 
   useEffect(() => {
     if (ref.current) {
@@ -32,14 +33,6 @@ const Details = ({
       ref.current.scrollTo(0, 0);
     }
   }, [details]);
-
-  useEffect(() => {
-    setIsPlayerSelected(true);
-  }, [isLoading]);
-
-  useEffect(() => {
-    setIsPlayerSelected(false);
-  }, [teamId]);
 
   const onScroll = (e) => {
     const breakpointWidth = 1224;
@@ -97,11 +90,6 @@ const Details = ({
     { title: 'pts', value: points },
   ];
 
-  const closeDisplay = () => {
-    setIsPlayerSelected(false);
-    dispatch({ type: 'RESET_PLAYER' });
-  };
-
   return (
     <div
       onScroll={onScroll}
@@ -109,16 +97,20 @@ const Details = ({
       className={classnames(
         styles.container,
         isLoading && styles.scrollHidden,
-        screenWidth <= 520 && isPlayerSelected && styles.portraitDisplay
+        screenWidth <= 520 && styles.portraitDisplay
       )}
     >
       <button
         onClick={() => {
-          closeDisplay();
+          dispatch({ type: 'RESET_PLAYER' });
+          history.push(`/${urlName}/players`);
         }}
-        className={styles.portraitButton}
+        className={classnames(
+          styles.portraitButton,
+          isAnimated && styles.positionFixed
+        )}
       >
-        <Close color={teamColor} />
+        <Close />
       </button>
       <Card
         player={details}
@@ -154,16 +146,12 @@ const mapStateToProps = ({ player, teams: { teams, selectedTeam } }) => ({
 });
 
 Details.propTypes = {
-  player: PropTypes.object.isRequired,
+  dispatch: PropTypes.func.isRequired,
   teams: PropTypes.array.isRequired,
+  history: PropTypes.object.isRequired,
+  player: PropTypes.object.isRequired,
   selectedTeam: PropTypes.object.isRequired,
-  dispatch: PropTypes.func,
-  screenWidth: PropTypes.number,
+  screenWidth: PropTypes.number.isRequired,
 };
 
-Details.defaultProps = {
-  dispatch: null,
-  screenWidth: null,
-};
-
-export default connect(mapStateToProps)(Details);
+export default connect(mapStateToProps)(withRouter(Details));

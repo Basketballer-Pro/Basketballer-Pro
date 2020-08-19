@@ -56,7 +56,7 @@ const Card = ({
         {!!Object.keys(player).length && (
           <>
             <div
-              style={screenWidth <= 520 ? { color: `${teamColor}` } : null}
+              style={screenWidth <= 520 ? { color: teamColor } : null}
               className={styles.number}
             >
               {jersey}
@@ -81,15 +81,13 @@ Card.propTypes = {
   getSelectedPlayer: PropTypes.func.isRequired,
   selectedTeam: PropTypes.object.isRequired,
   player: PropTypes.object.isRequired,
-  history: PropTypes.object,
+  history: PropTypes.object.isRequired,
+  screenWidth: PropTypes.number.isRequired,
   selectedPlayerId: PropTypes.string,
-  screenWidth: PropTypes.number,
 };
 
 Card.defaultProps = {
-  history: null,
   selectedPlayerId: null,
-  screenWidth: null,
 };
 
 export default withRouter(Card);
