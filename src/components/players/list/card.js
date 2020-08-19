@@ -83,13 +83,12 @@ Card.propTypes = {
   getSelectedPlayer: PropTypes.func.isRequired,
   selectedTeam: PropTypes.object.isRequired,
   player: PropTypes.object.isRequired,
-  history: PropTypes.object,
-  selectedPlayerId: PropTypes.string,
+  history: PropTypes.object.isRequired,
   screenWidth: PropTypes.number.isRequired,
+  selectedPlayerId: PropTypes.string,
 };
 
 Card.defaultProps = {
-  history: null,
   selectedPlayerId: null,
 };
 
