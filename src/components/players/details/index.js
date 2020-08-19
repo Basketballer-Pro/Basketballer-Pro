@@ -110,7 +110,7 @@ const Details = ({
           isAnimated && styles.positionFixed
         )}
       >
-        <Close color={teamColor} />
+        <Close />
       </button>
       <Card
         player={details}

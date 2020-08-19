@@ -85,13 +85,12 @@ Card.propTypes = {
   player: PropTypes.object.isRequired,
   history: PropTypes.object,
   selectedPlayerId: PropTypes.string,
-  screenWidth: PropTypes.number,
+  screenWidth: PropTypes.number.isRequired,
 };
 
 Card.defaultProps = {
   history: null,
   selectedPlayerId: null,
-  screenWidth: null,
 };
 
 export default withRouter(Card);
