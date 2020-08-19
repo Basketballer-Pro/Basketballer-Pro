@@ -107,7 +107,7 @@ const Details = ({
         }}
         className={classnames(
           styles.portraitButton,
-          isAnimated && styles.closeButtonMove
+          isAnimated && styles.positionFixed
         )}
       >
         <Close color={teamColor} />
