@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -14,10 +15,11 @@ import TotalStats from './totalStats';
 import styles from './index.module.scss';
 
 const Details = ({
+  history,
   dispatch,
   teams,
   player: { details, isLoading },
-  selectedTeam: { teamId, teamColor },
+  selectedTeam: { teamId, teamColor, urlName },
   screenWidth,
 }) => {
   const ref = useRef();
@@ -95,11 +97,14 @@ const Details = ({
       className={classnames(
         styles.container,
         isLoading && styles.scrollHidden,
-        screenWidth <= 520 && styles.portraitDisplay
+        screenWidth <= 520 && details.person_id && styles.portraitDisplay
       )}
     >
       <button
-        onClick={() => dispatch({ type: 'RESET_PLAYER' })}
+        onClick={() => {
+          dispatch({ type: 'RESET_PLAYER' });
+          history.push(`/${urlName}/players`);
+        }}
         className={styles.portraitButton}
       >
         <Close color={teamColor} />
@@ -145,4 +150,4 @@ Details.propTypes = {
   screenWidth: PropTypes.number.isRequired,
 };
 
-export default connect(mapStateToProps)(Details);
+export default connect(mapStateToProps)(withRouter(Details));
