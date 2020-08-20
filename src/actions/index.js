@@ -1,7 +1,5 @@
 import dataNbaNet from 'apis';
 import { TEAMS, TEAM_COLORS } from 'enums';
-import playerDetailsReducer from 'reducers/playerDetailsReducer';
-import { TOR } from 'assets/icons/logos';
 
 export const getTeams = (pathname, history) => async (dispatch) => {
   const [defaultTeamName, , defaultPlayerId] = pathname.split('/').slice(1);
