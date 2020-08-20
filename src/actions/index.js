@@ -40,12 +40,6 @@ export const getSelectedTeam = (
     return playerObj.teamId === team.teamId;
   });
 
-  // const singleTeamRosterResponse = await dataNbaNet.get(
-  //   `/prod/v1/${year}/teams/${team}/roster.json`
-  // );
-  // const singleTeamRoster =
-  //   singleTeamRosterResponse.data.league.standard.players;
-
   dispatch({ type: 'SET_PLAYERS', payload: teamRoster });
 
   //set defaultPlayer if optional defaultPlayerId exists
