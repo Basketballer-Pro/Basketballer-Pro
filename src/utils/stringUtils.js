@@ -6,5 +6,5 @@
  * @param {string} year
  * @returns {string}
  */
-export const formatPlayerPhotoUrl = (playerTeamId, playerId, year = '2018') =>
+export const formatPlayerPhotoUrl = (playerTeamId, playerId, year = '2019') =>
   `https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/${playerTeamId}/${year}/260x190/${playerId}.png`;
