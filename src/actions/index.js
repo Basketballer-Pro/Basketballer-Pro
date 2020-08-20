@@ -22,7 +22,7 @@ export const getTeams = (pathname, history) => async (dispatch) => {
 };
 
 export const getSelectedTeam = (
-  team = TEAMS.TOR.ID,
+  team,
   defaultPlayerId,
   history,
   year = '2018'
@@ -39,7 +39,7 @@ export const getSelectedTeam = (
   );
   const allPlayers = allPlayersResponse.data.league.standard;
   const teamRoster = allPlayers.filter((playerObj) => {
-    return playerObj.teamId === team;
+    return playerObj.teamId === team.teamId;
   });
 
   // const singleTeamRosterResponse = await dataNbaNet.get(

@@ -14,7 +14,6 @@ import selectMenuStyles from './selectMenuStyles';
 import styles from './dropdownMenu.module.scss';
 
 const DropdownMenu = ({ teams, selectedTeam, getSelectedTeam, history }) => {
-  console.log('teams: ', teams);
   const { teamId: selectedTeamId, teamColor } = selectedTeam;
   const chevron = () => <Chevron color={'white'} className={styles.chevron} />;
 
