@@ -36,8 +36,8 @@ export const getSelectedTeam = (
     `/prod/v1/${year}/players.json`
   );
   const allPlayers = allPlayersResponse.data.league.standard;
-  const teamRoster = allPlayers.filter((playerObj) => {
-    return playerObj.teamId === team.teamId;
+  const teamRoster = allPlayers.filter((player) => {
+    return player.teamId === team.teamId;
   });
 
   dispatch({ type: 'SET_PLAYERS', payload: teamRoster });
