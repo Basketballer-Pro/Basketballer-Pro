@@ -32,7 +32,7 @@
   }
 }
 
-@media all and (min-width: 671px) and (max-width: 736px) {
+@media all and (min-width: 671px) and (max-width: 736px) /*and (orientation: landscape) */ {
   .container {
     min-width: 270px;
   }
@@ -46,9 +46,7 @@
 
 @media all and (max-width: 520px) {
   .container {
-    position: absolute;
-    left: 100%;
-    transition: 0.2s ease;
+    display: none;
   }
 
   .portraitDisplay {
