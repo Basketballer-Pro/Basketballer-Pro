@@ -13,9 +13,11 @@ const Card = ({
     firstName,
     lastName,
     jersey,
-    teamSitesOnly: { posFull },
+    teamSitesOnly,
     heightFeet,
     heightInches,
+    pos,
+    selectedYear,
     weightPounds,
   },
   playerTeamId,
@@ -27,7 +29,7 @@ const Card = ({
     <div className={styles.card}>
       <div className={styles.imageContainer}>
         <img
-          src={formatPlayerPhotoUrl(playerTeamId, personId)}
+          src={formatPlayerPhotoUrl(playerTeamId, personId, selectedYear)}
           alt="player headshot"
           onError={(e) => (e.target.src = placeholderImg)}
         />
@@ -51,7 +53,7 @@ const Card = ({
             )}
           >
             <img
-              src={formatPlayerPhotoUrl(playerTeamId, personId)}
+              src={formatPlayerPhotoUrl(playerTeamId, personId, selectedYear)}
               alt="player headshot"
               onError={(e) => (e.target.src = placeholderImg)}
             />
@@ -60,7 +62,9 @@ const Card = ({
             <div className={styles.playerName}>
               {firstName} {lastName}
             </div>
-            <div className={styles.playerPosition}>{posFull}</div>
+            <div className={styles.playerPosition}>
+              {teamSitesOnly ? teamSitesOnly.posFull : pos}
+            </div>
             <div className={styles.playerDetails}>
               {heightFeet}&apos; {heightInches}, {weightPounds} lbs
             </div>

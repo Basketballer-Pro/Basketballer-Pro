@@ -21,6 +21,7 @@ const Card = ({
     jersey,
     lastName,
     personId,
+    pos,
     teamSitesOnly,
     selectedYear,
     weightPounds,
@@ -28,6 +29,8 @@ const Card = ({
   screenWidth,
 }) => {
   const isSelected = personId === selectedPlayerId;
+
+  console.log('pos', pos);
 
   console.log('selected year', selectedYear);
 
@@ -71,7 +74,7 @@ const Card = ({
                 {firstName} {lastName}
               </div>
               <div className={styles.position}>
-                {/* {teamSitesOnly.posFull || 'null'} */}x
+                {teamSitesOnly ? teamSitesOnly.posFull : pos}
               </div>
               <div className={styles.size}>
                 {heightFeet}&apos; {heightInches}, {weightPounds} lbs

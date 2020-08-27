@@ -25,8 +25,6 @@ export const getSelectedTeam = (team, defaultPlayerId, history, year) => async (
   dispatch
 ) => {
   // reset players list and details
-  // console.log('i fired');
-  // console.log('team: ', team);
   dispatch({ type: 'RESET_PLAYERS' });
   dispatch({ type: 'PRELOAD_PLAYER_DETAILS', payload: null });
 
@@ -37,7 +35,6 @@ export const getSelectedTeam = (team, defaultPlayerId, history, year) => async (
     `/prod/v1/${year}/players.json`
   );
 
-  // console.log('allPlayersResponse', allPlayersResponse);
   const allPlayers = allPlayersResponse.data.league.standard;
   const teamRoster = allPlayers.filter((player) => {
     return player.teamId === team.teamId;
