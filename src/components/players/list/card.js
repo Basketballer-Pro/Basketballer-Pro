@@ -22,11 +22,14 @@ const Card = ({
     lastName,
     personId,
     teamSitesOnly,
+    selectedYear,
     weightPounds,
   },
   screenWidth,
 }) => {
   const isSelected = personId === selectedPlayerId;
+
+  console.log('selected year', selectedYear);
 
   return (
     <div
@@ -42,7 +45,9 @@ const Card = ({
       <div className={styles.imageContainer}>
         <img
           src={
-            personId ? formatPlayerPhotoUrl(teamId, personId) : placeholderImg
+            personId
+              ? formatPlayerPhotoUrl(teamId, personId, selectedYear)
+              : placeholderImg
           }
           alt="player headshot"
           onError={(e) => (e.target.src = placeholderImg)}
@@ -65,7 +70,9 @@ const Card = ({
               <div className={styles.name}>
                 {firstName} {lastName}
               </div>
-              <div className={styles.position}>{teamSitesOnly.posFull}</div>
+              <div className={styles.position}>
+                {/* {teamSitesOnly.posFull || 'null'} */}x
+              </div>
               <div className={styles.size}>
                 {heightFeet}&apos; {heightInches}, {weightPounds} lbs
               </div>
