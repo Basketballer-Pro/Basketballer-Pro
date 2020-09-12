@@ -47,21 +47,21 @@ export const getSelectedTeam = (team, defaultPlayerId, history, year) => async (
   dispatch({ type: 'SET_PLAYERS', payload: rosterWithYear });
 
   //set defaultPlayer if optional defaultPlayerId exists
-  // if (defaultPlayerId) {
-  //   const defaultPlayer = teamRoster.find(
-  //     (player) => player.personId === defaultPlayerId
-  //   );
+  if (defaultPlayerId) {
+    const defaultPlayer = teamRoster.find(
+      (player) => player.personId === defaultPlayerId
+    );
 
-  //   if (defaultPlayer) {
-  //     dispatch(getSelectedPlayer(defaultPlayer));
-  //   } else {
-  //     //removes invalid defaultPlayerId
-  //     history.push('/');
-  //   }
-  // }
+    if (defaultPlayer) {
+      dispatch(getSelectedPlayer(defaultPlayer, year));
+    } else {
+      //removes invalid defaultPlayerId
+      history.push('/');
+    }
+  }
 };
 
-export const getSelectedPlayer = (player, year = 2019) => async (dispatch) => {
+export const getSelectedPlayer = (player, year) => async (dispatch) => {
   dispatch({ type: 'SET_PLAYER_DETAILS_IS_LOADING', payload: true });
   dispatch({ type: 'PRELOAD_PLAYER_DETAILS', payload: player });
 

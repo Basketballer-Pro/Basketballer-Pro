@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Select from 'react-select';
 import { connect } from 'react-redux';
 
@@ -7,24 +7,27 @@ import { getSelectedTeam } from 'actions';
 
 const Filter = ({ teams, players, title, options, array, getSelectedTeam }) => {
   const years = [
-    { value: 2019, label: 2019 },
-    { value: 2018, label: 2018 },
-    { value: 2017, label: 2017 },
-    { value: 2016, label: 2016 },
+    { value: 2019, label: '2019 - 2020' },
+    { value: 2018, label: '2018 - 2019' },
+    { value: 2017, label: '2017 - 2018' },
   ];
 
   const selectedTeam = teams.selectedTeam;
-  const selectedTeamId = selectedTeam.teamId;
+
+  // const [optionsMenu, setOptionsMenu] = useState(years);
 
   const handleChange = (e) => {
     getSelectedTeam(selectedTeam, null, null, e.value);
   };
+
+  // const defaultValue = { value: 2019, label: '2019 - 2020' };
 
   return (
     <div className={styles.container}>
       <Select
         defaultValue={years[0]}
         options={years}
+        // value={years.find((year) => year.value === selectedYear)}
         onChange={(e) => handleChange(e)}
       />
     </div>

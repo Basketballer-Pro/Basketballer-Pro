@@ -30,15 +30,11 @@ const Card = ({
 }) => {
   const isSelected = personId === selectedPlayerId;
 
-  console.log('pos', pos);
-
-  console.log('selected year', selectedYear);
-
   return (
     <div
       onClick={() => {
         history.push(`/${urlName}/players/${personId}`);
-        getSelectedPlayer(player);
+        getSelectedPlayer(player, selectedYear);
       }}
       className={classnames(
         styles.playerCard,
