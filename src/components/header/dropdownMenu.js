@@ -13,9 +13,17 @@ import { getSelectedTeam } from 'actions';
 import selectMenuStyles from './selectMenuStyles';
 import styles from './dropdownMenu.module.scss';
 
-const DropdownMenu = ({ teams, selectedTeam, getSelectedTeam, history }) => {
+const DropdownMenu = ({
+  teams,
+  selectedTeam,
+  getSelectedTeam,
+  history,
+  list,
+}) => {
   const { teamId: selectedTeamId, teamColor } = selectedTeam;
   const chevron = () => <Chevron color={'white'} className={styles.chevron} />;
+  const object = list.find((obj) => obj.selectedYear);
+  const selectedYear = object && object.selectedYear;
 
   const renderItem = (
     { data: { teamColor, fullName, tricode, teamId }, innerProps },
@@ -62,7 +70,7 @@ const DropdownMenu = ({ teams, selectedTeam, getSelectedTeam, history }) => {
         }}
         onChange={(team) => {
           history.push(`/${team.urlName}/players`);
-          getSelectedTeam(team);
+          getSelectedTeam(team, null, null, selectedYear);
         }}
       />
       <div
@@ -75,15 +83,20 @@ const DropdownMenu = ({ teams, selectedTeam, getSelectedTeam, history }) => {
   );
 };
 
-const mapStateToProps = ({ teams: { teams, selectedTeam } }) => {
+const mapStateToProps = ({
+  teams: { teams, selectedTeam },
+  players: { list },
+}) => {
   return {
     teams,
     selectedTeam,
+    list,
   };
 };
 
 DropdownMenu.propTypes = {
   getSelectedTeam: PropTypes.func.isRequired,
+  list: PropTypes.array.isRequired,
   teams: PropTypes.array.isRequired,
   selectedTeam: PropTypes.object.isRequired,
   history: PropTypes.object.isRequired,

@@ -22,13 +22,9 @@ const Filter = ({ teams, players, title, options, array, getSelectedTeam }) => {
 
   const selectedTeam = teams.selectedTeam;
 
-  // const [optionsMenu, setOptionsMenu] = useState(years);
-
   const handleChange = (e) => {
     getSelectedTeam(selectedTeam, null, null, e.value);
   };
-
-  // const defaultValue = { value: 2019, label: '2019 - 2020' };
 
   return (
     <div className={styles.container}>
@@ -36,7 +32,6 @@ const Filter = ({ teams, players, title, options, array, getSelectedTeam }) => {
         styles={menuStyles()}
         defaultValue={years[0]}
         options={years}
-        // defaultMenuIsOpen
         // value={years.find((year) => year.value === selectedYear)}
         onChange={(e) => handleChange(e)}
       />
