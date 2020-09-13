@@ -5,6 +5,14 @@ import { connect } from 'react-redux';
 import styles from './filter.module.scss';
 import { getSelectedTeam } from 'actions';
 
+const menuStyles = (provided) => {
+  return {
+    option: (provided, state) => ({
+      display: state.isSelected && 'none',
+    }),
+  };
+};
+
 const Filter = ({ teams, players, title, options, array, getSelectedTeam }) => {
   const years = [
     { value: 2019, label: '2019 - 2020' },
@@ -25,8 +33,10 @@ const Filter = ({ teams, players, title, options, array, getSelectedTeam }) => {
   return (
     <div className={styles.container}>
       <Select
+        styles={menuStyles()}
         defaultValue={years[0]}
         options={years}
+        // defaultMenuIsOpen
         // value={years.find((year) => year.value === selectedYear)}
         onChange={(e) => handleChange(e)}
       />
