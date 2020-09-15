@@ -12,11 +12,16 @@ const Filter = ({ teams, getSelectedTeam }) => {
     { value: 2017, label: '2017 - 2018' },
   ];
 
-  const menuStyles = () => {
+  const menuStyles = (state) => {
+    console.log('state', state);
     return {
-      option: (state) => ({
-        display: state.isSelected && 'none',
-      }),
+      option: (state) => (
+        {
+          // display: state.isSelected || (state.value && 'none'),
+          display: state.isDefaultValue && 'none',
+        },
+        console.log('statey', state)
+      ),
     };
   };
 
@@ -29,9 +34,12 @@ const Filter = ({ teams, getSelectedTeam }) => {
   return (
     <div className={styles.container}>
       <Select
-        styles={menuStyles()}
+        // styles={menuStyles()}
         defaultValue={years[0]}
+        placeholder={years[0]}
         options={years}
+        hideSelectedOptions
+        isSearchable={false}
         onChange={(e) => handleChange(e)}
       />
     </div>
