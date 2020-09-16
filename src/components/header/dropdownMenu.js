@@ -21,7 +21,9 @@ const DropdownMenu = ({
   list,
 }) => {
   const { teamId: selectedTeamId, teamColor } = selectedTeam;
-  const chevron = () => <Chevron color={'white'} className={styles.chevron} />;
+  const chevron = () => (
+    <Chevron color={'white'} width={14} height={7} className={styles.chevron} />
+  );
   const object = list.find((obj) => obj.selectedYear);
   const selectedYear = object && object.selectedYear;
 

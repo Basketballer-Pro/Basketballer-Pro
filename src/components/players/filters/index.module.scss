@@ -1,12 +1,15 @@
 @import 'src/scss/variables.scss';
 
-.filters {
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 45px;
   background-color: $white;
 }
 
 @media all and (min-width: 521px) and (max-width: 736px) {
-  .filters {
+  .container {
     display: none;
   }
 }

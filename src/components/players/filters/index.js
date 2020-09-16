@@ -6,7 +6,7 @@ import styles from './index.module.scss';
 
 const Filters = () => {
   return (
-    <div className={styles.filters}>
+    <div className={styles.container}>
       <Filter />
     </div>
   );

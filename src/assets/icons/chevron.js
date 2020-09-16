@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Chevron = ({ color, className }) => {
+const Chevron = ({ width, height, color, className }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={14}
-      height={7}
+      // width={14}
+      // height={7}
+      width={width}
+      height={height}
       viewBox="0 0 14 7"
       className={className}
     >
@@ -23,6 +25,8 @@ const Chevron = ({ color, className }) => {
 Chevron.propTypes = {
   color: PropTypes.string.isRequired,
   className: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
 };
 
 Chevron.defaultProps = {
