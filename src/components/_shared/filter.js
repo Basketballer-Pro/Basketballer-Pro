@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import styles from './filter.module.scss';
 import { getSelectedTeam } from 'actions';
+import selectMenuStyles from 'components/_shared/selectMenuStyles';
+import Chevron from 'assets/icons/chevron';
 
 const Filter = ({ teams, getSelectedTeam }) => {
   const years = [
@@ -11,19 +13,14 @@ const Filter = ({ teams, getSelectedTeam }) => {
     { value: 2018, label: '2018 - 2019' },
     { value: 2017, label: '2017 - 2018' },
   ];
-
-  const menuStyles = (state) => {
-    console.log('state', state);
-    return {
-      option: (state) => (
-        {
-          // display: state.isSelected || (state.value && 'none'),
-          display: state.isDefaultValue && 'none',
-        },
-        console.log('statey', state)
-      ),
-    };
-  };
+  const chevron = () => (
+    <Chevron
+      color={'#5C5C5C'}
+      width={10}
+      height={5}
+      className={styles.chevron}
+    />
+  );
 
   const selectedTeam = teams.selectedTeam;
 
@@ -34,12 +31,15 @@ const Filter = ({ teams, getSelectedTeam }) => {
   return (
     <div className={styles.container}>
       <Select
-        // styles={menuStyles()}
+        styles={selectMenuStyles()}
         defaultValue={years[0]}
         placeholder={years[0]}
         options={years}
         hideSelectedOptions
         isSearchable={false}
+        components={{
+          DropdownIndicator: chevron,
+        }}
         onChange={(e) => handleChange(e)}
       />
     </div>
