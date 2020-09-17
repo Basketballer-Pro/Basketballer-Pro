@@ -12,6 +12,8 @@ const selectMenuStyles = () => {
       boxShadow: 'none',
       border: 'none',
       borderRadius: 'none',
+      cursor: 'pointer',
+
       borderBottom: '1px solid grey',
       '&:hover': {
         borderColor: 'none',
@@ -45,6 +47,7 @@ const selectMenuStyles = () => {
     option: (provided) => ({
       ...provided,
       color: '#5C5C5C',
+      cursor: 'pointer',
       backgroundColor: 'none',
       '&:hover': {
         backgroundColor: '#EEEEEE',
