@@ -21,9 +21,9 @@ const Card = ({
     weightPounds,
   },
   playerTeamId,
+  teamColor,
   isSticky,
   isAnimated,
-  teamColor,
 }) => (
   <>
     <div className={styles.card}>
@@ -82,7 +82,6 @@ Card.propTypes = {
   player: PropTypes.object.isRequired,
   playerTeamId: PropTypes.string.isRequired,
   teamColor: PropTypes.string.isRequired,
-  selectedYear: PropTypes.number.isRequired,
   isSticky: PropTypes.bool.isRequired,
   isAnimated: PropTypes.bool.isRequired,
 };
