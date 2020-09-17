@@ -67,3 +67,15 @@ export const MVP_PLAYERS = Object.freeze([
 ]);
 
 export const DEFAULT_YEAR = 2019;
+
+/**
+ * Enum for years array.
+ * @readonly
+ * @enum {{ value: number, label: string }}
+ */
+
+export const YEARS = Object.freeze([
+  { value: 2019, label: '2019 - 20' },
+  { value: 2018, label: '2018 - 19' },
+  { value: 2017, label: '2017 - 18' },
+]);

@@ -1,21 +1,16 @@
 import React from 'react';
 import Select from 'react-select';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import Chevron from 'assets/icons/chevron';
 import { getSelectedTeam } from 'actions';
-import { COLORS } from 'enums';
+import { COLORS, YEARS } from 'enums';
 
 import selectMenuStyles from 'components/_shared/selectMenuStyles';
 import styles from './filter.module.scss';
 
-const Filter = ({ teams, getSelectedTeam }) => {
-  const years = [
-    { value: 2019, label: '2019 - 2020' },
-    { value: 2018, label: '2018 - 2019' },
-    { value: 2017, label: '2017 - 2018' },
-  ];
-
+const Filter = ({ selectedTeam, getSelectedTeam }) => {
   const chevron = () => (
     <Chevron
       color={COLORS.DARK_GREY}
@@ -25,7 +20,6 @@ const Filter = ({ teams, getSelectedTeam }) => {
     />
   );
 
-  const { selectedTeam } = teams;
   const handleChange = (e) => {
     getSelectedTeam(selectedTeam, e.value);
   };
@@ -34,9 +28,8 @@ const Filter = ({ teams, getSelectedTeam }) => {
     <div className={styles.container}>
       <Select
         styles={selectMenuStyles()}
-        defaultValue={years[0]}
-        placeholder={years[0]}
-        options={years}
+        defaultValue={YEARS[0]}
+        options={YEARS}
         hideSelectedOptions
         isSearchable={false}
         components={{
@@ -49,7 +42,12 @@ const Filter = ({ teams, getSelectedTeam }) => {
 };
 
 const mapStateToProps = ({ teams, players }) => {
-  return { teams: teams, players: players };
+  return { selectedTeam: teams.selectedTeam, players: players };
+};
+
+Filter.propTypes = {
+  getSelectedTeam: PropTypes.func.isRequired,
+  selectedTeam: PropTypes.object.isRequired,
 };
 
 export default connect(mapStateToProps, { getSelectedTeam })(Filter);
