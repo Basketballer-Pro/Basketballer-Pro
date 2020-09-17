@@ -14,8 +14,9 @@ import styles from './index.module.scss';
 const List = ({
   getSelectedPlayer,
   players,
+  player,
   player: {
-    details: { person_id: selectedPlayerId },
+    details: { personId: selectedPlayerId },
   },
   selectedTeam,
   selectedTeam: { teamId },

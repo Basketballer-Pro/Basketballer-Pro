@@ -19,9 +19,12 @@ export const getTeams = (pathname, history) => async (dispatch) => {
   dispatch(getSelectedTeam(defaultTeam, defaultPlayerId, history));
 };
 
-export const getSelectedTeam = (team, defaultPlayerId, history) => async (
-  dispatch
-) => {
+export const getSelectedTeam = (
+  team,
+  defaultPlayerId,
+  history,
+  year = '2018'
+) => async (dispatch) => {
   // reset players list and details
   dispatch({ type: 'RESET_PLAYERS' });
   dispatch({ type: 'PRELOAD_PLAYER_DETAILS', payload: null });
@@ -29,17 +32,20 @@ export const getSelectedTeam = (team, defaultPlayerId, history) => async (
   // set selected team
   dispatch({ type: 'SET_SELECTED_TEAM', payload: team });
 
-  const teamRosterResponse = await dataNbaNet.get(
-    `/json/cms/noseason/team/${team.urlName}/roster.json`
+  const allPlayersResponse = await dataNbaNet.get(
+    `/prod/v1/${year}/players.json`
   );
-  const teamRoster =
-    teamRosterResponse.data.sports_content.roster.players.player;
+  const allPlayers = allPlayersResponse.data.league.standard;
+  const teamRoster = allPlayers.filter((player) => {
+    return player.teamId === team.teamId;
+  });
+
   dispatch({ type: 'SET_PLAYERS', payload: teamRoster });
 
-  // set defaultPlayer if optional defaultPlayerId exists
+  //set defaultPlayer if optional defaultPlayerId exists
   if (defaultPlayerId) {
     const defaultPlayer = teamRoster.find(
-      (player) => player.person_id === defaultPlayerId
+      (player) => player.personId === defaultPlayerId
     );
 
     if (defaultPlayer) {
@@ -51,15 +57,17 @@ export const getSelectedTeam = (team, defaultPlayerId, history) => async (
   }
 };
 
-export const getSelectedPlayer = (player) => async (dispatch) => {
+export const getSelectedPlayer = (player, year = '2018') => async (
+  dispatch
+) => {
   dispatch({ type: 'SET_PLAYER_DETAILS_IS_LOADING', payload: true });
   dispatch({ type: 'PRELOAD_PLAYER_DETAILS', payload: player });
 
   const playerResponse = await dataNbaNet.get(
-    `/prod/v1/2019/players/${player.person_id}_profile.json`
+    `/prod/v1/${year}/players/${player.personId}_profile.json`
   );
   const gamesResponse = await dataNbaNet.get(
-    `/data/10s/prod/v1/2019/players/${player.person_id}_gamelog.json`
+    `/data/10s/prod/v1/2018/players/${player.personId}_gamelog.json`
   );
 
   dispatch({ type: 'UPDATE_PLAYER_DETAILS', payload: playerResponse });
