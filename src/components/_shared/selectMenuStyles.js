@@ -13,7 +13,6 @@ const selectMenuStyles = () => {
       border: 'none',
       borderRadius: 'none',
       cursor: 'pointer',
-
       borderBottom: '1px solid grey',
       '&:hover': {
         borderColor: 'none',

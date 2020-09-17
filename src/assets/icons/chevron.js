@@ -5,8 +5,6 @@ const Chevron = ({ width, height, color, className }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      // width={14}
-      // height={7}
       width={width}
       height={height}
       viewBox="0 0 14 7"
@@ -24,9 +22,9 @@ const Chevron = ({ width, height, color, className }) => {
 
 Chevron.propTypes = {
   color: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
   className: PropTypes.string,
-  width: PropTypes.number,
-  height: PropTypes.number,
 };
 
 Chevron.defaultProps = {

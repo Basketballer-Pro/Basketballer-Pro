@@ -2,10 +2,11 @@ import React from 'react';
 import Select from 'react-select';
 import { connect } from 'react-redux';
 
-import styles from './filter.module.scss';
-import { getSelectedTeam } from 'actions';
-import selectMenuStyles from 'components/_shared/selectMenuStyles';
 import Chevron from 'assets/icons/chevron';
+import { getSelectedTeam } from 'actions';
+
+import selectMenuStyles from 'components/_shared/selectMenuStyles';
+import styles from './filter.module.scss';
 
 const Filter = ({ teams, getSelectedTeam }) => {
   const years = [
@@ -13,6 +14,7 @@ const Filter = ({ teams, getSelectedTeam }) => {
     { value: 2018, label: '2018 - 2019' },
     { value: 2017, label: '2017 - 2018' },
   ];
+
   const chevron = () => (
     <Chevron
       color={'#5C5C5C'}
@@ -23,7 +25,6 @@ const Filter = ({ teams, getSelectedTeam }) => {
   );
 
   const selectedTeam = teams.selectedTeam;
-
   const handleChange = (e) => {
     getSelectedTeam(selectedTeam, null, null, e.value);
   };

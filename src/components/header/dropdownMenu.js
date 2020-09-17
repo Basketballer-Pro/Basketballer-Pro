@@ -14,18 +14,18 @@ import selectMenuStyles from './selectMenuStyles';
 import styles from './dropdownMenu.module.scss';
 
 const DropdownMenu = ({
-  teams,
-  selectedTeam,
   getSelectedTeam,
-  history,
   list,
+  teams,
+  history,
+  selectedTeam,
 }) => {
   const { teamId: selectedTeamId, teamColor } = selectedTeam;
   const chevron = () => (
     <Chevron color={'white'} width={14} height={7} className={styles.chevron} />
   );
-  const object = list.find((obj) => obj.selectedYear);
-  const selectedYear = object && object.selectedYear;
+  const player = list.find((player) => player.selectedYear);
+  const selectedYear = player && player.selectedYear;
 
   const renderItem = (
     { data: { teamColor, fullName, tricode, teamId }, innerProps },
