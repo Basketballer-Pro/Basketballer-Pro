@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import Chevron from 'assets/icons/chevron';
 import { getSelectedTeam } from 'actions';
+import { COLORS } from 'enums';
 
 import selectMenuStyles from 'components/_shared/selectMenuStyles';
 import styles from './filter.module.scss';
@@ -17,16 +18,16 @@ const Filter = ({ teams, getSelectedTeam }) => {
 
   const chevron = () => (
     <Chevron
-      color={'#5C5C5C'}
+      color={COLORS.DARK_GREY}
       width={10}
       height={5}
       className={styles.chevron}
     />
   );
 
-  const selectedTeam = teams.selectedTeam;
+  const { selectedTeam } = teams;
   const handleChange = (e) => {
-    getSelectedTeam(selectedTeam, null, null, e.value);
+    getSelectedTeam(selectedTeam, e.value);
   };
 
   return (

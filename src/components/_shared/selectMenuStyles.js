@@ -1,3 +1,5 @@
+import { COLORS } from 'enums';
+
 const selectMenuStyles = () => {
   return {
     container: (provided) => ({
@@ -27,7 +29,7 @@ const selectMenuStyles = () => {
       ...provided,
       margin: 0,
       padding: 0,
-      color: '#5C5C5C',
+      color: COLORS.DARK_GREY,
     }),
     indicatorSeparator: (provided) => ({
       ...provided,
@@ -45,11 +47,11 @@ const selectMenuStyles = () => {
     }),
     option: (provided) => ({
       ...provided,
-      color: '#5C5C5C',
+      color: COLORS.DARK_GREY,
       cursor: 'pointer',
       backgroundColor: 'none',
       '&:hover': {
-        backgroundColor: '#EEEEEE',
+        backgroundColor: COLORS.LIGHT_GREY,
       },
     }),
   };

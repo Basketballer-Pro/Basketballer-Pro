@@ -6,6 +6,8 @@
 export const COLORS = Object.freeze({
   LIGHT_GREY: '#f5f5f5',
   GREY: '#a8a8a8',
+  DARK_GREY: '#5c5c5c',
+  WHITE: '#ffffff',
 });
 
 /**
@@ -63,3 +65,5 @@ export const MVP_PLAYERS = Object.freeze([
   { NAME: 'kobe' },
   { NAME: 'jordan' },
 ]);
+
+export const DEFAULT_YEAR = 2019;

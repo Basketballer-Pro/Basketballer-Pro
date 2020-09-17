@@ -7,6 +7,7 @@ import classnames from 'classnames';
 
 import * as Logos from 'assets/icons/logos';
 import Chevron from 'assets/icons/chevron';
+import { COLORS } from 'enums';
 
 import { getSelectedTeam } from 'actions';
 
@@ -21,8 +22,9 @@ const DropdownMenu = ({
   selectedTeam,
 }) => {
   const { teamId: selectedTeamId, teamColor } = selectedTeam;
+  const { WHITE } = COLORS;
   const chevron = () => (
-    <Chevron color={'white'} width={14} height={7} className={styles.chevron} />
+    <Chevron color={WHITE} width={14} height={7} className={styles.chevron} />
   );
   const player = list.find((player) => player.selectedYear);
   const selectedYear = player && player.selectedYear;
@@ -72,12 +74,12 @@ const DropdownMenu = ({
         }}
         onChange={(team) => {
           history.push(`/${team.urlName}/players`);
-          getSelectedTeam(team, null, null, selectedYear);
+          getSelectedTeam(team, selectedYear);
         }}
       />
       <div
         style={{
-          borderColor: `${teamColor} white white`,
+          borderColor: `${teamColor} ${WHITE} ${WHITE}`,
         }}
         className={styles.borderTriangle}
       />

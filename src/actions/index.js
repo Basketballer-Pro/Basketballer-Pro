@@ -1,5 +1,5 @@
 import dataNbaNet from 'apis';
-import { TEAMS, TEAM_COLORS } from 'enums';
+import { TEAMS, TEAM_COLORS, DEFAULT_YEAR } from 'enums';
 
 export const getTeams = (pathname, history) => async (dispatch) => {
   const [defaultTeamName, , defaultPlayerId] = pathname.split('/').slice(1);
@@ -15,12 +15,12 @@ export const getTeams = (pathname, history) => async (dispatch) => {
   const defaultTeam =
     nbaTeams.find((team) => team.urlName === defaultTeamName) ||
     nbaTeams.find((team) => team.urlName === TEAMS.TOR.NAME);
-  const defaultYear = 2019;
-
-  dispatch(getSelectedTeam(defaultTeam, defaultPlayerId, history, defaultYear));
+  dispatch(
+    getSelectedTeam(defaultTeam, DEFAULT_YEAR, defaultPlayerId, history)
+  );
 };
 
-export const getSelectedTeam = (team, defaultPlayerId, history, year) => async (
+export const getSelectedTeam = (team, year, defaultPlayerId, history) => async (
   dispatch
 ) => {
   // reset players list and details
