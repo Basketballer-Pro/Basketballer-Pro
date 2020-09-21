@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import Chevron from 'assets/icons/chevron';
 import { getSelectedTeam } from 'actions';
-import { COLORS, YEARS } from 'enums';
+import { COLORS } from 'enums';
 
 import selectMenuStyles from 'components/_shared/selectMenuStyles';
 import styles from './filter.module.scss';
