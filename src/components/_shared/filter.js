@@ -10,7 +10,7 @@ import { COLORS, YEARS } from 'enums';
 import selectMenuStyles from 'components/_shared/selectMenuStyles';
 import styles from './filter.module.scss';
 
-const Filter = ({ selectedTeam, getSelectedTeam }) => {
+const Filter = ({ selectedTeam, getSelectedTeam, array }) => {
   const chevron = () => (
     <Chevron
       color={COLORS.DARK_GREY}
@@ -30,8 +30,10 @@ const Filter = ({ selectedTeam, getSelectedTeam }) => {
     <div className={styles.container}>
       <Select
         styles={selectMenuStyles()}
-        defaultValue={YEARS[0]}
-        options={YEARS}
+        // defaultValue={YEARS[0]}
+        defaultValue={array[0]}
+        // options={YEARS}
+        options={array}
         hideSelectedOptions
         isSearchable={false}
         components={{
