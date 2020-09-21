@@ -4,7 +4,6 @@ import { TEAMS, TEAM_COLORS, DEFAULT_YEAR } from 'enums';
 export const getTeams = (pathname, history) => async (dispatch) => {
   const [defaultTeamName, , defaultPlayerId] = pathname.split('/').slice(1);
   const response = await dataNbaNet.get(`/prod/v1/${DEFAULT_YEAR}/teams.json`);
-  // dispatch({ type: 'SET_SELECTED_YEAR', payload: DEFAULT_YEAR });
   const nbaTeams = Object.values(response.data.league.standard)
     .filter((team) => team.isNBAFranchise)
     .map((team) => ({
