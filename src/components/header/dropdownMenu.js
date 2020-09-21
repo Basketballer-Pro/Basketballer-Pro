@@ -7,15 +7,25 @@ import classnames from 'classnames';
 
 import * as Logos from 'assets/icons/logos';
 import Chevron from 'assets/icons/chevron';
+import { COLORS } from 'enums';
 
 import { getSelectedTeam } from 'actions';
 
 import selectMenuStyles from './selectMenuStyles';
 import styles from './dropdownMenu.module.scss';
 
-const DropdownMenu = ({ teams, selectedTeam, getSelectedTeam, history }) => {
+const DropdownMenu = ({
+  getSelectedTeam,
+  teams,
+  history,
+  selectedTeam,
+  year,
+}) => {
   const { teamId: selectedTeamId, teamColor } = selectedTeam;
-  const chevron = () => <Chevron color={'white'} className={styles.chevron} />;
+  const { WHITE } = COLORS;
+  const chevron = () => (
+    <Chevron color={WHITE} width={14} height={7} className={styles.chevron} />
+  );
 
   const renderItem = (
     { data: { teamColor, fullName, tricode, teamId }, innerProps },
@@ -62,12 +72,12 @@ const DropdownMenu = ({ teams, selectedTeam, getSelectedTeam, history }) => {
         }}
         onChange={(team) => {
           history.push(`/${team.urlName}/players`);
-          getSelectedTeam(team);
+          getSelectedTeam(team, year);
         }}
       />
       <div
         style={{
-          borderColor: `${teamColor} white white`,
+          borderColor: `${teamColor} ${WHITE} ${WHITE}`,
         }}
         className={styles.borderTriangle}
       />
@@ -75,10 +85,11 @@ const DropdownMenu = ({ teams, selectedTeam, getSelectedTeam, history }) => {
   );
 };
 
-const mapStateToProps = ({ teams: { teams, selectedTeam } }) => {
+const mapStateToProps = ({ teams: { teams, selectedTeam }, year }) => {
   return {
     teams,
     selectedTeam,
+    year,
   };
 };
 
@@ -87,6 +98,7 @@ DropdownMenu.propTypes = {
   teams: PropTypes.array.isRequired,
   selectedTeam: PropTypes.object.isRequired,
   history: PropTypes.object.isRequired,
+  year: PropTypes.number.isRequired,
 };
 
 export default connect(mapStateToProps, { getSelectedTeam })(

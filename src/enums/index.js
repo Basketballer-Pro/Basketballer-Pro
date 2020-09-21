@@ -6,6 +6,8 @@
 export const COLORS = Object.freeze({
   LIGHT_GREY: '#f5f5f5',
   GREY: '#a8a8a8',
+  DARK_GREY: '#5c5c5c',
+  WHITE: '#ffffff',
 });
 
 /**
@@ -62,4 +64,17 @@ export const TEAM_COLORS = Object.freeze({
 export const MVP_PLAYERS = Object.freeze([
   { NAME: 'kobe' },
   { NAME: 'jordan' },
+]);
+
+export const DEFAULT_YEAR = 2019;
+
+/**
+ * Enum for years array.
+ * @readonly
+ * @enum {{ value: number, label: string }}
+ */
+export const YEARS = Object.freeze([
+  { value: 2019, label: '2019 - 20' },
+  { value: 2018, label: '2018 - 19' },
+  { value: 2017, label: '2017 - 18' },
 ]);

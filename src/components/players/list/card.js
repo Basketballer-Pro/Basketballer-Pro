@@ -21,10 +21,12 @@ const Card = ({
     jersey,
     lastName,
     personId,
+    pos,
     teamSitesOnly,
     weightPounds,
   },
   screenWidth,
+  year,
 }) => {
   const isSelected = personId === selectedPlayerId;
 
@@ -32,7 +34,7 @@ const Card = ({
     <div
       onClick={() => {
         history.push(`/${urlName}/players/${personId}`);
-        getSelectedPlayer(player);
+        getSelectedPlayer(player, year);
       }}
       className={classnames(
         styles.playerCard,
@@ -42,7 +44,9 @@ const Card = ({
       <div className={styles.imageContainer}>
         <img
           src={
-            personId ? formatPlayerPhotoUrl(teamId, personId) : placeholderImg
+            personId
+              ? formatPlayerPhotoUrl(teamId, personId, year)
+              : placeholderImg
           }
           alt="player headshot"
           onError={(e) => (e.target.src = placeholderImg)}
@@ -65,7 +69,9 @@ const Card = ({
               <div className={styles.name}>
                 {firstName} {lastName}
               </div>
-              <div className={styles.position}>{teamSitesOnly.posFull}</div>
+              <div className={styles.position}>
+                {teamSitesOnly ? teamSitesOnly.posFull : pos}
+              </div>
               <div className={styles.size}>
                 {heightFeet}&apos; {heightInches}, {weightPounds} lbs
               </div>
@@ -84,6 +90,7 @@ Card.propTypes = {
   history: PropTypes.object.isRequired,
   screenWidth: PropTypes.number.isRequired,
   selectedPlayerId: PropTypes.string,
+  year: PropTypes.number.isRequired,
 };
 
 Card.defaultProps = {
