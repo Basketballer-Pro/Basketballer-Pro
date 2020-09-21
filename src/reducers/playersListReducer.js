@@ -9,6 +9,8 @@ export default (state = initialState, action) => {
       return initialState;
     case 'SET_PLAYERS':
       return { list: action.payload, isLoading: false };
+    case 'FILTER_PLAYERS':
+      return { list: action.payload };
     default:
       return state;
   }

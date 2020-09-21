@@ -1,16 +1,23 @@
 import React from 'react';
 import Select from 'react-select';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import PropTypes, { number } from 'prop-types';
 
 import Chevron from 'assets/icons/chevron';
 import { getSelectedTeam } from 'actions';
-import { COLORS } from 'enums';
+import { COLORS, YEARS } from 'enums';
 
 import selectMenuStyles from 'components/_shared/selectMenuStyles';
 import styles from './filter.module.scss';
 
-const Filter = ({ selectedTeam, getSelectedTeam, array }) => {
+const Filter = ({
+  selectedTeam,
+  getSelectedTeam,
+  array,
+  years,
+  positions,
+  players,
+}) => {
   const chevron = () => (
     <Chevron
       color={COLORS.DARK_GREY}
@@ -20,10 +27,22 @@ const Filter = ({ selectedTeam, getSelectedTeam, array }) => {
     />
   );
 
-  console.log('here');
+  // console.log('players', players);
+
+  const { list } = players;
+  console.log('list', list);
 
   const handleChange = (e) => {
-    getSelectedTeam(selectedTeam, e.value);
+    if (typeof e.value === 'number') {
+      getSelectedTeam(selectedTeam, e.value);
+    } else {
+      const filteredList = list.filter((player) => {
+        const parsedString = player.teamSitesOnly.posFull.toLowerCase();
+        // return parsedString === e.value;
+        return parsedString.includes(e.value);
+      });
+      console.log('filteredList', filteredList);
+    }
   };
 
   return (
