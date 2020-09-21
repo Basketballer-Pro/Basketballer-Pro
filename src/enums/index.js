@@ -73,7 +73,6 @@ export const DEFAULT_YEAR = 2019;
  * @readonly
  * @enum {{ value: number, label: string }}
  */
-
 export const YEARS = Object.freeze([
   { value: 2019, label: '2019 - 20' },
   { value: 2018, label: '2018 - 19' },

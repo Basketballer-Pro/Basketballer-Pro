@@ -16,18 +16,16 @@ import styles from './dropdownMenu.module.scss';
 
 const DropdownMenu = ({
   getSelectedTeam,
-  list,
   teams,
   history,
   selectedTeam,
+  year,
 }) => {
   const { teamId: selectedTeamId, teamColor } = selectedTeam;
   const { WHITE } = COLORS;
   const chevron = () => (
     <Chevron color={WHITE} width={14} height={7} className={styles.chevron} />
   );
-  const player = list.find((player) => player.selectedYear);
-  const selectedYear = player && player.selectedYear;
 
   const renderItem = (
     { data: { teamColor, fullName, tricode, teamId }, innerProps },
@@ -74,7 +72,7 @@ const DropdownMenu = ({
         }}
         onChange={(team) => {
           history.push(`/${team.urlName}/players`);
-          getSelectedTeam(team, selectedYear);
+          getSelectedTeam(team, year);
         }}
       />
       <div
@@ -87,23 +85,20 @@ const DropdownMenu = ({
   );
 };
 
-const mapStateToProps = ({
-  teams: { teams, selectedTeam },
-  players: { list },
-}) => {
+const mapStateToProps = ({ teams: { teams, selectedTeam }, year }) => {
   return {
     teams,
     selectedTeam,
-    list,
+    year,
   };
 };
 
 DropdownMenu.propTypes = {
   getSelectedTeam: PropTypes.func.isRequired,
-  list: PropTypes.array.isRequired,
   teams: PropTypes.array.isRequired,
   selectedTeam: PropTypes.object.isRequired,
   history: PropTypes.object.isRequired,
+  year: PropTypes.number.isRequired,
 };
 
 export default connect(mapStateToProps, { getSelectedTeam })(

@@ -21,6 +21,7 @@ const Details = ({
   player: { details, isLoading },
   selectedTeam: { teamId, teamColor, urlName },
   screenWidth,
+  year,
 }) => {
   const ref = useRef();
   const [isSticky, setIsSticky] = useState(false);
@@ -116,6 +117,7 @@ const Details = ({
         player={details}
         playerTeamId={teamId}
         teamColor={teamColor}
+        year={year}
         isSticky={isSticky}
         isAnimated={isAnimated}
       />
@@ -139,10 +141,11 @@ const Details = ({
   );
 };
 
-const mapStateToProps = ({ player, teams: { teams, selectedTeam } }) => ({
+const mapStateToProps = ({ player, teams: { teams, selectedTeam }, year }) => ({
   player,
   teams,
   selectedTeam,
+  year,
 });
 
 Details.propTypes = {
@@ -152,6 +155,7 @@ Details.propTypes = {
   player: PropTypes.object.isRequired,
   selectedTeam: PropTypes.object.isRequired,
   screenWidth: PropTypes.number.isRequired,
+  year: PropTypes.number.isRequired,
 };
 
 export default connect(mapStateToProps)(withRouter(Details));

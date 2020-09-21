@@ -23,18 +23,19 @@ const Card = ({
     personId,
     pos,
     teamSitesOnly,
-    selectedYear,
     weightPounds,
   },
   screenWidth,
+  year,
 }) => {
   const isSelected = personId === selectedPlayerId;
+  console.log('year', year);
 
   return (
     <div
       onClick={() => {
         history.push(`/${urlName}/players/${personId}`);
-        getSelectedPlayer(player, selectedYear);
+        getSelectedPlayer(player, year);
       }}
       className={classnames(
         styles.playerCard,
@@ -45,7 +46,7 @@ const Card = ({
         <img
           src={
             personId
-              ? formatPlayerPhotoUrl(teamId, personId, selectedYear)
+              ? formatPlayerPhotoUrl(teamId, personId, year)
               : placeholderImg
           }
           alt="player headshot"
@@ -90,6 +91,7 @@ Card.propTypes = {
   history: PropTypes.object.isRequired,
   screenWidth: PropTypes.number.isRequired,
   selectedPlayerId: PropTypes.string,
+  year: PropTypes.number.isRequired,
 };
 
 Card.defaultProps = {

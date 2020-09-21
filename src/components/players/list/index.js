@@ -14,7 +14,6 @@ import styles from './index.module.scss';
 const List = ({
   getSelectedPlayer,
   players,
-  player,
   player: {
     details: { personId: selectedPlayerId },
   },
@@ -22,6 +21,7 @@ const List = ({
   selectedTeam: { teamId },
   isLoading,
   screenWidth,
+  year,
 }) => {
   const domRef = useRef();
 
@@ -45,6 +45,7 @@ const List = ({
           selectedPlayerId={selectedPlayerId}
           player={player}
           screenWidth={screenWidth}
+          year={year}
         />
       ))}
     </div>
@@ -55,8 +56,9 @@ const mapStateToProps = ({
   player,
   players: { list, isLoading },
   teams: { selectedTeam },
+  year,
 }) => {
-  return { player, players: list, isLoading, selectedTeam };
+  return { player, players: list, isLoading, selectedTeam, year };
 };
 
 List.propTypes = {
@@ -66,6 +68,7 @@ List.propTypes = {
   selectedTeam: PropTypes.object.isRequired,
   isLoading: PropTypes.bool.isRequired,
   screenWidth: PropTypes.number.isRequired,
+  year: PropTypes.number.isRequired,
 };
 
 export default connect(mapStateToProps, { getSelectedPlayer })(List);

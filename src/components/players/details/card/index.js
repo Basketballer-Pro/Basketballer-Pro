@@ -17,19 +17,19 @@ const Card = ({
     pos,
     heightFeet,
     heightInches,
-    selectedYear,
     weightPounds,
   },
   playerTeamId,
   teamColor,
   isSticky,
   isAnimated,
+  year,
 }) => (
   <>
     <div className={styles.card}>
       <div className={styles.imageContainer}>
         <img
-          src={formatPlayerPhotoUrl(playerTeamId, personId, selectedYear)}
+          src={formatPlayerPhotoUrl(playerTeamId, personId, year)}
           alt="player headshot"
           onError={(e) => (e.target.src = placeholderImg)}
         />
@@ -53,7 +53,7 @@ const Card = ({
             )}
           >
             <img
-              src={formatPlayerPhotoUrl(playerTeamId, personId, selectedYear)}
+              src={formatPlayerPhotoUrl(playerTeamId, personId, year)}
               alt="player headshot"
               onError={(e) => (e.target.src = placeholderImg)}
             />
