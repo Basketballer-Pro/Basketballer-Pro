@@ -20,6 +20,8 @@ const Filter = ({ selectedTeam, getSelectedTeam }) => {
     />
   );
 
+  console.log('here');
+
   const handleChange = (e) => {
     getSelectedTeam(selectedTeam, e.value);
   };

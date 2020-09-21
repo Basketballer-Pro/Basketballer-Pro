@@ -1,5 +1,7 @@
 import { COLORS } from 'enums';
 
+const { DARK_GREY, LIGHT_GREY } = COLORS;
+
 const selectMenuStyles = () => {
   return {
     container: (provided) => ({
@@ -15,7 +17,7 @@ const selectMenuStyles = () => {
       border: 'none',
       borderRadius: 'none',
       cursor: 'pointer',
-      borderBottom: '1px solid grey',
+      borderBottom: `1px solid ${DARK_GREY}`,
       '&:hover': {
         borderColor: 'none',
       },
@@ -29,7 +31,7 @@ const selectMenuStyles = () => {
       ...provided,
       margin: 0,
       padding: 0,
-      color: COLORS.DARK_GREY,
+      color: DARK_GREY,
     }),
     indicatorSeparator: (provided) => ({
       ...provided,
@@ -39,7 +41,7 @@ const selectMenuStyles = () => {
       ...provided,
       marginTop: 0,
       borderRadius: 0,
-      boxShadow: '0 4px 2px -2px gray',
+      boxShadow: `0 4px 2px -2px ${DARK_GREY}`,
     }),
     menuList: (provided) => ({
       ...provided,
@@ -47,11 +49,11 @@ const selectMenuStyles = () => {
     }),
     option: (provided) => ({
       ...provided,
-      color: COLORS.DARK_GREY,
+      color: DARK_GREY,
       cursor: 'pointer',
       backgroundColor: 'none',
       '&:hover': {
-        backgroundColor: COLORS.LIGHT_GREY,
+        backgroundColor: LIGHT_GREY,
       },
     }),
   };
