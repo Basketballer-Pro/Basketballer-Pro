@@ -29,7 +29,6 @@ const Card = ({
   year,
 }) => {
   const isSelected = personId === selectedPlayerId;
-  console.log('year', year);
 
   return (
     <div
