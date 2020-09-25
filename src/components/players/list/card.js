@@ -27,8 +27,26 @@ const Card = ({
   },
   screenWidth,
   year,
+  position,
 }) => {
   const isSelected = personId === selectedPlayerId;
+  // console.log('position', position);
+  // console.log('pos', pos);
+  // console.log('teamSitesOnly', teamSitesOnly);
+  const parsedString = teamSitesOnly && teamSitesOnly.posFull.toLowerCase();
+  console.log('parsedString', parsedString);
+
+  const positionFull = teamSitesOnly && teamSitesOnly.posFull;
+  // console.log('position full', positionFull);
+
+  if (position && parsedString) {
+    // console.log(position == true);
+    const match = position.includes(parsedString);
+    console.log('match', match);
+  }
+
+  // const match = position && position.includes(positionFull);
+  // console.log('match', match);
 
   return (
     <div

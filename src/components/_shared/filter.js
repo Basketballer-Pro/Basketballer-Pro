@@ -11,6 +11,7 @@ import selectMenuStyles from 'components/_shared/selectMenuStyles';
 import styles from './filter.module.scss';
 
 const Filter = ({
+  dispatch,
   selectedTeam,
   getSelectedTeam,
   array,
@@ -27,21 +28,21 @@ const Filter = ({
     />
   );
 
+  // console.log('props', props);
   // console.log('players', players);
 
   const { list } = players;
-  console.log('list', list);
 
   const handleChange = (e) => {
     if (typeof e.value === 'number') {
       getSelectedTeam(selectedTeam, e.value);
     } else {
-      const filteredList = list.filter((player) => {
-        const parsedString = player.teamSitesOnly.posFull.toLowerCase();
-        // return parsedString === e.value;
-        return parsedString.includes(e.value);
-      });
-      console.log('filteredList', filteredList);
+      console.log('i fired');
+      // const filteredList = list.filter((player) => {
+      //   const parsedString = player.teamSitesOnly.posFull.toLowerCase();
+      //   // return parsedString === e.value;
+      //   return parsedString.includes(e.value);
+      dispatch({ type: 'SET_SELECTED_POSITION', payload: e.value });
     }
   };
 
@@ -64,7 +65,7 @@ const Filter = ({
   );
 };
 
-const mapStateToProps = ({ teams, players }) => {
+const mapStateToProps = ({ teams, players, position }) => {
   return { selectedTeam: teams.selectedTeam, players: players };
 };
 
@@ -73,4 +74,6 @@ Filter.propTypes = {
   selectedTeam: PropTypes.object.isRequired,
 };
 
-export default connect(mapStateToProps, { getSelectedTeam })(Filter);
+export default connect(mapStateToProps, {
+  getSelectedTeam,
+})(Filter);
