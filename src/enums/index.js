@@ -78,3 +78,14 @@ export const YEARS = Object.freeze([
   { value: 2018, label: '2018 - 19' },
   { value: 2017, label: '2017 - 18' },
 ]);
+
+/**
+ * Enum for years array.
+ * @readonly
+ * @enum {{ value: number, label: string }}
+ */
+export const POSITIONS = Object.freeze([
+  { value: 'forward', label: 'Forward' },
+  { value: 'center', label: 'Center' },
+  { value: 'guard', label: 'Guard' },
+]);

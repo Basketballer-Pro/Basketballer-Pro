@@ -22,8 +22,11 @@ const List = ({
   isLoading,
   screenWidth,
   year,
+  position,
 }) => {
   const domRef = useRef();
+
+  console.log('position', position);
 
   useEffect(() => {
     domRef.current.scrollTo(0, 0);
@@ -46,6 +49,7 @@ const List = ({
           player={player}
           screenWidth={screenWidth}
           year={year}
+          position={position}
         />
       ))}
     </div>
@@ -57,13 +61,15 @@ const mapStateToProps = ({
   players: { list, isLoading },
   teams: { selectedTeam },
   year,
+  position,
 }) => {
-  return { player, players: list, isLoading, selectedTeam, year };
+  return { player, players: list, isLoading, selectedTeam, year, position };
 };
 
 List.propTypes = {
   getSelectedPlayer: PropTypes.func.isRequired,
   players: PropTypes.array.isRequired,
+  position: PropTypes.array.isRequired,
   player: PropTypes.object.isRequired,
   selectedTeam: PropTypes.object.isRequired,
   isLoading: PropTypes.bool.isRequired,
