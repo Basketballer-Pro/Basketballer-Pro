@@ -8,6 +8,7 @@ const Filters = () => {
   return (
     <div className={styles.container}>
       <Filter />
+      <Filter />
     </div>
   );
 };
