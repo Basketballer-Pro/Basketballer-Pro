@@ -69,3 +69,7 @@ export const getSelectedPlayer = (player, year) => async (dispatch) => {
   dispatch({ type: 'SET_RECENT_GAMES', payload: gamesResponse });
   dispatch({ type: 'SET_PLAYER_DETAILS_IS_LOADING', payload: false });
 };
+
+export const filterPlayers = (position) => async (dispatch) => {
+  dispatch({ type: 'FILTER_PLAYERS', payload: position });
+};

@@ -14,6 +14,7 @@ import styles from './index.module.scss';
 const List = ({
   getSelectedPlayer,
   players,
+  filteredPlayers,
   player: {
     details: { personId: selectedPlayerId },
   },
@@ -29,6 +30,14 @@ const List = ({
     domRef.current.scrollTo(0, 0);
   }, [teamId]);
 
+  const theList = () => {
+    if (filteredPlayers) {
+      return filteredPlayers;
+    } else {
+      return players;
+    }
+  };
+
   return (
     <div
       ref={domRef}
@@ -37,7 +46,7 @@ const List = ({
       <Overlay isLoading={isLoading}>
         <Spinner height={19} width={4} radius={3} isLoading={isLoading} />
       </Overlay>
-      {players.map((player, index) => (
+      {theList().map((player, index) => (
         <Card
           key={index}
           getSelectedPlayer={getSelectedPlayer}
@@ -54,11 +63,18 @@ const List = ({
 
 const mapStateToProps = ({
   player,
-  players: { list, isLoading },
+  players: { list, isLoading, filteredList },
   teams: { selectedTeam },
   year,
 }) => {
-  return { player, players: list, isLoading, selectedTeam, year };
+  return {
+    player,
+    players: list,
+    filteredPlayers: filteredList,
+    isLoading,
+    selectedTeam,
+    year,
+  };
 };
 
 List.propTypes = {
