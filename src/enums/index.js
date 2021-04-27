@@ -82,7 +82,7 @@ export const YEARS = Object.freeze([
 /**
  * Enum for player positions array.
  * @readonly
- * @enum {{ value: number, label: string }}
+ * @enum {{ value: string, label: string }}
  */
 
 export const POSITIONS = Object.freeze([
