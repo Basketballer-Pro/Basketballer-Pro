@@ -1,25 +1,18 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 import { connect } from 'react-redux';
-import PropTypes, { number } from 'prop-types';
+import PropTypes from 'prop-types';
 
 import Chevron from 'assets/icons/chevron';
-import { getSelectedTeam, getSelectedPlayer, filterPlayers } from 'actions';
-import { COLORS /*YEARS*/ } from 'enums';
+import { getSelectedTeam, filterPlayers } from 'actions';
+import { COLORS } from 'enums';
 
 import selectMenuStyles from 'components/_shared/selectMenuStyles';
 import styles from './filter.module.scss';
 
-const Filter = ({
-  selectedTeam,
-  getSelectedTeam,
-  category,
-  players,
-  filterPlayers,
-}) => {
-  const [hasPlaceholder, setPlaceholder] = useState('Position');
-
-  console.log('cat', category);
+const Filter = ({ selectedTeam, getSelectedTeam, category, filterPlayers }) => {
+  const [catPlaceholder, setPlaceholder] = useState('Position');
+  const isNumber = typeof category[0].value === 'number';
 
   const chevron = () => (
     <Chevron
@@ -32,7 +25,6 @@ const Filter = ({
 
   const handleChange = (e) => {
     if (typeof e.value === 'string') {
-      console.log('e.value', e.value);
       setPlaceholder(null);
       filterPlayers(e.value);
     } else {
@@ -41,15 +33,12 @@ const Filter = ({
     }
   };
 
-  const numberCat = typeof category[0].value === 'number';
-  console.log('cat type', numberCat);
-
   return (
     <div className={styles.container}>
       <Select
         styles={selectMenuStyles()}
-        defaultValue={numberCat ? category[0] : hasPlaceholder}
-        placeholder={hasPlaceholder}
+        defaultValue={isNumber ? category[0] : catPlaceholder}
+        placeholder={catPlaceholder}
         options={category}
         hideSelectedOptions
         isSearchable={false}
@@ -68,6 +57,7 @@ const mapStateToProps = ({ teams, players }) => {
 
 Filter.propTypes = {
   getSelectedTeam: PropTypes.func.isRequired,
+  filterPlayers: PropTypes.func.isRequired,
   selectedTeam: PropTypes.object.isRequired,
 };
 
