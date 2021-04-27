@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Select from 'react-select';
 import { connect } from 'react-redux';
 import PropTypes, { number } from 'prop-types';
@@ -15,9 +15,12 @@ const Filter = ({
   getSelectedTeam,
   category,
   players,
-  dispatch,
   filterPlayers,
 }) => {
+  const [hasPlaceholder, setPlaceholder] = useState('Position');
+
+  console.log('cat', category);
+
   const chevron = () => (
     <Chevron
       color={COLORS.DARK_GREY}
@@ -30,25 +33,23 @@ const Filter = ({
   const handleChange = (e) => {
     if (typeof e.value === 'string') {
       console.log('e.value', e.value);
+      setPlaceholder(null);
       filterPlayers(e.value);
     } else {
+      setPlaceholder('Position');
       getSelectedTeam(selectedTeam, e.value);
     }
   };
 
-  const hasPlaceholder = () => {
-    if (typeof category[0].value === 'number') {
-      return null;
-    }
-    return 'Position!';
-  };
+  const numberCat = typeof category[0].value === 'number';
+  console.log('cat type', numberCat);
 
   return (
     <div className={styles.container}>
       <Select
         styles={selectMenuStyles()}
-        defaultValue={hasPlaceholder() === null && category[0]}
-        placeholder={hasPlaceholder()}
+        defaultValue={numberCat ? category[0] : hasPlaceholder}
+        placeholder={hasPlaceholder}
         options={category}
         hideSelectedOptions
         isSearchable={false}
@@ -65,16 +66,11 @@ const mapStateToProps = ({ teams, players }) => {
   return { selectedTeam: teams.selectedTeam, players: players };
 };
 
-// const mapDispatchToProps = (dispatch) => {
-//   return dispatch();
-// }
-
 Filter.propTypes = {
   getSelectedTeam: PropTypes.func.isRequired,
   selectedTeam: PropTypes.object.isRequired,
 };
 
-export default connect(
-  mapStateToProps,
-  /*mapDispatchToProps,*/ { getSelectedTeam, filterPlayers }
-)(Filter);
+export default connect(mapStateToProps, { getSelectedTeam, filterPlayers })(
+  Filter
+);
