@@ -46,8 +46,7 @@ const Filters = ({
     setValuePositions(e);
     if (e) {
       filterPlayers(e.value);
-    }
-    if (e === null) {
+    } else {
       resetList(list);
     }
   };
