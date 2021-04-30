@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import Select from 'react-select';
-import selectMenuStyles from 'components/_shared/selectMenuStyles';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Select from 'react-select';
+import PropTypes from 'prop-types';
 import { getSelectedTeam, filterPlayers } from 'actions';
 import { YEARS, POSITIONS, COLORS } from 'enums';
 import Chevron from 'assets/icons/chevron';
+import selectMenuStyles from 'components/_shared/selectMenuStyles';
 
 import styles from './index.module.scss';
 
