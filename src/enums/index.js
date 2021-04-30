@@ -86,7 +86,7 @@ export const YEARS = Object.freeze([
  */
 
 export const POSITIONS = Object.freeze([
-  { value: 'F' || 'F-G' || 'F-C', label: 'Forward' },
-  { value: 'C' || 'C-F', label: 'Center' },
-  { value: 'G' || 'G-F', label: 'Guard' },
+  { value: 'F', label: 'Forward' },
+  { value: 'C', label: 'Center' },
+  { value: 'G', label: 'Guard' },
 ]);

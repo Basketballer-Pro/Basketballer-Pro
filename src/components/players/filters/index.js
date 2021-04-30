@@ -44,27 +44,26 @@ const Filters = ({ selectedTeam, getSelectedTeam, filterPlayers }) => {
         styles={selectMenuStyles()}
         defaultValue={valueYears[0]}
         value={valueYears}
-        onChange={(e) => handleYearsChange(e)}
         options={YEARS}
-        hideSelectedOptions={true}
+        hideSelectedOptions
         isSearchable={false}
         components={{
           DropdownIndicator: chevron,
         }}
+        onChange={(e) => handleYearsChange(e)}
       />
       <Select
         styles={selectMenuStyles()}
         placeholder={positionPlaceholer}
         value={valuePositions}
         options={POSITIONS}
-        onChange={(e) => {
-          handlePositionsChange(e);
-        }}
-        isClickable={false}
-        hideSelectedOptions={true}
+        hideSelectedOptions
         isSearchable={false}
         components={{
           DropdownIndicator: chevron,
+        }}
+        onChange={(e) => {
+          handlePositionsChange(e);
         }}
       />
     </div>

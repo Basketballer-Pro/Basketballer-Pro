@@ -13,7 +13,9 @@ export default (state = initialState, action) => {
     case 'FILTER_PLAYERS':
       return {
         ...state,
-        filteredList: state.list.filter((obj) => obj.pos === action.payload),
+        filteredList: state.list.filter((player) =>
+          player.pos.includes(action.payload)
+        ),
       };
     default:
       return state;
