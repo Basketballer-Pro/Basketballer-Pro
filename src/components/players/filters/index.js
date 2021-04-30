@@ -47,6 +47,7 @@ const Filters = ({ selectedTeam, getSelectedTeam, filterPlayers }) => {
         onChange={(e) => handleYearsChange(e)}
         options={YEARS}
         hideSelectedOptions={true}
+        isSearchable={false}
         components={{
           DropdownIndicator: chevron,
         }}
@@ -61,6 +62,7 @@ const Filters = ({ selectedTeam, getSelectedTeam, filterPlayers }) => {
         }}
         isClickable={false}
         hideSelectedOptions={true}
+        isSearchable={false}
         components={{
           DropdownIndicator: chevron,
         }}
