@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
 import { getSelectedTeam, filterPlayers } from 'actions';
@@ -9,7 +10,12 @@ import selectMenuStyles from 'components/_shared/selectMenuStyles';
 
 import styles from './index.module.scss';
 
-const Filters = ({ selectedTeam, getSelectedTeam, filterPlayers }) => {
+const Filters = ({
+  selectedTeam,
+  getSelectedTeam,
+  filterPlayers,
+  resetPlayer,
+}) => {
   const [valueYears, setValueYears] = useState(YEARS[0]);
   const [valuePositions, setValuePositions] = useState(null);
   const positionPlaceholer = 'Position';
@@ -34,6 +40,7 @@ const Filters = ({ selectedTeam, getSelectedTeam, filterPlayers }) => {
   };
 
   const handlePositionsChange = (e) => {
+    resetPlayer();
     setValuePositions(e);
     filterPlayers(e.value);
   };
@@ -74,12 +81,19 @@ const mapStateToProps = ({ teams, players }) => {
   return { selectedTeam: teams.selectedTeam, players: players };
 };
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    resetPlayer: () => {
+      dispatch({ type: 'RESET_PLAYER' });
+    },
+    filterPlayers: bindActionCreators(filterPlayers, dispatch),
+    getSelectedTeam: bindActionCreators(getSelectedTeam, dispatch),
+  };
+};
 Filters.propTypes = {
   getSelectedTeam: PropTypes.func.isRequired,
   filterPlayers: PropTypes.func.isRequired,
   selectedTeam: PropTypes.object.isRequired,
 };
 
-export default connect(mapStateToProps, { getSelectedTeam, filterPlayers })(
-  Filters
-);
+export default connect(mapStateToProps, mapDispatchToProps)(Filters);
