@@ -39,6 +39,7 @@ export const getSelectedTeam = (team, year, defaultPlayerId, history) => async (
   });
 
   dispatch({ type: 'SET_PLAYERS', payload: teamRoster });
+  console.log('team roster', teamRoster);
   //set defaultPlayer if optional defaultPlayerId exists
   if (defaultPlayerId) {
     const defaultPlayer = teamRoster.find(

@@ -11,10 +11,12 @@ import selectMenuStyles from 'components/_shared/selectMenuStyles';
 import styles from './index.module.scss';
 
 const Filters = ({
-  selectedTeam,
   getSelectedTeam,
   filterPlayers,
   resetPlayer,
+  resetList,
+  players: { list },
+  selectedTeam,
 }) => {
   const [valueYears, setValueYears] = useState(YEARS[0]);
   const [valuePositions, setValuePositions] = useState(null);
@@ -42,7 +44,12 @@ const Filters = ({
   const handlePositionsChange = (e) => {
     resetPlayer();
     setValuePositions(e);
-    filterPlayers(e.value);
+    if (e) {
+      filterPlayers(e.value);
+    }
+    if (e === null) {
+      resetList(list);
+    }
   };
 
   return (
@@ -66,6 +73,7 @@ const Filters = ({
         options={POSITIONS}
         hideSelectedOptions
         isSearchable={false}
+        isClearable
         components={{
           DropdownIndicator: chevron,
         }}
@@ -83,16 +91,19 @@ const mapStateToProps = ({ teams, players }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    resetPlayer: () => {
-      dispatch({ type: 'RESET_PLAYER' });
-    },
+    resetPlayer: () => dispatch({ type: 'RESET_PLAYER' }),
+    resetList: (list) => dispatch({ type: 'SET_PLAYERS', payload: list }),
     filterPlayers: bindActionCreators(filterPlayers, dispatch),
     getSelectedTeam: bindActionCreators(getSelectedTeam, dispatch),
   };
 };
+
 Filters.propTypes = {
   getSelectedTeam: PropTypes.func.isRequired,
   filterPlayers: PropTypes.func.isRequired,
+  resetList: PropTypes.func.isRequired,
+  resetPlayer: PropTypes.func.isRequired,
+  players: PropTypes.object.isRequired,
   selectedTeam: PropTypes.object.isRequired,
 };
 
