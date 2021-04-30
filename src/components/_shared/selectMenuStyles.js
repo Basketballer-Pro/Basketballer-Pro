@@ -9,7 +9,7 @@ const selectMenuStyles = () => {
       boxShadow: 'none',
       fontFamily: 'arial',
       fontSize: 14,
-      width: 100,
+      width: 110,
       margin: 10,
     }),
     control: (provided) => ({
