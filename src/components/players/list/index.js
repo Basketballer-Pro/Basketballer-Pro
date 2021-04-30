@@ -20,9 +20,9 @@ const List = ({
   },
   selectedTeam,
   selectedTeam: { teamId },
-  isLoading,
   screenWidth,
   year,
+  isLoading,
 }) => {
   const domRef = useRef();
 
@@ -30,7 +30,7 @@ const List = ({
     domRef.current.scrollTo(0, 0);
   }, [teamId]);
 
-  const theList = () => {
+  const playersList = () => {
     if (filteredPlayers) {
       return filteredPlayers;
     } else {
@@ -46,7 +46,7 @@ const List = ({
       <Overlay isLoading={isLoading}>
         <Spinner height={19} width={4} radius={3} isLoading={isLoading} />
       </Overlay>
-      {theList().map((player, index) => (
+      {playersList().map((player, index) => (
         <Card
           key={index}
           getSelectedPlayer={getSelectedPlayer}
@@ -80,11 +80,18 @@ const mapStateToProps = ({
 List.propTypes = {
   getSelectedPlayer: PropTypes.func.isRequired,
   players: PropTypes.array.isRequired,
+  filteredPlayers: PropTypes.array,
   player: PropTypes.object.isRequired,
   selectedTeam: PropTypes.object.isRequired,
-  isLoading: PropTypes.bool.isRequired,
   screenWidth: PropTypes.number.isRequired,
+  teamId: PropTypes.number,
   year: PropTypes.number.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+};
+
+List.defaultProps = {
+  filteredPlayers: null,
+  teamId: null,
 };
 
 export default connect(mapStateToProps, { getSelectedPlayer })(List);
