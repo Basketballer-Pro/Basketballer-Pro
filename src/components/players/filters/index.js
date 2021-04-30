@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
@@ -12,6 +12,11 @@ import styles from './index.module.scss';
 const Filters = ({ selectedTeam, getSelectedTeam, filterPlayers }) => {
   const [valueYears, setValueYears] = useState(YEARS[0]);
   const [valuePositions, setValuePositions] = useState(null);
+  const positionPlaceholer = 'Position';
+
+  useEffect(() => {
+    setValuePositions(positionPlaceholer);
+  }, [selectedTeam]);
 
   const chevron = () => (
     <Chevron
@@ -24,7 +29,7 @@ const Filters = ({ selectedTeam, getSelectedTeam, filterPlayers }) => {
 
   const handleYearsChange = (e) => {
     setValueYears(e);
-    setValuePositions('Position');
+    setValuePositions(positionPlaceholer);
     getSelectedTeam(selectedTeam, e.value);
   };
 
@@ -48,7 +53,7 @@ const Filters = ({ selectedTeam, getSelectedTeam, filterPlayers }) => {
       <Select
         styles={selectMenuStyles()}
         value={valuePositions}
-        placeholder="Position"
+        placeholder={positionPlaceholer}
         onChange={(e) => {
           handlePositionsChange(e);
         }}
