@@ -1,5 +1,6 @@
 const initialState = {
   list: new Array(20).fill({}),
+  filteredList: [],
   isLoading: true,
 };
 
@@ -9,6 +10,13 @@ export default (state = initialState, action) => {
       return initialState;
     case 'SET_PLAYERS':
       return { list: action.payload, isLoading: false };
+    case 'FILTER_PLAYERS':
+      return {
+        ...state,
+        filteredList: state.list.filter((player) =>
+          player.pos.includes(action.payload)
+        ),
+      };
     default:
       return state;
   }

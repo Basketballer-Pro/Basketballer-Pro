@@ -78,3 +78,15 @@ export const YEARS = Object.freeze([
   { value: 2018, label: '2018 - 19' },
   { value: 2017, label: '2017 - 18' },
 ]);
+
+/**
+ * Enum for player positions array.
+ * @readonly
+ * @enum {{ value: string, label: string }}
+ */
+
+export const POSITIONS = Object.freeze([
+  { value: 'F', label: 'Forward' },
+  { value: 'C', label: 'Center' },
+  { value: 'G', label: 'Guard' },
+]);
