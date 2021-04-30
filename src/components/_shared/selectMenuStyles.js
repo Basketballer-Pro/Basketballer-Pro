@@ -9,6 +9,8 @@ const selectMenuStyles = () => {
       boxShadow: 'none',
       fontFamily: 'arial',
       fontSize: 14,
+      width: 100,
+      margin: 10,
     }),
     control: (provided) => ({
       ...provided,
@@ -26,6 +28,10 @@ const selectMenuStyles = () => {
       ...provided,
       margin: 0,
       padding: 0,
+    }),
+    placeholder: (provided) => ({
+      ...provided,
+      color: `${DARK_GREY}`,
     }),
     singleValue: (provided) => ({
       ...provided,

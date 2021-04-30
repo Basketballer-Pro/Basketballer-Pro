@@ -1,58 +1,76 @@
 import React, { useState } from 'react';
-import classnames from 'classnames';
 import Select from 'react-select';
-
-import Filter from 'components/_shared/filter';
-import { YEARS, POSITIONS } from 'enums';
+import selectMenuStyles from 'components/_shared/selectMenuStyles';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getSelectedTeam, filterPlayers } from 'actions';
+import { YEARS, POSITIONS, COLORS } from 'enums';
+import Chevron from 'assets/icons/chevron';
 
 import styles from './index.module.scss';
 
-const Filters = () => {
-  const [isUpdated, setUpdate] = useState(false);
-  const [valueB, setValueB] = useState(null);
+const Filters = ({ selectedTeam, getSelectedTeam, filterPlayers }) => {
+  const [valueYears, setValueYears] = useState(YEARS[0]);
+  const [valuePositions, setValuePositions] = useState(null);
 
-  const beenUpdated = () => {
-    setUpdate(true);
+  const chevron = () => (
+    <Chevron
+      color={COLORS.DARK_GREY}
+      width={10}
+      height={5}
+      className={styles.chevron}
+    />
+  );
+
+  const handleYearsChange = (e) => {
+    setValueYears(e);
+    setValuePositions('Position');
+    getSelectedTeam(selectedTeam, e.value);
+  };
+
+  const handlePositionsChange = (e) => {
+    setValuePositions(e);
+    filterPlayers(e.value);
   };
 
   return (
-    <div
-      className={
-        (styles.container,
-        classnames(styles.container, isUpdated && styles.fuck))
-      }
-    >
-      <Filter
-        typeOfMenu="years"
-        menuHasChanged={null}
-        update={() => beenUpdated()}
-        category={YEARS}
-      />
-      <Filter
-        typeOfMenu="Position"
-        menuHasChanged={isUpdated}
-        update={() => beenUpdated()}
-        category={POSITIONS}
-      />
+    <div className={styles.container}>
       <Select
-        onChange={() => {
-          setValueB(null);
+        styles={selectMenuStyles()}
+        defaultValue={valueYears[0]}
+        value={valueYears}
+        onChange={(e) => handleYearsChange(e)}
+        options={YEARS}
+        components={{
+          DropdownIndicator: chevron,
         }}
-        options={[
-          { value: 1, label: 'one' },
-          { value: 2, label: 'two' },
-        ]}
       />
       <Select
-        value={valueB}
-        onChange={(option) => setValueB(option)}
-        options={[
-          { value: 3, label: 'three' },
-          { value: 4, label: 'four' },
-        ]}
+        styles={selectMenuStyles()}
+        value={valuePositions}
+        placeholder="Position"
+        onChange={(e) => {
+          handlePositionsChange(e);
+        }}
+        options={POSITIONS}
+        components={{
+          DropdownIndicator: chevron,
+        }}
       />
     </div>
   );
 };
 
-export default Filters;
+const mapStateToProps = ({ teams, players }) => {
+  return { selectedTeam: teams.selectedTeam, players: players };
+};
+
+Filters.propTypes = {
+  getSelectedTeam: PropTypes.func.isRequired,
+  filterPlayers: PropTypes.func.isRequired,
+  selectedTeam: PropTypes.object.isRequired,
+};
+
+export default connect(mapStateToProps, { getSelectedTeam, filterPlayers })(
+  Filters
+);
